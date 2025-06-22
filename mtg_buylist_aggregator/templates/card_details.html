@@ -179,7 +179,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table table-hover">
+                                    <table class="table table-hover" id="vendorPricesTableContainer">
                                         <thead>
                                             <tr>
                                                 <th>Vendor</th>
@@ -268,7 +268,12 @@ let isFoil = false;
 document.addEventListener('DOMContentLoaded', function() {
     setupEventListeners();
     checkUrlParameters();
-    makeTableSortable('vendorPricesTable');
+    
+    // Make the vendor prices table sortable
+    const table = document.getElementById('vendorPricesTableContainer');
+    if (table) {
+        makeTableSortable('vendorPricesTableContainer');
+    }
 });
 
 function setupEventListeners() {
@@ -345,21 +350,38 @@ function displayAutocompleteResults(cards, query) {
     }
     
     const html = cards.map(card => {
-        const highlightedName = card.name.replace(
+        // Handle both string and object formats
+        const cardName = typeof card === 'string' ? card : (card.name || '');
+        const cardSet = typeof card === 'string' ? '' : (card.set_name || '');
+        
+        if (!cardName) return '';
+        
+        const highlightedName = cardName.replace(
             new RegExp(`(${query})`, 'gi'), 
             '<strong>$1</strong>'
         );
         
         return `
-            <div class="autocomplete-item" data-name="${card.name}" data-set="${card.set_name || ''}">
+            <div class="autocomplete-item" data-name="${cardName}" data-set="${cardSet}">
                 <div class="card-name">${highlightedName}</div>
-                ${card.set_name ? `<div class="card-set">${card.set_name}</div>` : ''}
+                ${cardSet ? `<div class="card-set">${cardSet}</div>` : ''}
             </div>
         `;
     }).join('');
     
     resultsDiv.innerHTML = html;
     resultsDiv.style.display = 'block';
+    
+    // Add click event listeners to autocomplete items
+    const items = resultsDiv.querySelectorAll('.autocomplete-item');
+    items.forEach(item => {
+        item.addEventListener('click', function() {
+            const name = this.getAttribute('data-name');
+            const set = this.getAttribute('data-set');
+            selectCard(name, set);
+            hideAutocomplete();
+        });
+    });
 }
 
 function hideAutocomplete() {
@@ -596,6 +618,12 @@ function displayCardDetails(data) {
     // Show the details section
     document.getElementById('cardDetailsSection').style.display = 'block';
     document.getElementById('searchResults').style.display = 'none';
+    
+    // Make the vendor prices table sortable after data is loaded
+    const table = document.getElementById('vendorPricesTableContainer');
+    if (table && data.current_prices.vendors.length > 0) {
+        makeTableSortable('vendorPricesTableContainer');
+    }
 }
 
 async function loadCardImage(cardName, setName, isFoil) {
@@ -777,21 +805,35 @@ function makeTableSortable(tableId) {
 }
 
 function sortTable(table, col, asc) {
+    // Check if table has tBodies and if the first one exists
+    if (!table.tBodies || table.tBodies.length === 0) {
+        console.warn('Table has no tbody elements');
+        return;
+    }
+    
     const tbody = table.tBodies[0];
-    if (!tbody) return;
+    if (!tbody) {
+        console.warn('Table tbody is null or undefined');
+        return;
+    }
     
     const rows = Array.from(tbody.querySelectorAll('tr'));
+    if (rows.length === 0) {
+        console.warn('No rows found in table tbody');
+        return;
+    }
+    
     rows.sort((a, b) => {
         // Check if the cells exist before accessing them
-        const aCell = a.children[col];
-        const bCell = b.children[col];
+        const aCell = a.children && a.children[col];
+        const bCell = b.children && b.children[col];
         
         if (!aCell || !bCell) {
             return 0; // If either cell is missing, treat as equal
         }
         
-        let aText = aCell.textContent.trim();
-        let bText = bCell.textContent.trim();
+        let aText = aCell.textContent ? aCell.textContent.trim() : '';
+        let bText = bCell.textContent ? bCell.textContent.trim() : '';
         
         if (col > 0) { // price columns
             aText = parseFloat(aText.replace(/[^\d.]/g, '')) || 0;
@@ -833,7 +875,12 @@ function showAlert(message, type = 'info') {
     
     // Insert at the top of the content
     const content = document.querySelector('.container');
-    content.insertBefore(alertDiv, content.firstChild);
+    if (content) {
+        content.insertBefore(alertDiv, content.firstChild);
+    } else {
+        // Fallback: append to body
+        document.body.insertBefore(alertDiv, document.body.firstChild);
+    }
     
     // Auto-dismiss after 5 seconds
     setTimeout(() => {

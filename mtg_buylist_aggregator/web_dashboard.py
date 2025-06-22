@@ -559,23 +559,24 @@ def api_card_details():
                         or getattr(price_data, "foil_treatment", None) == "Foil"
                     ):
                         continue
-                    # Separate bid/offer/ask/mid if available
-                    bid = price_data.all_conditions.get(
-                        "bid_price"
-                    ) or price_data.all_conditions.get("Bid")
-                    ask = price_data.all_conditions.get(
-                        "offer_price"
-                    ) or price_data.all_conditions.get("Offer")
-                    mid = price_data.all_conditions.get(
-                        "market_price"
-                    ) or price_data.all_conditions.get("Market")
-                    # Fallback to price if not available
-                    if bid is None:
-                        bid = price_data.price
-                    if ask is None:
-                        ask = price_data.price
-                    if mid is None:
-                        mid = price_data.price
+                    
+                    # Use the price directly since we don't have all_conditions anymore
+                    price = price_data.price if price_data.price else 0
+                    
+                    # Determine price type and set bid/ask/mid accordingly
+                    price_type = getattr(price_data, 'price_type', 'unknown')
+                    bid = None
+                    ask = None
+                    mid = None
+                    
+                    if 'bid' in price_type.lower():
+                        bid = price
+                    elif 'offer' in price_type.lower() or 'ask' in price_type.lower():
+                        ask = price
+                    else:
+                        # Default to mid price for unknown types
+                        mid = price
+                    
                     vendors_data.append(
                         {
                             "vendor": vendor,
