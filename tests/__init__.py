@@ -1,1 +1,1 @@
-"""Test package for MTG Buylist Aggregator.""" 
+"""Test package for MTG Buylist Aggregator."""

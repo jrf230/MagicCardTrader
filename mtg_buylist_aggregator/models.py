@@ -8,6 +8,7 @@ from datetime import datetime
 
 class Rarity(str, Enum):
     """Card rarity levels."""
+
     COMMON = "Common"
     UNCOMMON = "Uncommon"
     RARE = "Rare"
@@ -20,6 +21,7 @@ class Rarity(str, Enum):
 
 class FoilTreatment(str, Enum):
     """Foil treatment types."""
+
     NONFOIL = "Non-foil"
     FOIL = "Foil"
     ETCHED_FOIL = "Etched Foil"
@@ -32,6 +34,7 @@ class FoilTreatment(str, Enum):
 
 class PromoType(str, Enum):
     """Promo card types."""
+
     REGULAR = "Regular"
     PROMO = "Promo"
     PRERELEASE = "Prerelease"
@@ -49,6 +52,7 @@ class PromoType(str, Enum):
 
 class ArtworkVariant(str, Enum):
     """Artwork variant types."""
+
     NORMAL = "Normal"
     ALTERNATE_ART = "Alternate Art"
     SHOWCASE = "Showcase"
@@ -64,6 +68,7 @@ class ArtworkVariant(str, Enum):
 
 class BorderTreatment(str, Enum):
     """Border treatment types."""
+
     NORMAL = "Normal"
     BORDERLESS = "Borderless"
     FULL_ART = "Full Art"
@@ -73,6 +78,7 @@ class BorderTreatment(str, Enum):
 
 class CardSize(str, Enum):
     """Card size types."""
+
     NORMAL = "Normal"
     OVERSIZED = "Oversized"
     MINI = "Mini"
@@ -80,6 +86,7 @@ class CardSize(str, Enum):
 
 class Language(str, Enum):
     """Card language."""
+
     ENGLISH = "English"
     JAPANESE = "Japanese"
     CHINESE_SIMPLIFIED = "Chinese Simplified"
@@ -95,6 +102,7 @@ class Language(str, Enum):
 
 class Condition(str, Enum):
     """Card condition."""
+
     NM = "Near Mint"
     EX = "Excellent"
     GD = "Good"
@@ -105,6 +113,7 @@ class Condition(str, Enum):
 
 class Edition(str, Enum):
     """Card edition."""
+
     UNLIMITED = "Unlimited"
     FIRST_EDITION = "1st Edition"
     SECOND_EDITION = "2nd Edition"
@@ -120,42 +129,64 @@ class Edition(str, Enum):
 
 class Card(BaseModel):
     """Represents a Magic: The Gathering card in a collection."""
-    
+
     # Core identification
     name: str = Field(..., description="The name of the card")
     set_name: str = Field(..., description="The set the card is from")
-    card_number: Optional[str] = Field(None, description="The collector number within the set")
+    card_number: Optional[str] = Field(
+        None, description="The collector number within the set"
+    )
     rarity: Optional[Rarity] = Field(None, description="The rarity of the card")
-    
+
     # Physical characteristics
     quantity: int = Field(..., ge=1, description="Number of copies owned")
-    foil_treatment: FoilTreatment = Field(default=FoilTreatment.NONFOIL, description="Foil treatment type")
+    foil_treatment: FoilTreatment = Field(
+        default=FoilTreatment.NONFOIL, description="Foil treatment type"
+    )
     condition: Condition = Field(default=Condition.NM, description="Card condition")
-    
+
     # Variant characteristics
-    promo_type: PromoType = Field(default=PromoType.REGULAR, description="Promo card type")
-    artwork_variant: ArtworkVariant = Field(default=ArtworkVariant.NORMAL, description="Artwork variant type")
-    border_treatment: BorderTreatment = Field(default=BorderTreatment.NORMAL, description="Border treatment type")
+    promo_type: PromoType = Field(
+        default=PromoType.REGULAR, description="Promo card type"
+    )
+    artwork_variant: ArtworkVariant = Field(
+        default=ArtworkVariant.NORMAL, description="Artwork variant type"
+    )
+    border_treatment: BorderTreatment = Field(
+        default=BorderTreatment.NORMAL, description="Border treatment type"
+    )
     card_size: CardSize = Field(default=CardSize.NORMAL, description="Card size type")
-    
+
     # Additional characteristics
     language: Language = Field(default=Language.ENGLISH, description="Card language")
     edition: Optional[Edition] = Field(None, description="Card edition")
-    signed: bool = Field(default=False, description="Whether the card is signed by the artist")
-    original_printing: bool = Field(default=True, description="Whether this is the original printing (vs reprint)")
-    stamp: Optional[str] = Field(None, description="Special stamp or mark (e.g., Planeswalker, Arena)")
-    serialized_number: Optional[str] = Field(None, description="Serialized number for special cards (e.g., 1/500)")
+    signed: bool = Field(
+        default=False, description="Whether the card is signed by the artist"
+    )
+    original_printing: bool = Field(
+        default=True, description="Whether this is the original printing (vs reprint)"
+    )
+    stamp: Optional[str] = Field(
+        None, description="Special stamp or mark (e.g., Planeswalker, Arena)"
+    )
+    serialized_number: Optional[str] = Field(
+        None, description="Serialized number for special cards (e.g., 1/500)"
+    )
     is_token: bool = Field(default=False, description="Is this a token?")
     is_emblem: bool = Field(default=False, description="Is this an emblem?")
-    is_other: bool = Field(default=False, description="Is this a non-standard card (e.g., box topper)?")
-    
+    is_other: bool = Field(
+        default=False, description="Is this a non-standard card (e.g., box topper)?"
+    )
+
     # Legacy support - deprecated fields
-    foil: bool = Field(default=False, description="Legacy foil field - use foil_treatment instead")
-    
+    foil: bool = Field(
+        default=False, description="Legacy foil field - use foil_treatment instead"
+    )
+
     # New fields
     set_code: Optional[str] = Field(None, description="Short set code (e.g., C21)")
     scryfall_id: Optional[str] = Field(None, description="Scryfall UUID for the card")
-    
+
     class Config:
         json_schema_extra = {
             "example": {
@@ -179,18 +210,22 @@ class Card(BaseModel):
                 "serialized_number": None,
                 "is_token": False,
                 "is_emblem": False,
-                "is_other": False
+                "is_other": False,
             }
         }
-    
+
     def __init__(self, **data):
         super().__init__(**data)
         # Legacy support: sync foil field with foil_treatment
-        if 'foil' in data and data['foil'] and self.foil_treatment == FoilTreatment.NONFOIL:
+        if (
+            "foil" in data
+            and data["foil"]
+            and self.foil_treatment == FoilTreatment.NONFOIL
+        ):
             self.foil_treatment = FoilTreatment.FOIL
         elif self.foil_treatment != FoilTreatment.NONFOIL:
             self.foil = True
-    
+
     def get_unique_key(self) -> str:
         """Generate a unique key for this card variant."""
         components = [
@@ -212,10 +247,10 @@ class Card(BaseModel):
             self.serialized_number or "",
             "token" if self.is_token else "not_token",
             "emblem" if self.is_emblem else "not_emblem",
-            "other" if self.is_other else "not_other"
+            "other" if self.is_other else "not_other",
         ]
         return "|".join(components)
-    
+
     def is_foil(self) -> bool:
         """Check if the card has any foil treatment."""
         return self.foil_treatment != FoilTreatment.NONFOIL
@@ -223,21 +258,38 @@ class Card(BaseModel):
 
 class PriceData(BaseModel):
     """Represents a single price point for a card from a vendor."""
+
     vendor: str = Field(..., description="Name of the vendor")
     price: float = Field(..., ge=0, description="Price in USD")
-    price_type: str = Field(..., description="Type of price (e.g., 'bid_cash', 'offer_nm', 'offer_lp')")
-    condition: Condition = Field(default=Condition.NM, description="Card condition for this price")
-    quantity_limit: Optional[int] = Field(None, ge=0, description="Maximum quantity for this price point")
-    last_price_update: Optional[datetime] = Field(default_factory=datetime.now, description="When this price was last updated")
+    price_type: str = Field(
+        ..., description="Type of price (e.g., 'bid_cash', 'offer_nm', 'offer_lp')"
+    )
+    condition: Condition = Field(
+        default=Condition.NM, description="Card condition for this price"
+    )
+    quantity_limit: Optional[int] = Field(
+        None, ge=0, description="Maximum quantity for this price point"
+    )
+    last_price_update: Optional[datetime] = Field(
+        default_factory=datetime.now, description="When this price was last updated"
+    )
     notes: Optional[str] = Field(None, description="Additional notes for this price")
-    
+
 
 class CardPrices(BaseModel):
     """Represents all price data for a single card, aggregating multiple vendors and price points."""
+
     card: Card = Field(..., description="The card")
-    prices: Dict[str, List[PriceData]] = Field(default_factory=dict, description="Key: vendor name, Value: list of prices from that vendor")
-    best_bid: Optional[PriceData] = Field(None, description="The single best (highest) buylist/bid price")
-    best_offer: Optional[PriceData] = Field(None, description="The single best (lowest) retail/offer price")
+    prices: Dict[str, List[PriceData]] = Field(
+        default_factory=dict,
+        description="Key: vendor name, Value: list of prices from that vendor",
+    )
+    best_bid: Optional[PriceData] = Field(
+        None, description="The single best (highest) buylist/bid price"
+    )
+    best_offer: Optional[PriceData] = Field(
+        None, description="The single best (lowest) retail/offer price"
+    )
 
     def update_best_prices(self) -> None:
         """Iterate through all prices to find the best bid and best offer."""
@@ -246,11 +298,11 @@ class CardPrices(BaseModel):
 
         for vendor_prices in self.prices.values():
             for price_data in vendor_prices:
-                if 'bid' in price_data.price_type:
+                if "bid" in price_data.price_type:
                     all_bids.append(price_data)
-                elif 'offer' in price_data.price_type:
+                elif "offer" in price_data.price_type:
                     all_offers.append(price_data)
-        
+
         if all_bids:
             self.best_bid = max(all_bids, key=lambda p: p.price)
         else:
@@ -264,26 +316,29 @@ class CardPrices(BaseModel):
 
 class CollectionSummary(BaseModel):
     """Summary of a card collection with total values."""
-    
+
     total_cards: int = Field(..., description="Total number of cards in collection")
     total_value_by_vendor: Dict[str, float] = Field(
-        default_factory=dict, 
-        description="Total collection value by vendor"
+        default_factory=dict, description="Total collection value by vendor"
     )
     best_total_value: Optional[float] = Field(None, description="Highest total value")
-    best_vendor: Optional[str] = Field(None, description="Vendor with highest total value")
+    best_vendor: Optional[str] = Field(
+        None, description="Vendor with highest total value"
+    )
     cards_with_prices: int = Field(..., description="Number of cards with price data")
-    cards_without_prices: int = Field(..., description="Number of cards without price data")
-    
+    cards_without_prices: int = Field(
+        ..., description="Number of cards without price data"
+    )
+
     def calculate_totals(self, card_prices_list: list[CardPrices]) -> None:
         """Calculate total values from a list of card prices."""
         self.total_cards = len(card_prices_list)
         self.cards_with_prices = sum(1 for cp in card_prices_list if cp.prices)
         self.cards_without_prices = self.total_cards - self.cards_with_prices
-        
+
         # Reset vendor totals
         self.total_value_by_vendor = {}
-        
+
         # Calculate totals by vendor
         for card_prices in card_prices_list:
             for vendor, prices in card_prices.prices.items():
@@ -293,14 +348,14 @@ class CollectionSummary(BaseModel):
                     self.total_value_by_vendor[vendor] += (
                         price_data.price * card_prices.card.quantity
                     )
-        
+
         # Find best vendor
         if self.total_value_by_vendor:
             self.best_vendor = max(
                 self.total_value_by_vendor.keys(),
-                key=lambda v: self.total_value_by_vendor[v]
+                key=lambda v: self.total_value_by_vendor[v],
             )
             self.best_total_value = self.total_value_by_vendor[self.best_vendor]
         else:
             self.best_vendor = None
-            self.best_total_value = None 
+            self.best_total_value = None

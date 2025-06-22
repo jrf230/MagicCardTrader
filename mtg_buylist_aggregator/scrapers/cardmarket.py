@@ -7,9 +7,10 @@ from typing import Optional, List
 from datetime import datetime
 import re
 
+
 class CardmarketScraper(BaseScraper):
     """Fetches Cardmarket prices by scraping the public site (lowest available price)."""
-    
+
     def __init__(self):
         super().__init__("Cardmarket", "https://www.cardmarket.com")
         self.BASE_URL = "https://www.cardmarket.com/en/Magic/Products/Singles"
@@ -22,21 +23,23 @@ class CardmarketScraper(BaseScraper):
             resp.raise_for_status()
             html = resp.text
             # Find the first price in the search results (EUR)
-            price_match = re.search(r'\u20ac\s*([\d,.]+)', html)
+            price_match = re.search(r"\u20ac\s*([\d,.]+)", html)
             if price_match:
-                price_eur = float(price_match.group(1).replace(",", "").replace(".", "."))
+                price_eur = float(
+                    price_match.group(1).replace(",", "").replace(".", ".")
+                )
                 return PriceData(
                     vendor="Cardmarket",
                     price=price_eur,
                     condition="Near Mint",
                     quantity_limit=None,
                     last_price_update=datetime.now(),
-                    all_conditions={"currency": "EUR"}
+                    all_conditions={"currency": "EUR"},
                 )
             return None
         except Exception:
             return None
-    
+
     def get_buylist(self) -> List[PriceData]:
         """Cardmarket buylist not implemented yet, return empty list."""
-        return [] 
+        return []
