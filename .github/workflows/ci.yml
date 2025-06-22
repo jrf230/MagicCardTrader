@@ -171,24 +171,34 @@ jobs:
         name: dist
         path: dist/
     
-    - name: Deploy to PyPI (if tagged)
-      if: startsWith(github.ref, 'refs/tags/')
+    - name: Check for PyPI token
+      id: check-token
+      run: |
+        if [ -n "${{ secrets.PYPI_API_TOKEN }}" ]; then
+          echo "has_token=true" >> $GITHUB_OUTPUT
+        else
+          echo "has_token=false" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Deploy to PyPI
+      if: startsWith(github.ref, 'refs/tags/') && steps.check-token.outputs.has_token == 'true'
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
       run: |
-        if [ -n "$TWINE_PASSWORD" ]; then
-          echo "Deploying to PyPI..."
-          twine upload dist/*
-        else
-          echo "⚠️  Skipping PyPI deployment - PYPI_API_TOKEN not configured"
-          echo "📝 To enable PyPI deployment:"
-          echo "   1. Go to your PyPI account and create an API token"
-          echo "   2. Go to this repository's Settings → Secrets and variables → Actions"
-          echo "   3. Add a new repository secret named 'PYPI_API_TOKEN'"
-          echo "   4. Set the value to your PyPI API token"
-          echo "   5. The next tagged release will automatically deploy to PyPI"
-        fi
+        echo "Deploying to PyPI..."
+        twine upload dist/*
+    
+    - name: Skip PyPI deployment
+      if: startsWith(github.ref, 'refs/tags/') && steps.check-token.outputs.has_token == 'false'
+      run: |
+        echo "⚠️  Skipping PyPI deployment - PYPI_API_TOKEN not configured"
+        echo "📝 To enable PyPI deployment:"
+        echo "   1. Go to your PyPI account and create an API token"
+        echo "   2. Go to this repository's Settings → Secrets and variables → Actions"
+        echo "   3. Add a new repository secret named 'PYPI_API_TOKEN'"
+        echo "   4. Set the value to your PyPI API token"
+        echo "   5. The next tagged release will automatically deploy to PyPI"
     
     - name: Create Release
       if: startsWith(github.ref, 'refs/tags/')
