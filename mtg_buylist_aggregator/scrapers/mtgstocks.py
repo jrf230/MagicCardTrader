@@ -16,6 +16,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
+from mtg_buylist_aggregator.set_utils import get_all_set_identifiers
+from urllib.parse import quote_plus
 
 logger = logging.getLogger(__name__)
 
@@ -109,30 +111,74 @@ class MTGStocksScraper(BaseScraper):
             time.sleep(self.min_request_interval - time_since_last)
         self.last_request_time = time.time()
 
-    def search_card(self, card: Card) -> Optional[PriceData]:
-        """Search for a card and return bid/offer price data from MTGStocks."""
+    def search_card(self, card: Card) -> List[PriceData]:
+        """Search MTGStocks for a specific card."""
+        logger.debug(f"MTGStocks: Attempting to scrape {card.name} ({card.set_name})")
+        
         try:
-            self._rate_limit()
-
-            # First try to get manual data
-            manual_data = self._get_manual_data(card)
-            if manual_data:
-                logger.debug(
-                    f"MTGStocks: Using manual data for {card.name} ({card.set_name})"
-                )
-                return manual_data
-
-            # If no manual data, try scraping (though it's likely to fail due to JavaScript)
-            logger.debug(
-                f"MTGStocks: Attempting to scrape {card.name} ({card.set_name})"
-            )
-            return self._attempt_scraping(card)
-
+            # Build search URL
+            search_query = f"{card.name} {card.set_name}"
+            url = f"https://www.mtgstocks.com/prints?query={quote_plus(search_query)}"
+            
+            response = self.session.get(url, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.text, "html.parser")
+            
+            # Get all set identifiers for robust matching
+            set_identifiers = get_all_set_identifiers(card.set_name)
+            set_identifiers = [s.lower() for s in set_identifiers]
+            card_name_lc = card.name.lower()
+            
+            # Find card entries
+            card_entries = soup.select(".card-entry")
+            
+            for entry in card_entries:
+                # Get all text from the entry for robust matching
+                entry_text = entry.get_text(strip=True).lower()
+                
+                # Check if card name and any set identifier are present
+                if card_name_lc not in entry_text:
+                    continue
+                    
+                if not any(s in entry_text for s in set_identifiers):
+                    continue
+                
+                logger.debug(f"MTGStocks: Matched set for {card.name}: identifiers={set_identifiers} in entry_text={entry_text[:100]}...")
+                
+                # Check foil status
+                is_foil = "foil" in entry_text
+                if card.foil != is_foil:
+                    continue
+                
+                # Extract price information
+                price_elements = entry.select(".price")
+                if price_elements:
+                    try:
+                        price_text = price_elements[0].get_text(strip=True).replace("$", "").replace(",", "")
+                        price = float(price_text)
+                        
+                        # MTGStocks typically shows market prices (can be used as offer prices)
+                        price_data = PriceData(
+                            vendor=self.name,
+                            price=price,
+                            price_type="offer_market",
+                            condition="Near Mint",  # MTGStocks doesn't always specify condition
+                            last_price_update=datetime.now(),
+                        )
+                        
+                        logger.debug(f"MTGStocks: Found price ${price} for {card.name} ({card.set_name})")
+                        return [price_data]
+                        
+                    except (ValueError, TypeError) as e:
+                        logger.warning(f"MTGStocks: Could not parse price for {card.name}: {e}")
+            
+            logger.debug(f"MTGStocks: No scraped bid/offer prices found for {card.name} ({card.set_name})")
+            return []
+            
         except Exception as e:
-            logger.debug(
-                f"MTGStocks: Error searching for {card.name} ({card.set_name}): {e}"
-            )
-            return None
+            logger.error(f"MTGStocks: Error searching for {card.name}: {e}")
+            return []
 
     def _get_manual_data(self, card: Card) -> Optional[PriceData]:
         """Get manual bid/offer data for a card."""

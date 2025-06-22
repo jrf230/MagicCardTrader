@@ -6,9 +6,12 @@ import time
 from typing import Optional, List, Dict
 from datetime import datetime, timedelta
 import re
+from bs4 import BeautifulSoup
+from urllib.parse import quote_plus
 
 from .base_scraper import BaseScraper
 from ..models import Card, PriceData
+from mtg_buylist_aggregator.set_utils import get_all_set_identifiers
 
 logger = logging.getLogger(__name__)
 
@@ -88,28 +91,90 @@ class EbayScraper(BaseScraper):
             time.sleep(self.min_request_interval - time_since_last)
         self.last_request_time = time.time()
 
-    def search_card(self, card: Card) -> Optional[PriceData]:
-        """Search for offer prices and recent sales data for a card on eBay."""
+    def search_card(self, card: Card) -> List[PriceData]:
+        """Search eBay for recent sales of a specific card."""
+        logger.debug(f"eBay: Attempting to scrape {card.name} ({card.set_name})")
+        
         try:
-            self._rate_limit()
-
-            # First check manual data
-            manual_data = self._get_manual_offer_data(card)
-            if manual_data:
-                logger.debug(
-                    f"eBay: Using manual data for {card.name} ({card.set_name})"
-                )
-                return manual_data
-
-            # If no manual data, try web scraping
-            logger.debug(f"eBay: Attempting to scrape {card.name} ({card.set_name})")
-            return self._attempt_scraping(card)
-
+            # Build search query
+            search_query = f"{card.name} {card.set_name}"
+            url = f"https://www.ebay.com/sch/i.html?_nkw={quote_plus(search_query)}&_sacat=0&LH_BIN=1&_sop=12&_dmd=2"
+            
+            response = self.session.get(url, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.text, "html.parser")
+            
+            # Get all set identifiers for robust matching
+            set_identifiers = get_all_set_identifiers(card.set_name)
+            set_identifiers = [s.lower() for s in set_identifiers]
+            card_name_lc = card.name.lower()
+            
+            # Find listing items
+            listing_items = soup.select(".s-item")
+            
+            for item in listing_items:
+                # Get all text from the item for robust matching
+                item_text = item.get_text(strip=True).lower()
+                
+                # Check if card name and any set identifier are present
+                if card_name_lc not in item_text:
+                    continue
+                    
+                if not any(s in item_text for s in set_identifiers):
+                    continue
+                
+                logger.debug(f"eBay: Matched set for {card.name}: identifiers={set_identifiers} in item_text={item_text[:100]}...")
+                
+                # Check foil status
+                is_foil = "foil" in item_text
+                if card.foil != is_foil:
+                    continue
+                
+                # Extract price information
+                price_elements = item.select(".s-item__price")
+                if price_elements:
+                    try:
+                        price_text = price_elements[0].get_text(strip=True).replace("$", "").replace(",", "")
+                        price = float(price_text)
+                        
+                        # Extract condition if available
+                        condition = "Near Mint"  # Default
+                        condition_elements = item.select(".s-item__condition")
+                        if condition_elements:
+                            condition_text = condition_elements[0].get_text(strip=True).lower()
+                            if "excellent" in condition_text:
+                                condition = "Excellent"
+                            elif "good" in condition_text:
+                                condition = "Good"
+                            elif "light played" in condition_text or "lightly played" in condition_text:
+                                condition = "Light Played"
+                            elif "played" in condition_text:
+                                condition = "Played"
+                            elif "poor" in condition_text:
+                                condition = "Poor"
+                        
+                        # eBay shows recent sales prices (can be used as offer prices)
+                        price_data = PriceData(
+                            vendor=self.name,
+                            price=price,
+                            price_type="offer_recent_sale",  # Always set price_type
+                            condition=condition,
+                            last_price_update=datetime.now(),
+                        )
+                        
+                        logger.debug(f"eBay: Found price ${price} for {card.name} ({card.set_name})")
+                        return [price_data]
+                        
+                    except (ValueError, TypeError) as e:
+                        logger.warning(f"eBay: Could not parse price for {card.name}: {e}")
+            
+            logger.debug(f"eBay: No price found for {card.name} ({card.set_name})")
+            return []
+            
         except Exception as e:
-            logger.debug(
-                f"eBay: Error searching for {card.name} ({card.set_name}): {e}"
-            )
-            return None
+            logger.error(f"eBay: Error searching for {card.name}: {e}")
+            return []
 
     def _get_manual_offer_data(self, card: Card) -> Optional[PriceData]:
         """Get manual offer price and sales data for a card."""

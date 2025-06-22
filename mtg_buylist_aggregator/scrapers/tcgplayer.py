@@ -8,6 +8,9 @@ from ..models import Card, PriceData
 from datetime import datetime
 import time
 import logging
+from bs4 import BeautifulSoup
+from urllib.parse import quote_plus
+from mtg_buylist_aggregator.set_utils import get_all_set_identifiers
 
 logger = logging.getLogger(__name__)
 
@@ -78,30 +81,74 @@ class TCGPlayerScraper(BaseScraper):
             time.sleep(self.min_request_interval - time_since_last)
         self.last_request_time = time.time()
 
-    def search_card(self, card: Card) -> Optional[PriceData]:
-        """Search for a card on TCG Player and return offer price data only."""
+    def search_card(self, card: Card) -> List[PriceData]:
+        """Search TCGPlayer for a specific card."""
+        logger.debug(f"TCG Player: Attempting to scrape {card.name} ({card.set_name})")
+        
         try:
-            self._rate_limit()
-
-            # First check manual data
-            manual_data = self._get_manual_offer_data(card)
-            if manual_data:
-                logger.debug(
-                    f"TCG Player: Using manual data for {card.name} ({card.set_name})"
-                )
-                return manual_data
-
-            # If no manual data, try web scraping (though it may not work due to JavaScript)
-            logger.debug(
-                f"TCG Player: Attempting to scrape {card.name} ({card.set_name})"
-            )
-            return self._attempt_scraping(card)
-
+            # Build search query
+            search_query = f"{card.name} {card.set_name}"
+            url = f"https://www.tcgplayer.com/search/magic/product?productLineName=magic&q={quote_plus(search_query)}&page=1&view=grid"
+            
+            response = self.session.get(url, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.text, "html.parser")
+            
+            # Get all set identifiers for robust matching
+            set_identifiers = get_all_set_identifiers(card.set_name)
+            set_identifiers = [s.lower() for s in set_identifiers]
+            card_name_lc = card.name.lower()
+            
+            # Find product cards
+            product_cards = soup.select(".product-card")
+            
+            for product_card in product_cards:
+                # Get all text from the product card for robust matching
+                card_text = product_card.get_text(strip=True).lower()
+                
+                # Check if card name and any set identifier are present
+                if card_name_lc not in card_text:
+                    continue
+                    
+                if not any(s in card_text for s in set_identifiers):
+                    continue
+                
+                logger.debug(f"TCG Player: Matched set for {card.name}: identifiers={set_identifiers} in card_text={card_text[:100]}...")
+                
+                # Check foil status
+                is_foil = "foil" in card_text
+                if card.foil != is_foil:
+                    continue
+                
+                # Extract price information
+                price_elements = product_card.select(".price-point__price")
+                if price_elements:
+                    try:
+                        price_text = price_elements[0].get_text(strip=True).replace("$", "").replace(",", "")
+                        price = float(price_text)
+                        
+                        # TCGPlayer typically shows market prices (can be used as offer prices)
+                        price_data = PriceData(
+                            vendor=self.name,
+                            price=price,
+                            price_type="offer_market",
+                            condition="Near Mint",  # TCGPlayer doesn't always specify condition
+                            last_price_update=datetime.now(),
+                        )
+                        
+                        logger.debug(f"TCG Player: Found price ${price} for {card.name} ({card.set_name})")
+                        return [price_data]
+                        
+                    except (ValueError, TypeError) as e:
+                        logger.warning(f"TCG Player: Could not parse price for {card.name}: {e}")
+            
+            logger.debug(f"TCG Player: No price found for {card.name} ({card.set_name})")
+            return []
+            
         except Exception as e:
-            logger.debug(
-                f"TCG Player: Error searching for {card.name} ({card.set_name}): {e}"
-            )
-            return None
+            logger.error(f"TCG Player: Error searching for {card.name}: {e}")
+            return []
 
     def _get_manual_offer_data(self, card: Card) -> Optional[PriceData]:
         """Get manual offer price data for a card."""
@@ -233,9 +280,9 @@ class TCGPlayerScraper(BaseScraper):
         try:
             # For now, return basic insights based on search results
             price_data = self.search_card(card)
-            if price_data and price_data.price:
+            if price_data and price_data[0].price:
                 return {
-                    "current_market_price": price_data.price,
+                    "current_market_price": price_data[0].price,
                     "price_volatility": 0.0,  # Would need historical data
                     "trend_direction": "stable",  # Would need trend analysis
                     "volume": 5,  # Default medium volume

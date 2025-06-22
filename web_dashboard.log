@@ -31222,3 +31222,947 @@ condition
 2025-06-22 16:47:01,241 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [eBay Recent Sales]: No price found
 2025-06-22 16:47:01,241 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGMintCard]: No price found
 2025-06-22 16:47:01,773 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:47:01] "GET /api/card-details?name=Cabal%20Ritual&set=Torment HTTP/1.1" 200 -
+2025-06-22 16:47:25,440 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:47:25] "GET /card-details HTTP/1.1" 200 -
+2025-06-22 16:47:27,484 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:47:27] "GET /api/search-cards?q=Cabal%20Ritual HTTP/1.1" 200 -
+2025-06-22 16:47:29,411 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:47:29] "GET /api/search-cards-autocomplete?query=Cabal HTTP/1.1" 200 -
+2025-06-22 16:47:42,402 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 16:47:42,403 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:47:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 16:48:42,402 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 16:48:42,402 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:48:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 16:49:42,402 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 16:49:42,402 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:49:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 16:50:29,127 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:50:29] "GET /card-details HTTP/1.1" 200 -
+2025-06-22 16:50:31,874 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:50:31] "GET /api/search-cards-autocomplete?query=cV HTTP/1.1" 200 -
+2025-06-22 16:50:33,658 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:50:33] "GET /api/search-cards-autocomplete?query=cABA HTTP/1.1" 200 -
+2025-06-22 16:50:35,556 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:50:35] "GET /api/search-cards?q=cABAL+RITUAL HTTP/1.1" 200 -
+2025-06-22 16:50:35,820 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:50:35] "GET /api/search-cards-autocomplete?query=cABAL%20RITUAL HTTP/1.1" 200 -
+2025-06-22 16:50:41,914 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Scryfall scraper (real)
+2025-06-22 16:50:41,915 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Card Kingdom scraper (real)
+2025-06-22 16:50:41,915 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Star City Games scraper (real)
+2025-06-22 16:50:41,915 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized BeatTheBuylist scraper (real)
+2025-06-22 16:50:41,915 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Channel Fireball scraper (real)
+2025-06-22 16:50:41,916 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized CoolStuffInc scraper (real)
+2025-06-22 16:50:41,916 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized TCG Player scraper (real)
+2025-06-22 16:50:41,916 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized MTGGoldfish scraper (real)
+2025-06-22 16:50:41,916 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized MTGStocks scraper (real)
+2025-06-22 16:50:41,916 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized MTGMintCard scraper (real)
+2025-06-22 16:50:41,916 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized StrikeZoneOnline scraper (real)
+2025-06-22 16:50:41,916 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Troll Trader Cards scraper (real)
+2025-06-22 16:50:41,916 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Nerd Rage Gaming scraper (real)
+2025-06-22 16:50:41,916 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Harlequin Games scraper (real)
+2025-06-22 16:50:41,916 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Card Conduit scraper (real)
+2025-06-22 16:50:41,916 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Troll and Toad scraper (real)
+2025-06-22 16:50:41,916 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Card Shark scraper (real)
+2025-06-22 16:50:41,916 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Magic Card Prices scraper (real)
+2025-06-22 16:50:41,917 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Cardmarket scraper (real)
+2025-06-22 16:50:41,917 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized eBay Recent Sales scraper (real)
+2025-06-22 16:50:41,917 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized 20 scrapers
+2025-06-22 16:50:41,917 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Getting prices for 1 cards from 20 vendors
+2025-06-22 16:50:41,917 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 1/1: Cabal Ritual (Torment)
+2025-06-22 16:50:42,211 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Star City Games
+2025-06-22 16:50:42,211 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from BeatTheBuylist
+2025-06-22 16:50:42,271 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Scryfall
+2025-06-22 16:50:42,421 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 16:50:42,422 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:50:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 16:50:42,549 - mtg_buylist_aggregator.scrapers.coolstuffinc - ERROR - Error searching CoolStuffInc for Cabal Ritual: 404 Client Error: Not Found for url: https://www.coolstuffinc.com/search?q=Cabal+Ritual+Torment&category=Magic%3A+The+Gathering
+2025-06-22 16:50:42,549 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from CoolStuffInc
+2025-06-22 16:50:42,703 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from TCG Player
+2025-06-22 16:50:42,912 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Channel Fireball
+2025-06-22 16:50:43,065 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGStocks
+2025-06-22 16:50:43,902 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Card Kingdom
+2025-06-22 16:50:43,902 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from StrikeZoneOnline
+2025-06-22 16:50:43,903 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Troll Trader Cards
+2025-06-22 16:50:43,903 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Nerd Rage Gaming
+2025-06-22 16:50:43,903 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Harlequin Games
+2025-06-22 16:50:43,903 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Card Conduit
+2025-06-22 16:50:43,903 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Troll and Toad
+2025-06-22 16:50:43,903 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Card Shark
+2025-06-22 16:50:43,903 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Magic Card Prices
+2025-06-22 16:50:43,903 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGGoldfish
+2025-06-22 16:50:44,037 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Cardmarket
+2025-06-22 16:50:44,841 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from eBay Recent Sales
+2025-06-22 16:50:46,123 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGMintCard
+2025-06-22 16:50:46,123 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Cabal Ritual
+2025-06-22 16:50:46,123 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Completed price lookup for 1 cards
+2025-06-22 16:50:46,123 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - Completed scraping with the following errors:
+2025-06-22 16:50:46,123 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Star City Games]: No price found
+2025-06-22 16:50:46,123 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [BeatTheBuylist]: No price found
+2025-06-22 16:50:46,123 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Scryfall]: No price found
+2025-06-22 16:50:46,123 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [CoolStuffInc]: No price found
+2025-06-22 16:50:46,124 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [TCG Player]: No price found
+2025-06-22 16:50:46,124 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Channel Fireball]: No price found
+2025-06-22 16:50:46,124 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGStocks]: No price found
+2025-06-22 16:50:46,124 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Card Kingdom]: No price found
+2025-06-22 16:50:46,124 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [StrikeZoneOnline]: No price found
+2025-06-22 16:50:46,124 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Troll Trader Cards]: No price found
+2025-06-22 16:50:46,124 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Nerd Rage Gaming]: No price found
+2025-06-22 16:50:46,124 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Harlequin Games]: No price found
+2025-06-22 16:50:46,124 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Card Conduit]: No price found
+2025-06-22 16:50:46,124 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Troll and Toad]: No price found
+2025-06-22 16:50:46,124 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Card Shark]: No price found
+2025-06-22 16:50:46,124 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Magic Card Prices]: No price found
+2025-06-22 16:50:46,124 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGGoldfish]: No price found
+2025-06-22 16:50:46,124 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Cardmarket]: No price found
+2025-06-22 16:50:46,124 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [eBay Recent Sales]: No price found
+2025-06-22 16:50:46,124 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGMintCard]: No price found
+2025-06-22 16:50:46,678 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:50:46] "GET /api/card-details?name=Cabal+Ritual&set=Torment&foil=false HTTP/1.1" 200 -
+2025-06-22 16:50:46,681 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Scryfall scraper (real)
+2025-06-22 16:50:46,681 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Card Kingdom scraper (real)
+2025-06-22 16:50:46,681 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Star City Games scraper (real)
+2025-06-22 16:50:46,681 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized BeatTheBuylist scraper (real)
+2025-06-22 16:50:46,681 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Channel Fireball scraper (real)
+2025-06-22 16:50:46,681 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized CoolStuffInc scraper (real)
+2025-06-22 16:50:46,681 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized TCG Player scraper (real)
+2025-06-22 16:50:46,681 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized MTGGoldfish scraper (real)
+2025-06-22 16:50:46,681 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized MTGStocks scraper (real)
+2025-06-22 16:50:46,681 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized MTGMintCard scraper (real)
+2025-06-22 16:50:46,681 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized StrikeZoneOnline scraper (real)
+2025-06-22 16:50:46,681 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Troll Trader Cards scraper (real)
+2025-06-22 16:50:46,681 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Nerd Rage Gaming scraper (real)
+2025-06-22 16:50:46,681 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Harlequin Games scraper (real)
+2025-06-22 16:50:46,681 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Card Conduit scraper (real)
+2025-06-22 16:50:46,681 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Troll and Toad scraper (real)
+2025-06-22 16:50:46,681 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Card Shark scraper (real)
+2025-06-22 16:50:46,681 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Magic Card Prices scraper (real)
+2025-06-22 16:50:46,681 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Cardmarket scraper (real)
+2025-06-22 16:50:46,681 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized eBay Recent Sales scraper (real)
+2025-06-22 16:50:46,681 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized 20 scrapers
+2025-06-22 16:50:46,681 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Getting prices for 1 cards from 20 vendors
+2025-06-22 16:50:46,681 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 1/1: Cabal Ritual (Torment)
+2025-06-22 16:50:46,985 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Star City Games
+2025-06-22 16:50:46,985 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from BeatTheBuylist
+2025-06-22 16:50:47,000 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Scryfall
+2025-06-22 16:50:47,275 - mtg_buylist_aggregator.scrapers.coolstuffinc - ERROR - Error searching CoolStuffInc for Cabal Ritual: 404 Client Error: Not Found for url: https://www.coolstuffinc.com/search?q=Cabal+Ritual+Torment&category=Magic%3A+The+Gathering
+2025-06-22 16:50:47,276 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from CoolStuffInc
+2025-06-22 16:50:47,461 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from TCG Player
+2025-06-22 16:50:47,631 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Channel Fireball
+2025-06-22 16:50:47,734 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGStocks
+2025-06-22 16:50:48,576 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Card Kingdom
+2025-06-22 16:50:48,576 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from StrikeZoneOnline
+2025-06-22 16:50:48,577 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Troll Trader Cards
+2025-06-22 16:50:48,577 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Nerd Rage Gaming
+2025-06-22 16:50:48,577 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Harlequin Games
+2025-06-22 16:50:48,577 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Card Conduit
+2025-06-22 16:50:48,577 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Troll and Toad
+2025-06-22 16:50:48,577 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Card Shark
+2025-06-22 16:50:48,577 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Magic Card Prices
+2025-06-22 16:50:48,610 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGGoldfish
+2025-06-22 16:50:48,742 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Cardmarket
+2025-06-22 16:50:49,497 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from eBay Recent Sales
+2025-06-22 16:50:50,273 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGMintCard
+2025-06-22 16:50:50,274 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Cabal Ritual
+2025-06-22 16:50:50,274 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Completed price lookup for 1 cards
+2025-06-22 16:50:50,274 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - Completed scraping with the following errors:
+2025-06-22 16:50:50,274 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Star City Games]: No price found
+2025-06-22 16:50:50,274 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [BeatTheBuylist]: No price found
+2025-06-22 16:50:50,274 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Scryfall]: No price found
+2025-06-22 16:50:50,274 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [CoolStuffInc]: No price found
+2025-06-22 16:50:50,274 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [TCG Player]: No price found
+2025-06-22 16:50:50,274 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Channel Fireball]: No price found
+2025-06-22 16:50:50,274 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGStocks]: No price found
+2025-06-22 16:50:50,274 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Card Kingdom]: No price found
+2025-06-22 16:50:50,274 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [StrikeZoneOnline]: No price found
+2025-06-22 16:50:50,274 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Troll Trader Cards]: No price found
+2025-06-22 16:50:50,274 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Nerd Rage Gaming]: No price found
+2025-06-22 16:50:50,274 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Harlequin Games]: No price found
+2025-06-22 16:50:50,274 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Card Conduit]: No price found
+2025-06-22 16:50:50,274 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Troll and Toad]: No price found
+2025-06-22 16:50:50,274 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Card Shark]: No price found
+2025-06-22 16:50:50,274 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Magic Card Prices]: No price found
+2025-06-22 16:50:50,274 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGGoldfish]: No price found
+2025-06-22 16:50:50,274 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Cardmarket]: No price found
+2025-06-22 16:50:50,275 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [eBay Recent Sales]: No price found
+2025-06-22 16:50:50,275 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGMintCard]: No price found
+2025-06-22 16:50:50,767 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:50:50] "GET /api/card-details?name=Cabal+Ritual&set=Torment&foil=false HTTP/1.1" 200 -
+2025-06-22 16:50:50,769 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Scryfall scraper (real)
+2025-06-22 16:50:50,770 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Card Kingdom scraper (real)
+2025-06-22 16:50:50,770 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Star City Games scraper (real)
+2025-06-22 16:50:50,770 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized BeatTheBuylist scraper (real)
+2025-06-22 16:50:50,770 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Channel Fireball scraper (real)
+2025-06-22 16:50:50,770 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized CoolStuffInc scraper (real)
+2025-06-22 16:50:50,770 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized TCG Player scraper (real)
+2025-06-22 16:50:50,770 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized MTGGoldfish scraper (real)
+2025-06-22 16:50:50,770 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized MTGStocks scraper (real)
+2025-06-22 16:50:50,770 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized MTGMintCard scraper (real)
+2025-06-22 16:50:50,770 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized StrikeZoneOnline scraper (real)
+2025-06-22 16:50:50,770 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Troll Trader Cards scraper (real)
+2025-06-22 16:50:50,770 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Nerd Rage Gaming scraper (real)
+2025-06-22 16:50:50,770 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Harlequin Games scraper (real)
+2025-06-22 16:50:50,770 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Card Conduit scraper (real)
+2025-06-22 16:50:50,770 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Troll and Toad scraper (real)
+2025-06-22 16:50:50,770 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Card Shark scraper (real)
+2025-06-22 16:50:50,770 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Magic Card Prices scraper (real)
+2025-06-22 16:50:50,770 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Cardmarket scraper (real)
+2025-06-22 16:50:50,770 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized eBay Recent Sales scraper (real)
+2025-06-22 16:50:50,770 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized 20 scrapers
+2025-06-22 16:50:50,770 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Getting prices for 1 cards from 20 vendors
+2025-06-22 16:50:50,770 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 1/1: Cabal Ritual (Torment)
+2025-06-22 16:50:51,071 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Star City Games
+2025-06-22 16:50:51,072 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from BeatTheBuylist
+2025-06-22 16:50:51,121 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Scryfall
+2025-06-22 16:50:51,422 - mtg_buylist_aggregator.scrapers.coolstuffinc - ERROR - Error searching CoolStuffInc for Cabal Ritual: 404 Client Error: Not Found for url: https://www.coolstuffinc.com/search?q=Cabal+Ritual+Torment&category=Magic%3A+The+Gathering
+2025-06-22 16:50:51,423 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from CoolStuffInc
+2025-06-22 16:50:51,523 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from TCG Player
+2025-06-22 16:50:51,833 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Channel Fireball
+2025-06-22 16:50:52,087 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGStocks
+2025-06-22 16:50:52,666 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGGoldfish
+2025-06-22 16:50:52,667 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from StrikeZoneOnline
+2025-06-22 16:50:52,667 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Troll Trader Cards
+2025-06-22 16:50:52,667 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Nerd Rage Gaming
+2025-06-22 16:50:52,667 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Harlequin Games
+2025-06-22 16:50:52,667 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Card Conduit
+2025-06-22 16:50:52,668 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Troll and Toad
+2025-06-22 16:50:52,668 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Card Shark
+2025-06-22 16:50:52,668 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Magic Card Prices
+2025-06-22 16:50:52,863 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Card Kingdom
+2025-06-22 16:50:52,916 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Cardmarket
+2025-06-22 16:50:53,664 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from eBay Recent Sales
+2025-06-22 16:50:54,937 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGMintCard
+2025-06-22 16:50:54,937 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Cabal Ritual
+2025-06-22 16:50:54,937 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Completed price lookup for 1 cards
+2025-06-22 16:50:54,937 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - Completed scraping with the following errors:
+2025-06-22 16:50:54,937 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Star City Games]: No price found
+2025-06-22 16:50:54,937 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [BeatTheBuylist]: No price found
+2025-06-22 16:50:54,937 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Scryfall]: No price found
+2025-06-22 16:50:54,937 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [CoolStuffInc]: No price found
+2025-06-22 16:50:54,937 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [TCG Player]: No price found
+2025-06-22 16:50:54,937 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Channel Fireball]: No price found
+2025-06-22 16:50:54,937 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGStocks]: No price found
+2025-06-22 16:50:54,937 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGGoldfish]: No price found
+2025-06-22 16:50:54,937 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [StrikeZoneOnline]: No price found
+2025-06-22 16:50:54,937 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Troll Trader Cards]: No price found
+2025-06-22 16:50:54,937 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Nerd Rage Gaming]: No price found
+2025-06-22 16:50:54,937 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Harlequin Games]: No price found
+2025-06-22 16:50:54,938 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Card Conduit]: No price found
+2025-06-22 16:50:54,938 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Troll and Toad]: No price found
+2025-06-22 16:50:54,938 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Card Shark]: No price found
+2025-06-22 16:50:54,938 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Magic Card Prices]: No price found
+2025-06-22 16:50:54,938 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Card Kingdom]: No price found
+2025-06-22 16:50:54,938 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Cardmarket]: No price found
+2025-06-22 16:50:54,938 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [eBay Recent Sales]: No price found
+2025-06-22 16:50:54,938 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGMintCard]: No price found
+2025-06-22 16:50:55,596 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:50:55] "GET /api/card-details?name=Cabal+Ritual&set=Torment&foil=false HTTP/1.1" 200 -
+2025-06-22 16:50:55,598 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Scryfall scraper (real)
+2025-06-22 16:50:55,599 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Card Kingdom scraper (real)
+2025-06-22 16:50:55,599 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Star City Games scraper (real)
+2025-06-22 16:50:55,599 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized BeatTheBuylist scraper (real)
+2025-06-22 16:50:55,599 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Channel Fireball scraper (real)
+2025-06-22 16:50:55,599 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized CoolStuffInc scraper (real)
+2025-06-22 16:50:55,599 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized TCG Player scraper (real)
+2025-06-22 16:50:55,599 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized MTGGoldfish scraper (real)
+2025-06-22 16:50:55,599 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized MTGStocks scraper (real)
+2025-06-22 16:50:55,599 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized MTGMintCard scraper (real)
+2025-06-22 16:50:55,599 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized StrikeZoneOnline scraper (real)
+2025-06-22 16:50:55,599 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Troll Trader Cards scraper (real)
+2025-06-22 16:50:55,599 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Nerd Rage Gaming scraper (real)
+2025-06-22 16:50:55,599 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Harlequin Games scraper (real)
+2025-06-22 16:50:55,599 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Card Conduit scraper (real)
+2025-06-22 16:50:55,599 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Troll and Toad scraper (real)
+2025-06-22 16:50:55,599 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Card Shark scraper (real)
+2025-06-22 16:50:55,599 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Magic Card Prices scraper (real)
+2025-06-22 16:50:55,599 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Cardmarket scraper (real)
+2025-06-22 16:50:55,599 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized eBay Recent Sales scraper (real)
+2025-06-22 16:50:55,599 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized 20 scrapers
+2025-06-22 16:50:55,599 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Getting prices for 1 cards from 20 vendors
+2025-06-22 16:50:55,599 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 1/1: Cabal Ritual (Torment)
+2025-06-22 16:50:55,898 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Star City Games
+2025-06-22 16:50:55,898 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from BeatTheBuylist
+2025-06-22 16:50:55,937 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Scryfall
+2025-06-22 16:50:56,238 - mtg_buylist_aggregator.scrapers.coolstuffinc - ERROR - Error searching CoolStuffInc for Cabal Ritual: 404 Client Error: Not Found for url: https://www.coolstuffinc.com/search?q=Cabal+Ritual+Torment&category=Magic%3A+The+Gathering
+2025-06-22 16:50:56,238 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from CoolStuffInc
+2025-06-22 16:50:56,339 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from TCG Player
+2025-06-22 16:50:56,544 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Channel Fireball
+2025-06-22 16:50:56,618 - mtg_buylist_aggregator.api_service - INFO - Force updating all prices
+2025-06-22 16:50:56,621 - mtg_buylist_aggregator.api_service - INFO - Fetching fresh prices from vendors
+2025-06-22 16:50:56,621 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Scryfall scraper (real)
+2025-06-22 16:50:56,622 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Card Kingdom scraper (real)
+2025-06-22 16:50:56,622 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Star City Games scraper (real)
+2025-06-22 16:50:56,622 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized BeatTheBuylist scraper (real)
+2025-06-22 16:50:56,622 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Channel Fireball scraper (real)
+2025-06-22 16:50:56,622 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized CoolStuffInc scraper (real)
+2025-06-22 16:50:56,624 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized TCG Player scraper (real)
+2025-06-22 16:50:56,625 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized MTGGoldfish scraper (real)
+2025-06-22 16:50:56,625 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized MTGStocks scraper (real)
+2025-06-22 16:50:56,625 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized MTGMintCard scraper (real)
+2025-06-22 16:50:56,625 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized StrikeZoneOnline scraper (real)
+2025-06-22 16:50:56,626 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Troll Trader Cards scraper (real)
+2025-06-22 16:50:56,626 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Nerd Rage Gaming scraper (real)
+2025-06-22 16:50:56,626 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Harlequin Games scraper (real)
+2025-06-22 16:50:56,626 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Card Conduit scraper (real)
+2025-06-22 16:50:56,626 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Troll and Toad scraper (real)
+2025-06-22 16:50:56,626 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Card Shark scraper (real)
+2025-06-22 16:50:56,626 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Magic Card Prices scraper (real)
+2025-06-22 16:50:56,626 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Cardmarket scraper (real)
+2025-06-22 16:50:56,626 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized eBay Recent Sales scraper (real)
+2025-06-22 16:50:56,627 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized 20 scrapers
+2025-06-22 16:50:56,627 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Getting prices for 12 cards from 20 vendors
+2025-06-22 16:50:56,627 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 1/12: Cabal Ritual (TORMENT)
+2025-06-22 16:50:56,650 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGStocks
+2025-06-22 16:50:56,932 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Scryfall
+2025-06-22 16:50:56,933 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from BeatTheBuylist
+2025-06-22 16:50:56,977 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Star City Games
+2025-06-22 16:50:57,344 - mtg_buylist_aggregator.scrapers.coolstuffinc - ERROR - Error searching CoolStuffInc for Cabal Ritual: 404 Client Error: Not Found for url: https://www.coolstuffinc.com/search?q=Cabal+Ritual+TORMENT&category=Magic%3A+The+Gathering
+2025-06-22 16:50:57,345 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from CoolStuffInc
+2025-06-22 16:50:57,466 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Card Kingdom
+2025-06-22 16:50:57,467 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from StrikeZoneOnline
+2025-06-22 16:50:57,467 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Troll Trader Cards
+2025-06-22 16:50:57,467 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Nerd Rage Gaming
+2025-06-22 16:50:57,467 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Harlequin Games
+2025-06-22 16:50:57,467 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Card Conduit
+2025-06-22 16:50:57,467 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Troll and Toad
+2025-06-22 16:50:57,467 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Card Shark
+2025-06-22 16:50:57,467 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Magic Card Prices
+2025-06-22 16:50:57,493 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from TCG Player
+2025-06-22 16:50:57,504 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGGoldfish
+2025-06-22 16:50:57,535 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Channel Fireball
+2025-06-22 16:50:57,588 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Cardmarket
+2025-06-22 16:50:57,647 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGStocks
+2025-06-22 16:50:58,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from eBay Recent Sales
+2025-06-22 16:50:58,754 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Card Kingdom
+2025-06-22 16:50:58,780 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from StrikeZoneOnline
+2025-06-22 16:50:58,785 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Troll Trader Cards
+2025-06-22 16:50:58,793 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Nerd Rage Gaming
+2025-06-22 16:50:58,823 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Harlequin Games
+2025-06-22 16:50:58,824 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Card Conduit
+2025-06-22 16:50:58,830 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Troll and Toad
+2025-06-22 16:50:58,836 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Card Shark
+2025-06-22 16:50:58,836 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Magic Card Prices
+2025-06-22 16:50:58,842 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGGoldfish
+2025-06-22 16:50:58,982 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Cardmarket
+2025-06-22 16:50:59,251 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGMintCard
+2025-06-22 16:50:59,252 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Cabal Ritual
+2025-06-22 16:50:59,252 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Completed price lookup for 1 cards
+2025-06-22 16:50:59,252 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - Completed scraping with the following errors:
+2025-06-22 16:50:59,253 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Star City Games]: No price found
+2025-06-22 16:50:59,253 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [BeatTheBuylist]: No price found
+2025-06-22 16:50:59,253 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Scryfall]: No price found
+2025-06-22 16:50:59,253 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [CoolStuffInc]: No price found
+2025-06-22 16:50:59,253 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [TCG Player]: No price found
+2025-06-22 16:50:59,253 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Channel Fireball]: No price found
+2025-06-22 16:50:59,253 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGStocks]: No price found
+2025-06-22 16:50:59,253 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Card Kingdom]: No price found
+2025-06-22 16:50:59,253 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [StrikeZoneOnline]: No price found
+2025-06-22 16:50:59,253 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Troll Trader Cards]: No price found
+2025-06-22 16:50:59,253 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Nerd Rage Gaming]: No price found
+2025-06-22 16:50:59,253 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Harlequin Games]: No price found
+2025-06-22 16:50:59,253 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Card Conduit]: No price found
+2025-06-22 16:50:59,253 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Troll and Toad]: No price found
+2025-06-22 16:50:59,253 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Card Shark]: No price found
+2025-06-22 16:50:59,253 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Magic Card Prices]: No price found
+2025-06-22 16:50:59,253 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGGoldfish]: No price found
+2025-06-22 16:50:59,253 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Cardmarket]: No price found
+2025-06-22 16:50:59,253 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [eBay Recent Sales]: No price found
+2025-06-22 16:50:59,253 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGMintCard]: No price found
+2025-06-22 16:50:59,765 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:50:59] "GET /api/card-details?name=Cabal+Ritual&set=Torment&foil=false HTTP/1.1" 200 -
+2025-06-22 16:50:59,767 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from eBay Recent Sales
+2025-06-22 16:51:00,668 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGMintCard
+2025-06-22 16:51:00,669 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Cabal Ritual
+2025-06-22 16:51:00,669 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 2/12: Cabal Ritual (torment)
+2025-06-22 16:51:00,786 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Star City Games
+2025-06-22 16:51:00,786 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from BeatTheBuylist
+2025-06-22 16:51:01,001 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Scryfall
+2025-06-22 16:51:01,003 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Channel Fireball
+2025-06-22 16:51:01,037 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from TCG Player
+2025-06-22 16:51:01,334 - mtg_buylist_aggregator.scrapers.coolstuffinc - ERROR - Error searching CoolStuffInc for Cabal Ritual: 404 Client Error: Not Found for url: https://www.coolstuffinc.com/search?q=Cabal+Ritual+torment&category=Magic%3A+The+Gathering
+2025-06-22 16:51:01,335 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from CoolStuffInc
+2025-06-22 16:51:01,384 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGStocks
+2025-06-22 16:51:02,096 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGGoldfish
+2025-06-22 16:51:02,097 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from StrikeZoneOnline
+2025-06-22 16:51:02,097 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Troll Trader Cards
+2025-06-22 16:51:02,097 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Nerd Rage Gaming
+2025-06-22 16:51:02,097 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Harlequin Games
+2025-06-22 16:51:02,098 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Card Conduit
+2025-06-22 16:51:02,098 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Troll and Toad
+2025-06-22 16:51:02,098 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Card Shark
+2025-06-22 16:51:02,098 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Magic Card Prices
+2025-06-22 16:51:02,224 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Cardmarket
+2025-06-22 16:51:02,733 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Card Kingdom
+2025-06-22 16:51:03,001 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from eBay Recent Sales
+2025-06-22 16:51:03,869 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGMintCard
+2025-06-22 16:51:03,870 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Cabal Ritual
+2025-06-22 16:51:03,870 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 3/12: Counterspell (Commander 2013)
+2025-06-22 16:51:04,004 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from Star City Games
+2025-06-22 16:51:04,004 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from BeatTheBuylist
+2025-06-22 16:51:04,209 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from Channel Fireball
+2025-06-22 16:51:04,258 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from TCG Player
+2025-06-22 16:51:04,440 - mtg_buylist_aggregator.scrapers.coolstuffinc - ERROR - Error searching CoolStuffInc for Counterspell: 404 Client Error: Not Found for url: https://www.coolstuffinc.com/search?q=Counterspell+Commander+2013&category=Magic%3A+The+Gathering
+2025-06-22 16:51:04,441 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from CoolStuffInc
+2025-06-22 16:51:04,496 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from MTGStocks
+2025-06-22 16:51:05,302 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from MTGGoldfish
+2025-06-22 16:51:05,302 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from StrikeZoneOnline
+2025-06-22 16:51:05,302 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from Troll Trader Cards
+2025-06-22 16:51:05,302 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from Nerd Rage Gaming
+2025-06-22 16:51:05,302 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from Harlequin Games
+2025-06-22 16:51:05,302 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from Card Conduit
+2025-06-22 16:51:05,303 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from Troll and Toad
+2025-06-22 16:51:05,303 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from Card Shark
+2025-06-22 16:51:05,303 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from Magic Card Prices
+2025-06-22 16:51:05,467 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from Cardmarket
+2025-06-22 16:51:05,846 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from Card Kingdom
+2025-06-22 16:51:06,869 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from eBay Recent Sales
+2025-06-22 16:51:06,879 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from MTGMintCard
+2025-06-22 16:51:06,880 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Counterspell
+2025-06-22 16:51:06,880 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 4/12: Demonic Tutor (Ultimate Masters)
+2025-06-22 16:51:07,007 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from Star City Games
+2025-06-22 16:51:07,007 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from BeatTheBuylist
+2025-06-22 16:51:07,242 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from Channel Fireball
+2025-06-22 16:51:07,269 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from TCG Player
+2025-06-22 16:51:07,467 - mtg_buylist_aggregator.scrapers.coolstuffinc - ERROR - Error searching CoolStuffInc for Demonic Tutor: 404 Client Error: Not Found for url: https://www.coolstuffinc.com/search?q=Demonic+Tutor+Ultimate+Masters&category=Magic%3A+The+Gathering
+2025-06-22 16:51:07,468 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from CoolStuffInc
+2025-06-22 16:51:07,517 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from MTGStocks
+2025-06-22 16:51:08,318 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from MTGGoldfish
+2025-06-22 16:51:08,319 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from StrikeZoneOnline
+2025-06-22 16:51:08,320 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from Troll Trader Cards
+2025-06-22 16:51:08,320 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from Nerd Rage Gaming
+2025-06-22 16:51:08,321 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from Harlequin Games
+2025-06-22 16:51:08,321 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from Card Conduit
+2025-06-22 16:51:08,321 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from Troll and Toad
+2025-06-22 16:51:08,321 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from Card Shark
+2025-06-22 16:51:08,321 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from Magic Card Prices
+2025-06-22 16:51:08,457 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from Cardmarket
+2025-06-22 16:51:09,027 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from Card Kingdom
+2025-06-22 16:51:09,577 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from MTGMintCard
+2025-06-22 16:51:09,579 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from eBay Recent Sales
+2025-06-22 16:51:09,579 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Demonic Tutor
+2025-06-22 16:51:09,579 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 5/12: Lightning Bolt (Magic 2010)
+2025-06-22 16:51:09,709 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from Star City Games
+2025-06-22 16:51:09,709 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from BeatTheBuylist
+2025-06-22 16:51:09,905 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from Channel Fireball
+2025-06-22 16:51:09,935 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from TCG Player
+2025-06-22 16:51:10,272 - mtg_buylist_aggregator.scrapers.coolstuffinc - ERROR - Error searching CoolStuffInc for Lightning Bolt: 404 Client Error: Not Found for url: https://www.coolstuffinc.com/search?q=Lightning+Bolt+Magic+2010&category=Magic%3A+The+Gathering
+2025-06-22 16:51:10,272 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from CoolStuffInc
+2025-06-22 16:51:10,312 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from MTGStocks
+2025-06-22 16:51:10,983 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from MTGGoldfish
+2025-06-22 16:51:10,983 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from StrikeZoneOnline
+2025-06-22 16:51:10,984 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from Troll Trader Cards
+2025-06-22 16:51:10,984 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from Nerd Rage Gaming
+2025-06-22 16:51:10,985 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from Harlequin Games
+2025-06-22 16:51:10,985 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from Card Conduit
+2025-06-22 16:51:10,985 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from Troll and Toad
+2025-06-22 16:51:10,985 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from Card Shark
+2025-06-22 16:51:10,985 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from Magic Card Prices
+2025-06-22 16:51:11,172 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from Cardmarket
+2025-06-22 16:51:12,064 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from Card Kingdom
+2025-06-22 16:51:12,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from MTGMintCard
+2025-06-22 16:51:12,344 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from eBay Recent Sales
+2025-06-22 16:51:12,344 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Lightning Bolt
+2025-06-22 16:51:12,344 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 6/12: Path To Exile (Modern Masters 2015)
+2025-06-22 16:51:12,454 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from Star City Games
+2025-06-22 16:51:12,454 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from BeatTheBuylist
+2025-06-22 16:51:12,673 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from Channel Fireball
+2025-06-22 16:51:12,728 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from TCG Player
+2025-06-22 16:51:13,021 - mtg_buylist_aggregator.scrapers.coolstuffinc - ERROR - Error searching CoolStuffInc for Path To Exile: 404 Client Error: Not Found for url: https://www.coolstuffinc.com/search?q=Path+To+Exile+Modern+Masters+2015&category=Magic%3A+The+Gathering
+2025-06-22 16:51:13,022 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from CoolStuffInc
+2025-06-22 16:51:13,063 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from MTGStocks
+2025-06-22 16:51:13,772 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from MTGGoldfish
+2025-06-22 16:51:13,772 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from StrikeZoneOnline
+2025-06-22 16:51:13,772 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from Troll Trader Cards
+2025-06-22 16:51:13,773 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from Nerd Rage Gaming
+2025-06-22 16:51:13,773 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from Harlequin Games
+2025-06-22 16:51:13,773 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from Card Conduit
+2025-06-22 16:51:13,773 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from Troll and Toad
+2025-06-22 16:51:13,773 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from Card Shark
+2025-06-22 16:51:13,774 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from Magic Card Prices
+2025-06-22 16:51:13,917 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from Cardmarket
+2025-06-22 16:51:15,089 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from MTGMintCard
+2025-06-22 16:51:15,139 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from Card Kingdom
+2025-06-22 16:51:15,142 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from eBay Recent Sales
+2025-06-22 16:51:15,142 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Path To Exile
+2025-06-22 16:51:15,142 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 7/12: Rhystic Study (prophecy)
+2025-06-22 16:51:15,256 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from Star City Games
+2025-06-22 16:51:15,257 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from BeatTheBuylist
+2025-06-22 16:51:15,451 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from Channel Fireball
+2025-06-22 16:51:15,478 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from TCG Player
+2025-06-22 16:51:15,754 - mtg_buylist_aggregator.scrapers.coolstuffinc - ERROR - Error searching CoolStuffInc for Rhystic Study: 404 Client Error: Not Found for url: https://www.coolstuffinc.com/search?q=Rhystic+Study+prophecy&category=Magic%3A+The+Gathering
+2025-06-22 16:51:15,755 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from CoolStuffInc
+2025-06-22 16:51:15,797 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from MTGStocks
+2025-06-22 16:51:16,523 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from MTGGoldfish
+2025-06-22 16:51:16,523 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from StrikeZoneOnline
+2025-06-22 16:51:16,524 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from Troll Trader Cards
+2025-06-22 16:51:16,524 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from Nerd Rage Gaming
+2025-06-22 16:51:16,524 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from Harlequin Games
+2025-06-22 16:51:16,525 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from Card Conduit
+2025-06-22 16:51:16,525 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from Troll and Toad
+2025-06-22 16:51:16,525 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from Card Shark
+2025-06-22 16:51:16,525 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from Magic Card Prices
+2025-06-22 16:51:16,657 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from Cardmarket
+2025-06-22 16:51:17,403 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from eBay Recent Sales
+2025-06-22 16:51:17,943 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from Card Kingdom
+2025-06-22 16:51:18,214 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from MTGMintCard
+2025-06-22 16:51:18,214 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Rhystic Study
+2025-06-22 16:51:18,214 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 8/12: Snapcaster Mage (Innistrad)
+2025-06-22 16:51:18,328 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from Star City Games
+2025-06-22 16:51:18,328 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from BeatTheBuylist
+2025-06-22 16:51:18,525 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from Channel Fireball
+2025-06-22 16:51:18,554 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from TCG Player
+2025-06-22 16:51:18,847 - mtg_buylist_aggregator.scrapers.coolstuffinc - ERROR - Error searching CoolStuffInc for Snapcaster Mage: 404 Client Error: Not Found for url: https://www.coolstuffinc.com/search?q=Snapcaster+Mage+Innistrad&category=Magic%3A+The+Gathering
+2025-06-22 16:51:18,847 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from CoolStuffInc
+2025-06-22 16:51:18,893 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from MTGStocks
+2025-06-22 16:51:19,598 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from MTGGoldfish
+2025-06-22 16:51:19,599 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from StrikeZoneOnline
+2025-06-22 16:51:19,599 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from Troll Trader Cards
+2025-06-22 16:51:19,599 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from Nerd Rage Gaming
+2025-06-22 16:51:19,599 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from Harlequin Games
+2025-06-22 16:51:19,600 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from Card Conduit
+2025-06-22 16:51:19,600 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from Troll and Toad
+2025-06-22 16:51:19,600 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from Card Shark
+2025-06-22 16:51:19,600 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from Magic Card Prices
+2025-06-22 16:51:19,766 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from Cardmarket
+2025-06-22 16:51:20,868 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from eBay Recent Sales
+2025-06-22 16:51:21,047 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from Card Kingdom
+2025-06-22 16:51:21,276 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from MTGMintCard
+2025-06-22 16:51:21,276 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Snapcaster Mage
+2025-06-22 16:51:21,276 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 9/12: Sol Ring (Commander 2021)
+2025-06-22 16:51:21,396 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from Star City Games
+2025-06-22 16:51:21,396 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from BeatTheBuylist
+2025-06-22 16:51:21,592 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from Channel Fireball
+2025-06-22 16:51:21,592 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from TCG Player
+2025-06-22 16:51:21,855 - mtg_buylist_aggregator.scrapers.coolstuffinc - ERROR - Error searching CoolStuffInc for Sol Ring: 404 Client Error: Not Found for url: https://www.coolstuffinc.com/search?q=Sol+Ring+Commander+2021&category=Magic%3A+The+Gathering
+2025-06-22 16:51:21,856 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from CoolStuffInc
+2025-06-22 16:51:21,857 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from MTGStocks
+2025-06-22 16:51:21,857 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from MTGMintCard
+2025-06-22 16:51:21,857 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from StrikeZoneOnline
+2025-06-22 16:51:21,857 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from Troll Trader Cards
+2025-06-22 16:51:21,858 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from Nerd Rage Gaming
+2025-06-22 16:51:21,858 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from Harlequin Games
+2025-06-22 16:51:21,858 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from Card Conduit
+2025-06-22 16:51:21,858 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from Troll and Toad
+2025-06-22 16:51:21,858 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from Card Shark
+2025-06-22 16:51:21,858 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from Magic Card Prices
+2025-06-22 16:51:22,026 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from Cardmarket
+2025-06-22 16:51:22,026 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from eBay Recent Sales
+2025-06-22 16:51:22,636 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from MTGGoldfish
+2025-06-22 16:51:23,905 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from Card Kingdom
+2025-06-22 16:51:23,905 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Sol Ring
+2025-06-22 16:51:23,905 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 10/12: Tarmogoyf (Modern Masters 2017)
+2025-06-22 16:51:24,017 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from Star City Games
+2025-06-22 16:51:24,017 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from BeatTheBuylist
+2025-06-22 16:51:24,210 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from Channel Fireball
+2025-06-22 16:51:24,247 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from TCG Player
+2025-06-22 16:51:24,557 - mtg_buylist_aggregator.scrapers.coolstuffinc - ERROR - Error searching CoolStuffInc for Tarmogoyf: 404 Client Error: Not Found for url: https://www.coolstuffinc.com/search?q=Tarmogoyf+Modern+Masters+2017&category=Magic%3A+The+Gathering
+2025-06-22 16:51:24,557 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from CoolStuffInc
+2025-06-22 16:51:24,598 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from MTGStocks
+2025-06-22 16:51:25,351 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from MTGGoldfish
+2025-06-22 16:51:25,351 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from StrikeZoneOnline
+2025-06-22 16:51:25,351 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from Troll Trader Cards
+2025-06-22 16:51:25,351 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from Nerd Rage Gaming
+2025-06-22 16:51:25,351 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from Harlequin Games
+2025-06-22 16:51:25,351 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from Card Conduit
+2025-06-22 16:51:25,351 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from Troll and Toad
+2025-06-22 16:51:25,351 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from Card Shark
+2025-06-22 16:51:25,352 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from Magic Card Prices
+2025-06-22 16:51:25,515 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from Cardmarket
+2025-06-22 16:51:26,730 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from eBay Recent Sales
+2025-06-22 16:51:26,967 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from Card Kingdom
+2025-06-22 16:51:27,050 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from MTGMintCard
+2025-06-22 16:51:27,050 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Tarmogoyf
+2025-06-22 16:51:27,050 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 11/12: Test Card (Test Set)
+2025-06-22 16:51:27,177 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Star City Games
+2025-06-22 16:51:27,177 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from BeatTheBuylist
+2025-06-22 16:51:27,389 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Channel Fireball
+2025-06-22 16:51:27,391 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Scryfall
+2025-06-22 16:51:27,423 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from TCG Player
+2025-06-22 16:51:27,649 - mtg_buylist_aggregator.scrapers.coolstuffinc - ERROR - Error searching CoolStuffInc for Test Card: 404 Client Error: Not Found for url: https://www.coolstuffinc.com/search?q=Test+Card+Test+Set&category=Magic%3A+The+Gathering
+2025-06-22 16:51:27,649 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from CoolStuffInc
+2025-06-22 16:51:27,691 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from MTGStocks
+2025-06-22 16:51:28,462 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from MTGGoldfish
+2025-06-22 16:51:28,463 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from StrikeZoneOnline
+2025-06-22 16:51:28,463 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Troll Trader Cards
+2025-06-22 16:51:28,463 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Nerd Rage Gaming
+2025-06-22 16:51:28,464 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Harlequin Games
+2025-06-22 16:51:28,464 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Card Conduit
+2025-06-22 16:51:28,464 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Troll and Toad
+2025-06-22 16:51:28,464 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Card Shark
+2025-06-22 16:51:28,465 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Magic Card Prices
+2025-06-22 16:51:28,623 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Cardmarket
+2025-06-22 16:51:29,729 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from MTGMintCard
+2025-06-22 16:51:29,731 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from eBay Recent Sales
+2025-06-22 16:51:29,838 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Card Kingdom
+2025-06-22 16:51:29,838 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Test Card
+2025-06-22 16:51:29,838 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 12/12: Wrath Of God (Core Set 2021)
+2025-06-22 16:51:29,960 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from Star City Games
+2025-06-22 16:51:29,960 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from BeatTheBuylist
+2025-06-22 16:51:30,151 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from Channel Fireball
+2025-06-22 16:51:30,237 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from TCG Player
+2025-06-22 16:51:30,474 - mtg_buylist_aggregator.scrapers.coolstuffinc - ERROR - Error searching CoolStuffInc for Wrath Of God: 404 Client Error: Not Found for url: https://www.coolstuffinc.com/search?q=Wrath+Of+God+Core+Set+2021&category=Magic%3A+The+Gathering
+2025-06-22 16:51:30,474 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from CoolStuffInc
+2025-06-22 16:51:30,522 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from MTGStocks
+2025-06-22 16:51:31,280 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from MTGGoldfish
+2025-06-22 16:51:31,281 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from StrikeZoneOnline
+2025-06-22 16:51:31,281 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from Troll Trader Cards
+2025-06-22 16:51:31,281 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from Nerd Rage Gaming
+2025-06-22 16:51:31,281 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from Harlequin Games
+2025-06-22 16:51:31,282 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from Card Conduit
+2025-06-22 16:51:31,282 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from Troll and Toad
+2025-06-22 16:51:31,282 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from Card Shark
+2025-06-22 16:51:31,282 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from Magic Card Prices
+2025-06-22 16:51:31,496 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from Cardmarket
+2025-06-22 16:51:32,595 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from eBay Recent Sales
+2025-06-22 16:51:32,904 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from MTGMintCard
+2025-06-22 16:51:32,965 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from Card Kingdom
+2025-06-22 16:51:32,965 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Wrath Of God
+2025-06-22 16:51:32,965 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Completed price lookup for 12 cards
+2025-06-22 16:51:32,965 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - Completed scraping with the following errors:
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Scryfall]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [BeatTheBuylist]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Star City Games]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [CoolStuffInc]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [TCG Player]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Channel Fireball]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGStocks]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Card Kingdom]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [StrikeZoneOnline]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Troll Trader Cards]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Nerd Rage Gaming]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Harlequin Games]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Card Conduit]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Troll and Toad]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Card Shark]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Magic Card Prices]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGGoldfish]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Cardmarket]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [eBay Recent Sales]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGMintCard]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Star City Games]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [BeatTheBuylist]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Scryfall]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Channel Fireball]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [TCG Player]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [CoolStuffInc]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGStocks]: No price found
+2025-06-22 16:51:32,966 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGGoldfish]: No price found
+2025-06-22 16:51:32,967 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [StrikeZoneOnline]: No price found
+2025-06-22 16:51:32,967 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Troll Trader Cards]: No price found
+2025-06-22 16:51:32,967 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Nerd Rage Gaming]: No price found
+2025-06-22 16:51:32,967 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Harlequin Games]: No price found
+2025-06-22 16:51:32,967 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Card Conduit]: No price found
+2025-06-22 16:51:32,967 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Troll and Toad]: No price found
+2025-06-22 16:51:32,967 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Card Shark]: No price found
+2025-06-22 16:51:32,967 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Magic Card Prices]: No price found
+2025-06-22 16:51:32,967 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Cardmarket]: No price found
+2025-06-22 16:51:32,967 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Card Kingdom]: No price found
+2025-06-22 16:51:32,967 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [eBay Recent Sales]: No price found
+2025-06-22 16:51:32,967 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGMintCard]: No price found
+2025-06-22 16:51:32,967 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [Star City Games]: No price found
+2025-06-22 16:51:32,967 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [BeatTheBuylist]: No price found
+2025-06-22 16:51:32,967 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [Channel Fireball]: No price found
+2025-06-22 16:51:32,967 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [TCG Player]: No price found
+2025-06-22 16:51:32,967 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [CoolStuffInc]: No price found
+2025-06-22 16:51:32,967 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [MTGStocks]: No price found
+2025-06-22 16:51:32,967 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [MTGGoldfish]: No price found
+2025-06-22 16:51:32,967 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [StrikeZoneOnline]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [Troll Trader Cards]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [Nerd Rage Gaming]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [Harlequin Games]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [Card Conduit]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [Troll and Toad]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [Card Shark]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [Magic Card Prices]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [Cardmarket]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [Card Kingdom]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [eBay Recent Sales]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [MTGMintCard]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [Star City Games]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [BeatTheBuylist]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [Channel Fireball]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [TCG Player]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [CoolStuffInc]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [MTGStocks]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [MTGGoldfish]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [StrikeZoneOnline]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [Troll Trader Cards]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [Nerd Rage Gaming]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [Harlequin Games]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [Card Conduit]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [Troll and Toad]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [Card Shark]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [Magic Card Prices]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [Cardmarket]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [Card Kingdom]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [MTGMintCard]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [eBay Recent Sales]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [Star City Games]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [BeatTheBuylist]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [Channel Fireball]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [TCG Player]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [CoolStuffInc]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [MTGStocks]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [MTGGoldfish]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [StrikeZoneOnline]: No price found
+2025-06-22 16:51:32,968 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [Troll Trader Cards]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [Nerd Rage Gaming]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [Harlequin Games]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [Card Conduit]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [Troll and Toad]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [Card Shark]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [Magic Card Prices]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [Cardmarket]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [Card Kingdom]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [MTGMintCard]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [eBay Recent Sales]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [Star City Games]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [BeatTheBuylist]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [Channel Fireball]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [TCG Player]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [CoolStuffInc]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [MTGStocks]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [MTGGoldfish]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [StrikeZoneOnline]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [Troll Trader Cards]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [Nerd Rage Gaming]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [Harlequin Games]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [Card Conduit]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [Troll and Toad]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [Card Shark]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [Magic Card Prices]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [Cardmarket]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [MTGMintCard]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [Card Kingdom]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [eBay Recent Sales]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [Star City Games]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [BeatTheBuylist]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [Channel Fireball]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [TCG Player]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [CoolStuffInc]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [MTGStocks]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [MTGGoldfish]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [StrikeZoneOnline]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [Troll Trader Cards]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [Nerd Rage Gaming]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [Harlequin Games]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [Card Conduit]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [Troll and Toad]: No price found
+2025-06-22 16:51:32,969 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [Card Shark]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [Magic Card Prices]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [Cardmarket]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [eBay Recent Sales]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [Card Kingdom]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [MTGMintCard]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [Star City Games]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [BeatTheBuylist]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [Channel Fireball]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [TCG Player]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [CoolStuffInc]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [MTGStocks]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [MTGGoldfish]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [StrikeZoneOnline]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [Troll Trader Cards]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [Nerd Rage Gaming]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [Harlequin Games]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [Card Conduit]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [Troll and Toad]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [Card Shark]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [Magic Card Prices]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [Cardmarket]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [eBay Recent Sales]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [Card Kingdom]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [MTGMintCard]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [Star City Games]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [BeatTheBuylist]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [Channel Fireball]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [TCG Player]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [CoolStuffInc]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [MTGStocks]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [MTGMintCard]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [StrikeZoneOnline]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [Troll Trader Cards]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [Nerd Rage Gaming]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [Harlequin Games]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [Card Conduit]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [Troll and Toad]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [Card Shark]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [Magic Card Prices]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [Cardmarket]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [eBay Recent Sales]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [MTGGoldfish]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [Card Kingdom]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [Star City Games]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [BeatTheBuylist]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [Channel Fireball]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [TCG Player]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [CoolStuffInc]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [MTGStocks]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [MTGGoldfish]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [StrikeZoneOnline]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [Troll Trader Cards]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [Nerd Rage Gaming]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [Harlequin Games]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [Card Conduit]: No price found
+2025-06-22 16:51:32,970 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [Troll and Toad]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [Card Shark]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [Magic Card Prices]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [Cardmarket]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [eBay Recent Sales]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [Card Kingdom]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [MTGMintCard]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Star City Games]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [BeatTheBuylist]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Channel Fireball]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Scryfall]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [TCG Player]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [CoolStuffInc]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [MTGStocks]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [MTGGoldfish]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [StrikeZoneOnline]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Troll Trader Cards]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Nerd Rage Gaming]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Harlequin Games]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Card Conduit]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Troll and Toad]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Card Shark]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Magic Card Prices]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Cardmarket]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [MTGMintCard]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [eBay Recent Sales]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Card Kingdom]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [Star City Games]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [BeatTheBuylist]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [Channel Fireball]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [TCG Player]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [CoolStuffInc]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [MTGStocks]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [MTGGoldfish]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [StrikeZoneOnline]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [Troll Trader Cards]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [Nerd Rage Gaming]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [Harlequin Games]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [Card Conduit]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [Troll and Toad]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [Card Shark]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [Magic Card Prices]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [Cardmarket]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [eBay Recent Sales]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [MTGMintCard]: No price found
+2025-06-22 16:51:32,971 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [Card Kingdom]: No price found
+2025-06-22 16:51:32,972 - mtg_buylist_aggregator.database - INFO - Updated price cache for 12 cards
+2025-06-22 16:51:32,974 - __main__ - INFO - API Request: update_price_cache - Success
+2025-06-22 16:51:32,974 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:51:32] "POST /api/update-price-cache HTTP/1.1" 200 -
+2025-06-22 16:51:42,399 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 16:51:42,400 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:51:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 16:52:42,399 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 16:52:42,399 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:52:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 16:53:42,397 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 16:53:42,398 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:53:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 16:54:42,396 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 16:54:42,397 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:54:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 16:55:42,398 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 16:55:42,399 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:55:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 16:56:42,396 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 16:56:42,397 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:56:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 16:57:42,395 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 16:57:42,395 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:57:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 16:58:42,394 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 16:58:42,395 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:58:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 16:59:42,394 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 16:59:42,395 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:59:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 17:00:42,390 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 17:00:42,391 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 17:00:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 17:00:48,243 - werkzeug - INFO -  * Detected change in '/Users/johnforys/MagicCardTrader/test_scraper.py', reloading
+2025-06-22 17:00:48,320 - werkzeug - INFO -  * Restarting with stat
+2025-06-22 17:00:48,605 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 17:00:48,605 - apscheduler.scheduler - INFO - Added job "refresh_prices_and_analytics" to job store "default"
+2025-06-22 17:00:48,605 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-22 17:00:48,620 - werkzeug - WARNING -  * Debugger is active!
+2025-06-22 17:00:48,624 - werkzeug - INFO -  * Debugger PIN: 118-838-002
+2025-06-22 17:01:21,852 - werkzeug - INFO -  * Detected change in '/Users/johnforys/MagicCardTrader/test_cardkingdom_debug.py', reloading
+2025-06-22 17:01:21,894 - werkzeug - INFO -  * Restarting with stat
+2025-06-22 17:01:22,114 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 17:01:22,114 - apscheduler.scheduler - INFO - Added job "refresh_prices_and_analytics" to job store "default"
+2025-06-22 17:01:22,114 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-22 17:01:22,124 - werkzeug - WARNING -  * Debugger is active!
+2025-06-22 17:01:22,129 - werkzeug - INFO -  * Debugger PIN: 118-838-002
+2025-06-22 17:01:40,245 - werkzeug - INFO -  * Detected change in '/Users/johnforys/MagicCardTrader/test_cardkingdom_debug.py', reloading
+2025-06-22 17:01:40,293 - werkzeug - INFO -  * Restarting with stat
+2025-06-22 17:01:40,513 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 17:01:40,513 - apscheduler.scheduler - INFO - Added job "refresh_prices_and_analytics" to job store "default"
+2025-06-22 17:01:40,513 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-22 17:01:40,526 - werkzeug - WARNING -  * Debugger is active!
+2025-06-22 17:01:40,530 - werkzeug - INFO -  * Debugger PIN: 118-838-002
+2025-06-22 17:01:42,389 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 17:01:42,389 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 17:01:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 17:02:30,934 - werkzeug - INFO -  * Detected change in '/Users/johnforys/MagicCardTrader/mtg_buylist_aggregator/scrapers/cardkingdom.py', reloading
+2025-06-22 17:02:30,990 - werkzeug - INFO -  * Restarting with stat
+2025-06-22 17:02:31,211 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 17:02:31,211 - apscheduler.scheduler - INFO - Added job "refresh_prices_and_analytics" to job store "default"
+2025-06-22 17:02:31,211 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-22 17:02:31,223 - werkzeug - WARNING -  * Debugger is active!
+2025-06-22 17:02:31,227 - werkzeug - INFO -  * Debugger PIN: 118-838-002
+2025-06-22 17:02:32,242 - werkzeug - INFO -  * Detected change in '/Users/johnforys/MagicCardTrader/mtg_buylist_aggregator/scrapers/cardkingdom.py', reloading
+2025-06-22 17:02:32,308 - werkzeug - INFO -  * Restarting with stat
+2025-06-22 17:02:32,536 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 17:02:32,536 - apscheduler.scheduler - INFO - Added job "refresh_prices_and_analytics" to job store "default"
+2025-06-22 17:02:32,536 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-22 17:02:32,547 - werkzeug - WARNING -  * Debugger is active!
+2025-06-22 17:02:32,552 - werkzeug - INFO -  * Debugger PIN: 118-838-002
+2025-06-22 17:02:42,390 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 17:02:42,391 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 17:02:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 17:03:05,824 - werkzeug - INFO -  * Detected change in '/Users/johnforys/MagicCardTrader/mtg_buylist_aggregator/set_utils.py', reloading
+2025-06-22 17:03:05,882 - werkzeug - INFO -  * Restarting with stat
+2025-06-22 17:03:06,100 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 17:03:06,100 - apscheduler.scheduler - INFO - Added job "refresh_prices_and_analytics" to job store "default"
+2025-06-22 17:03:06,100 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-22 17:03:06,112 - werkzeug - WARNING -  * Debugger is active!
+2025-06-22 17:03:06,115 - werkzeug - INFO -  * Debugger PIN: 118-838-002
+2025-06-22 17:03:21,245 - werkzeug - INFO -  * Detected change in '/Users/johnforys/MagicCardTrader/mtg_buylist_aggregator/scrapers/cardkingdom.py', reloading
+2025-06-22 17:03:21,297 - werkzeug - INFO -  * Restarting with stat
+2025-06-22 17:03:21,518 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 17:03:21,518 - apscheduler.scheduler - INFO - Added job "refresh_prices_and_analytics" to job store "default"
+2025-06-22 17:03:21,518 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-22 17:03:21,530 - werkzeug - WARNING -  * Debugger is active!
+2025-06-22 17:03:21,533 - werkzeug - INFO -  * Debugger PIN: 118-838-002
+2025-06-22 17:03:42,392 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 17:03:42,393 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 17:03:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 17:04:42,389 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 17:04:42,390 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 17:04:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 17:05:42,390 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 17:05:42,390 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 17:05:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 17:06:42,388 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 17:06:42,389 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 17:06:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 17:07:42,387 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 17:07:42,388 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 17:07:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 17:08:42,426 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 17:08:42,427 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 17:08:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 17:09:42,431 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 17:09:42,431 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 17:09:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 17:10:42,434 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 17:10:42,435 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 17:10:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 17:11:42,432 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 17:11:42,433 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 17:11:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 17:12:42,432 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 17:12:42,433 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 17:12:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 17:13:42,432 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 17:13:42,433 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 17:13:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 17:14:42,432 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 17:14:42,433 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 17:14:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 17:15:34,742 - werkzeug - INFO -  * Detected change in '/Users/johnforys/MagicCardTrader/mtg_buylist_aggregator/scrapers/tcgplayer.py', reloading
+2025-06-22 17:15:34,806 - werkzeug - INFO -  * Restarting with stat
+2025-06-22 17:15:35,099 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 17:15:35,099 - apscheduler.scheduler - INFO - Added job "refresh_prices_and_analytics" to job store "default"
+2025-06-22 17:15:35,099 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-22 17:15:35,112 - werkzeug - WARNING -  * Debugger is active!
+2025-06-22 17:15:35,117 - werkzeug - INFO -  * Debugger PIN: 118-838-002
+2025-06-22 17:15:42,429 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 17:15:42,430 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 17:15:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 17:15:46,207 - werkzeug - INFO -  * Detected change in '/Users/johnforys/MagicCardTrader/mtg_buylist_aggregator/scrapers/starcitygames.py', reloading
+2025-06-22 17:15:46,266 - werkzeug - INFO -  * Restarting with stat
+2025-06-22 17:15:46,486 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 17:15:46,486 - apscheduler.scheduler - INFO - Added job "refresh_prices_and_analytics" to job store "default"
+2025-06-22 17:15:46,486 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-22 17:15:46,499 - werkzeug - WARNING -  * Debugger is active!
+2025-06-22 17:15:46,502 - werkzeug - INFO -  * Debugger PIN: 118-838-002
+2025-06-22 17:15:57,590 - werkzeug - INFO -  * Detected change in '/Users/johnforys/MagicCardTrader/mtg_buylist_aggregator/scrapers/mtgstocks.py', reloading
+2025-06-22 17:15:57,655 - werkzeug - INFO -  * Restarting with stat
+2025-06-22 17:15:57,876 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 17:15:57,876 - apscheduler.scheduler - INFO - Added job "refresh_prices_and_analytics" to job store "default"
+2025-06-22 17:15:57,876 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-22 17:15:57,887 - werkzeug - WARNING -  * Debugger is active!
+2025-06-22 17:15:57,891 - werkzeug - INFO -  * Debugger PIN: 118-838-002
+2025-06-22 17:16:11,004 - werkzeug - INFO -  * Detected change in '/Users/johnforys/MagicCardTrader/mtg_buylist_aggregator/scrapers/ebay.py', reloading
+2025-06-22 17:16:11,038 - werkzeug - INFO -  * Restarting with stat
+2025-06-22 17:16:11,256 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 17:16:11,256 - apscheduler.scheduler - INFO - Added job "refresh_prices_and_analytics" to job store "default"
+2025-06-22 17:16:11,256 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-22 17:16:11,267 - werkzeug - WARNING -  * Debugger is active!
+2025-06-22 17:16:11,271 - werkzeug - INFO -  * Debugger PIN: 118-838-002
+2025-06-22 17:16:42,433 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 17:16:42,434 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 17:16:42] "GET /api/cache-status HTTP/1.1" 200 -

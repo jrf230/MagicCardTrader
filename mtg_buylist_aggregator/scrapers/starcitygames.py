@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 from mtg_buylist_aggregator.scrapers.base_scraper import BaseScraper
 from mtg_buylist_aggregator.models import Card, PriceData
 from datetime import datetime
+from mtg_buylist_aggregator.set_utils import get_all_set_identifiers
 
 logger = logging.getLogger(__name__)
 
@@ -67,44 +68,74 @@ class StarCityGamesScraper(BaseScraper):
         # Use the dedicated buylist endpoint
         return f"{self.base_url}/mtg?search={encoded_search}"
 
-    def search_card(self, card: Card) -> Optional[PriceData]:
-        """Search for a specific card and return comprehensive buylist price data from SCG."""
+    def search_card(self, card: Card) -> List[PriceData]:
+        """Search Star City Games for a specific card."""
+        logger.debug(f"SCG: Searching buylist for {card.name} ({card.set_name})")
+        
         try:
-            # First check manual data
-            manual_data = self._check_manual_buylist_data(card)
-            if manual_data:
-                return manual_data
-
-            # If no manual data, try web scraping (though it may not work due to JavaScript)
-            self._rate_limit()
-            url = self._build_buylist_url(card)
-            logger.debug(
-                f"SCG: Searching buylist for {card.name} ({card.set_name}) at {url}"
-            )
-
-            resp = self.session.get(url, timeout=15)
-            resp.raise_for_status()
-            soup = BeautifulSoup(resp.text, "html.parser")
-
-            # Extract comprehensive buylist price data for the specific card variant
-            price_data = self._extract_comprehensive_buylist_data(soup, card)
-
-            if price_data:
-                logger.debug(
-                    f"SCG: Found buylist prices for {card.name} ({card.set_name}): ${price_data.price}"
-                )
-                return price_data
-            else:
-                logger.debug(
-                    f"SCG: No buylist price found for {card.name} ({card.set_name})"
-                )
-                return None
-
+            # Build search URL
+            search_query = f"{card.name} {card.set_name}"
+            url = f"https://sellyourcards.starcitygames.com/mtg?search={quote_plus(search_query)}"
+            
+            response = self.session.get(url, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.text, "html.parser")
+            
+            # Get all set identifiers for robust matching
+            set_identifiers = get_all_set_identifiers(card.set_name)
+            set_identifiers = [s.lower() for s in set_identifiers]
+            card_name_lc = card.name.lower()
+            
+            # Find product rows
+            product_rows = soup.select(".product-row")
+            
+            for row in product_rows:
+                # Get all text from the row for robust matching
+                row_text = row.get_text(strip=True).lower()
+                
+                # Check if card name and any set identifier are present
+                if card_name_lc not in row_text:
+                    continue
+                    
+                if not any(s in row_text for s in set_identifiers):
+                    continue
+                
+                logger.debug(f"SCG: Matched set for {card.name}: identifiers={set_identifiers} in row_text={row_text[:100]}...")
+                
+                # Check foil status
+                is_foil = "foil" in row_text
+                if card.foil != is_foil:
+                    continue
+                
+                # Extract price information
+                price_elements = row.select(".price")
+                if price_elements:
+                    try:
+                        price_text = price_elements[0].get_text(strip=True).replace("$", "").replace(",", "")
+                        price = float(price_text)
+                        
+                        # SCG typically shows buylist prices (bid prices)
+                        price_data = PriceData(
+                            vendor=self.name,
+                            price=price,
+                            price_type="bid_cash",
+                            condition="Near Mint",  # SCG buylist is typically NM
+                            last_price_update=datetime.now(),
+                        )
+                        
+                        logger.debug(f"SCG: Found buylist price ${price} for {card.name} ({card.set_name})")
+                        return [price_data]
+                        
+                    except (ValueError, TypeError) as e:
+                        logger.warning(f"SCG: Could not parse price for {card.name}: {e}")
+            
+            logger.debug(f"SCG: No buylist price found for {card.name} ({card.set_name})")
+            return []
+            
         except Exception as e:
-            logger.debug(
-                f"SCG: Error searching buylist for {card.name} ({card.set_name}): {e}"
-            )
-            return None
+            logger.error(f"SCG: Error searching for {card.name}: {e}")
+            return []
 
     def search_card_with_credit(self, card: Card) -> Dict[str, Optional[PriceData]]:
         """Search for a card and return both cash and credit price data."""
@@ -113,30 +144,30 @@ class StarCityGamesScraper(BaseScraper):
         if cash_data:
             # Extract credit price from the data
             credit_price = None
-            if cash_data.all_conditions.get("credit_prices"):
-                credit_prices = cash_data.all_conditions["credit_prices"]
+            if cash_data[0].all_conditions.get("credit_prices"):
+                credit_prices = cash_data[0].all_conditions["credit_prices"]
                 # Use NM credit price if available, otherwise any credit price
                 credit_price = (
                     credit_prices.get("NM_Credit") or list(credit_prices.values())[0]
                 )
-            elif cash_data.all_conditions.get("credit_price"):
-                credit_price = cash_data.all_conditions["credit_price"]
+            elif cash_data[0].all_conditions.get("credit_price"):
+                credit_price = cash_data[0].all_conditions["credit_price"]
 
             if credit_price:
                 credit_data = PriceData(
                     vendor=f"{self.name} (Credit)",
                     price=credit_price,
-                    condition=cash_data.condition,
-                    quantity_limit=cash_data.quantity_limit,
-                    last_price_update=cash_data.last_price_update,
+                    condition=cash_data[0].condition,
+                    quantity_limit=cash_data[0].quantity_limit,
+                    last_price_update=cash_data[0].last_price_update,
                     all_conditions={
-                        **cash_data.all_conditions,
+                        **cash_data[0].all_conditions,
                         "price_type": "credit_buylist",
-                        "cash_price": cash_data.price,
+                        "cash_price": cash_data[0].price,
                     },
                 )
 
-                return {"cash": cash_data, "credit": credit_data}
+                return {"cash": cash_data[0], "credit": credit_data}
 
         return {"cash": cash_data, "credit": None}
 

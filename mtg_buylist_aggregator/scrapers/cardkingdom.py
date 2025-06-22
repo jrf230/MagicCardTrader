@@ -12,6 +12,7 @@ from bs4 import BeautifulSoup
 from mtg_buylist_aggregator.scrapers.base_scraper import BaseScraper
 from mtg_buylist_aggregator.models import Card, PriceData
 from datetime import datetime
+from mtg_buylist_aggregator.set_utils import get_all_set_identifiers
 
 logger = logging.getLogger(__name__)
 
@@ -74,6 +75,35 @@ class CardKingdomScraper(BaseScraper):
 
         return all_prices
 
+    def _get_set_code(self, card: Card) -> str:
+        """Get the set code for a card, using Scryfall if needed."""
+        if card.set_code:
+            return card.set_code.lower()
+        # Try to get set code from Scryfall
+        try:
+            resp = requests.get(f"https://api.scryfall.com/sets", timeout=10)
+            resp.raise_for_status()
+            sets = resp.json().get("data", [])
+            for s in sets:
+                if s["name"].lower() == card.set_name.lower():
+                    return s["code"].lower()
+        except Exception as e:
+            logger.warning(f"CK: Failed to get set code from Scryfall for {card.set_name}: {e}")
+        return ""
+
+    def _matches_set(self, card: Card, text: str) -> bool:
+        """Return True if the set name or set code matches anywhere in the text."""
+        set_code = self._get_set_code(card)
+        set_name = card.set_name.lower()
+        text = text.lower()
+        if set_name in text:
+            logger.debug(f"CK: Matched set name '{set_name}' in text")
+            return True
+        if set_code and set_code in text:
+            logger.debug(f"CK: Matched set code '{set_code}' in text")
+            return True
+        return False
+
     def _search_buylist(self, card: Card) -> List[PriceData]:
         """Extracts buylist prices (cash and credit). Returns a list of PriceData."""
         self._rate_limit()
@@ -88,45 +118,41 @@ class CardKingdomScraper(BaseScraper):
         soup = BeautifulSoup(resp.text, "html.parser")
         results: List[PriceData] = []
 
-        # Find all item rows in the buylist table
+        set_identifiers = get_all_set_identifiers(card.set_name)
+        set_identifiers = [s.lower() for s in set_identifiers]
+        card_name_lc = card.name.lower()
+
         item_rows = soup.select("div.itemContentWrapper")
 
         for item in item_rows:
-            # Check if the set name matches
-            set_name_div = item.select_one("div.productDetailTitle")
-            if (
-                not set_name_div
-                or card.set_name.lower()
-                not in set_name_div.get_text(strip=True).lower()
-            ):
+            item_text = item.get_text(strip=True).lower()
+            # Check if the card name matches
+            if card_name_lc not in item_text:
                 continue
-
-            # Check if it's the correct foil version
-            is_foil_row = "foil" in set_name_div.get_text(strip=True).lower()
+            # Check if any set identifier matches
+            if not any(s in item_text for s in set_identifiers):
+                continue
+            logger.debug(f"CK: Matched set for {card.name}: identifiers={set_identifiers} in item_text={item_text}")
+            # Check foil
+            set_name_div = item.select_one("div.productDetailTitle")
+            is_foil_row = set_name_div and "foil" in set_name_div.get_text(strip=True).lower()
             if card.foil != is_foil_row:
                 continue
-
-            # Find price and quantity
             price_div = item.select_one("div.usd.price")
             qty_input = item.select_one('input[name="sell_quantity[1]"]')
-
             if price_div and qty_input:
                 try:
                     price_str = price_div.get_text(strip=True).replace("$", "")
                     price = float(price_str)
-
-                    # CK buylist shows NM price, quantity is for what they'll buy
                     cash_price_data = PriceData(
                         vendor=self.name,
                         price=price,
                         price_type="bid_cash",
                         condition="Near Mint",
-                        quantity_limit=None,  # Buylist quantity is dynamic
+                        quantity_limit=None,
                         last_price_update=datetime.now(),
                     )
                     results.append(cash_price_data)
-
-                    # Calculate credit price (30% bonus)
                     credit_price = round(price * 1.30, 2)
                     credit_price_data = PriceData(
                         vendor=self.name,
@@ -137,16 +163,14 @@ class CardKingdomScraper(BaseScraper):
                         last_price_update=datetime.now(),
                     )
                     results.append(credit_price_data)
-
                     logger.debug(
                         f"CK: Found buylist prices for {card.name} ({card.set_name}): Cash ${price}, Credit ${credit_price}"
                     )
-                    return results  # Found the specific set, so we are done
+                    return results
                 except (ValueError, TypeError) as e:
                     logger.warning(
                         f"CK: Could not parse price for {card.name} ({card.set_name}): {e}"
                     )
-
         logger.debug(
             f"CK: No matching buylist version found for {card.name} ({card.set_name})"
         )
@@ -168,20 +192,26 @@ class CardKingdomScraper(BaseScraper):
 
         results: List[PriceData] = []
 
+        set_identifiers = get_all_set_identifiers(card.set_name)
+        set_identifiers = [s.lower() for s in set_identifiers]
+        card_name_lc = card.name.lower()
+
         # Find all product cards on the page
         product_items = soup.select("div.productItemWrapper")
 
         for item in product_items:
-            title_div = item.select_one("span.productDetailTitle")
-            # Check if it's the correct card and set
-            if not title_div or not all(
-                x in title_div.get_text(strip=True).lower()
-                for x in [card.name.lower(), card.set_name.lower()]
-            ):
+            item_text = item.get_text(strip=True).lower()
+            if card_name_lc not in item_text:
                 continue
-
-            # Correctly identify foil status from the title
-            is_foil_item = "foil" in title_div.get_text(strip=True).lower()
+            if not any(s in item_text for s in set_identifiers):
+                continue
+            logger.debug(f"CK: Matched set for {card.name}: identifiers={set_identifiers} in item_text={item_text}")
+            is_foil_item = False
+            for selector in ["span.productDetailTitle", "div.productDetailTitle", "h3.productDetailTitle", "a.productDetailTitle", ".productDetailTitle"]:
+                title_div = item.select_one(selector)
+                if title_div and "foil" in title_div.get_text(strip=True).lower():
+                    is_foil_item = True
+                    break
             if card.foil != is_foil_item:
                 continue
 
