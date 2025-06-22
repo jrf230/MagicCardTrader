@@ -128,93 +128,66 @@ class ScraperManager:
             return self._MOCK_SCRAPER_REGISTRY.copy()
         else:
             if not self._SCRAPER_REGISTRY:
-                # Prioritize working scrapers
-                from .scryfall import ScryfallScraper
-
+                # Register scrapers that provide bid prices (buylist prices)
                 self.register_scraper("Scryfall", ScryfallScraper)
-
-                # Add other scrapers that might work (but may be slower/unreliable)
-                try:
-                    from .cardkingdom import CardKingdomScraper
-
-                    self.register_scraper("Card Kingdom", CardKingdomScraper)
-                except:
-                    pass
-
-                try:
-                    from .tcgplayer import TCGPlayerScraper
-
-                    self.register_scraper("TCG Player", TCGPlayerScraper)
-                except:
-                    pass
-
-                try:
-                    from .mtggoldfish import MTGGoldfishScraper
-
-                    self.register_scraper("MTGGoldfish", MTGGoldfishScraper)
-                except:
-                    pass
-
-                try:
-                    from .mtgstocks import MTGStocksScraper
-
-                    self.register_scraper("MTGStocks", MTGStocksScraper)
-                except:
-                    pass
-
-                try:
-                    from .mtgmintcard import MTGMintCardScraper
-
-                    self.register_scraper("MTGMintCard", MTGMintCardScraper)
-                except:
-                    pass
-
-                try:
-                    from .strikezone import StrikeZoneScraper
-
-                    self.register_scraper("StrikeZoneOnline", StrikeZoneScraper)
-                except:
-                    pass
-
-                try:
-                    from .trolltrader import TrollTraderScraper
-
-                    self.register_scraper("Troll Trader Cards", TrollTraderScraper)
-                except:
-                    pass
-
-                try:
-                    from .nerdragegaming import NerdRageGamingScraper
-
-                    self.register_scraper("Nerd Rage Gaming", NerdRageGamingScraper)
-                except:
-                    pass
-
-                try:
-                    from .harlequingames import HarlequinGamesScraper
-
-                    self.register_scraper("Harlequin Games", HarlequinGamesScraper)
-                except:
-                    pass
-
-                try:
-                    from .beatthebuylist import BeatTheBuylistScraper
-
-                    self.register_scraper("BeatTheBuylist", BeatTheBuylistScraper)
-                except:
-                    pass
-
-                # Disable problematic scrapers for now
-                # from .starcitygames import StarCityGamesScraper
-                # from .ebay import EbayScraper
-                # from .channelfireball import ChannelFireballScraper
-                # from .coolstuffinc import CoolStuffIncScraper
-                # from .cardmarket import CardmarketScraper
-                # from .magiccardprices import MagicCardPricesScraper
-                # from .cardshark import CardSharkScraper
-                # from .trollandtoad import TrollAndToadScraper
-                # from .cardconduit import CardConduitScraper
-                # from .marketplaces import GeneralMarketplaceScraper
+                
+                # Card Kingdom - provides buylist prices
+                self.register_scraper("Card Kingdom", CardKingdomScraper)
+                
+                # Star City Games - provides buylist prices
+                self.register_scraper("Star City Games", StarCityGamesScraper)
+                
+                # BeatTheBuylist - specializes in buylist aggregation
+                self.register_scraper("BeatTheBuylist", BeatTheBuylistScraper)
+                
+                # Channel Fireball - provides buylist prices
+                self.register_scraper("Channel Fireball", ChannelFireballScraper)
+                
+                # CoolStuffInc - provides buylist prices
+                self.register_scraper("CoolStuffInc", CoolStuffIncScraper)
+                
+                # TCG Player - provides market prices (can be used as offer prices)
+                self.register_scraper("TCG Player", TCGPlayerScraper)
+                
+                # MTGGoldfish - provides market data
+                self.register_scraper("MTGGoldfish", MTGGoldfishScraper)
+                
+                # MTGStocks - provides market data
+                self.register_scraper("MTGStocks", MTGStocksScraper)
+                
+                # MTGMintCard - provides buylist prices
+                self.register_scraper("MTGMintCard", MTGMintCardScraper)
+                
+                # StrikeZone - provides buylist prices
+                self.register_scraper("StrikeZoneOnline", StrikeZoneScraper)
+                
+                # Troll Trader - provides buylist prices
+                self.register_scraper("Troll Trader Cards", TrollTraderScraper)
+                
+                # Nerd Rage Gaming - provides buylist prices
+                self.register_scraper("Nerd Rage Gaming", NerdRageGamingScraper)
+                
+                # Harlequin Games - provides buylist prices
+                self.register_scraper("Harlequin Games", HarlequinGamesScraper)
+                
+                # Card Conduit - provides buylist prices
+                self.register_scraper("Card Conduit", CardConduitScraper)
+                
+                # Troll and Toad - provides buylist prices
+                self.register_scraper("Troll and Toad", TrollAndToadScraper)
+                
+                # Card Shark - provides buylist prices
+                self.register_scraper("Card Shark", CardSharkScraper)
+                
+                # Magic Card Prices - provides market data
+                self.register_scraper("Magic Card Prices", MagicCardPricesScraper)
+                
+                # Cardmarket - provides market data
+                self.register_scraper("Cardmarket", CardmarketScraper)
+                
+                # eBay - provides recent sales data
+                self.register_scraper("eBay Recent Sales", EbayScraper)
+                
             return self._SCRAPER_REGISTRY.copy()
 
     def get_card_prices(self, card: Card) -> CardPrices:

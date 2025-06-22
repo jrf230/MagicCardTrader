@@ -139,24 +139,6 @@
     </div>
 </div>
 
-<!-- Market Depth Modal -->
-<div class="modal fade" id="marketDepthModal" tabindex="-1" aria-labelledby="marketDepthModalLabel" aria-hidden="true" role="dialog">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="marketDepthModalLabel">Market Depth</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" id="marketDepthContent">
-                <!-- Market depth content will be loaded here -->
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- Loading Indicator -->
 <div class="loading" id="loading" role="status" aria-live="polite">
     <div class="spinner-border text-primary" role="status">
@@ -258,15 +240,33 @@ document.addEventListener('DOMContentLoaded', function() {
 async function loadCollectionAndPrices() {
     showLoading('loading');
     try {
-        const response = await fetch('/api/collection-prices');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+        // First load collection data quickly
+        const collectionResponse = await fetch('/api/collection');
+        if (!collectionResponse.ok) {
+            throw new Error(`HTTP error! status: ${collectionResponse.status}`);
         }
-        const data = await response.json();
-        renderCollection(data.cards);
-        updateCardCount(data.cards.length);
+        const collectionData = await collectionResponse.json();
+        
+        // Render collection immediately with placeholder prices
+        renderCollection(collectionData.cards || []);
+        updateCardCount((collectionData.cards || []).length);
+        
+        // Then load prices in background
+        setTimeout(async () => {
+            try {
+                const pricesResponse = await fetch('/api/collection-prices');
+                if (pricesResponse.ok) {
+                    const pricesData = await pricesResponse.json();
+                    renderCollection(pricesData.cards || collectionData.cards || []);
+                }
+            } catch (error) {
+                console.error('Error loading prices:', error);
+                // Don't show error to user since collection is already loaded
+            }
+        }, 100);
+        
     } catch (error) {
-        console.error('Error loading collection and prices:', error);
+        console.error('Error loading collection:', error);
         showError('Failed to load collection. Please try refreshing the page.');
         const tableBody = document.getElementById('collectionTable');
         tableBody.innerHTML = '<tr><td colspan="8" class="text-center text-danger">Error loading collection.</td></tr>';
@@ -317,8 +317,9 @@ function renderCollection(cards) {
 
             row.innerHTML = `
                 <td>
-                    <a href="#" class="card-details-link" data-bs-toggle="modal" data-bs-target="#marketDepthModal" 
-                       aria-label="View market details for ${escapeHTML(toTitleCase(card.name || ''))}">
+                    <a href="/card-details?name=${encodeURIComponent(card.name)}&set_name=${encodeURIComponent(card.set_name)}&foil=${card.foil}" 
+                       target="_blank" class="card-details-link" 
+                       aria-label="View card details for ${escapeHTML(toTitleCase(card.name || ''))} in new tab">
                         ${escapeHTML(toTitleCase(card.name || ''))}
                     </a>
                 </td>
@@ -339,10 +340,11 @@ function renderCollection(cards) {
                             aria-label="Remove ${escapeHTML(card.name)} from collection">
                         <i class="fas fa-trash" aria-hidden="true"></i>
                     </button>
-                    <button class="btn btn-sm btn-info" onclick="showMarketDepth(event, '${card.name}', '${card.set_name}', ${card.foil})" 
-                            aria-label="View market depth for ${escapeHTML(card.name)}">
+                    <a href="/card-details?name=${encodeURIComponent(card.name)}&set_name=${encodeURIComponent(card.set_name)}&foil=${card.foil}" 
+                       target="_blank" class="btn btn-sm btn-info" 
+                       aria-label="View market depth for ${escapeHTML(card.name)} in new tab">
                         <i class="fas fa-chart-bar" aria-hidden="true"></i>
-                    </button>
+                    </a>
                 </td>
             `;
             tableBody.appendChild(row);
@@ -384,119 +386,6 @@ async function removeCard(event, cardName, setName, isFoil) {
         console.error('Error removing card:', error);
         showError('An error occurred while removing the card.');
     }
-}
-
-async function showMarketDepth(event, cardName, setName, isFoil) {
-    event.stopPropagation();
-    const modalTitle = document.getElementById('marketDepthModalLabel');
-    const modalBody = document.getElementById('marketDepthContent');
-    
-    modalTitle.textContent = `Market Depth for ${cardName}`;
-    modalBody.innerHTML = '<div class="text-center"><div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div></div>';
-
-    $('#marketDepthModal').modal('show');
-
-    try {
-        const url = `/api/card-details?name=${encodeURIComponent(cardName)}&set_name=${encodeURIComponent(setName)}&foil=${isFoil}`;
-        const response = await fetch(url);
-        if (!response.ok) throw new Error('Failed to fetch market data');
-        
-        const data = await response.json();
-        
-        let content = `
-            <h5>${escapeHTML(data.card.name)} - ${escapeHTML(data.card.set_name)} ${data.card.foil ? '(Foil)' : ''}</h5>
-            <p>Rarity: ${escapeHTML(data.card.rarity)}</p>
-            
-            <h6>Vendor Prices (Bids)</h6>
-            <ul class="list-group mb-3">
-        `;
-
-        if (data.current_prices.vendors.length > 0) {
-            data.current_prices.vendors.sort((a, b) => (b.bid || 0) - (a.bid || 0)).forEach(vendor => {
-                content += `
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <span>
-                            <i class="fas fa-store me-2"></i><strong>${escapeHTML(vendor.vendor)}</strong>
-                            <br><small class="text-muted">Last updated: ${new Date(vendor.last_updated).toLocaleString()}</small>
-                        </span>
-                        <span class="badge bg-success rounded-pill fs-6">$${(vendor.bid || 0).toFixed(2)}</span>
-                    </li>`;
-            });
-        } else {
-            content += '<li class="list-group-item">No bid prices available.</li>';
-        }
-        content += '</ul>';
-
-        content += '<h6>Retail Prices (Offers/Asks)</h6><ul class="list-group mb-3">';
-        if (Object.keys(data.retail_prices_by_condition).length > 0) {
-             Object.entries(data.retail_prices_by_condition).forEach(([condition, price_info]) => {
-                content += `
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <span>
-                            <i class="fas fa-tag me-2"></i><strong>Card Kingdom (${escapeHTML(condition)})</strong>
-                        </span>
-                        <span class="badge bg-primary rounded-pill fs-6">$${(price_info.price || 0).toFixed(2)}</span>
-                    </li>`;
-            });
-        } else {
-            content += '<li class="list-group-item">No retail prices available.</li>';
-        }
-
-        content += '</ul><h6>Historical Data (Last 30 Days)</h6>';
-        if (data.historical_data && data.historical_data.length > 0) {
-            content += '<canvas id="priceHistoryChart"></canvas>';
-        } else {
-            content += '<p>No historical data available.</p>';
-        }
-        
-        modalBody.innerHTML = content;
-
-        if (data.historical_data && data.historical_data.length > 0) {
-            renderPriceChart(data.historical_data);
-        }
-    } catch (error) {
-        console.error('Error showing market depth:', error);
-        modalBody.innerHTML = `<div class="alert alert-danger">${error.message}</div>`;
-    }
-}
-
-function renderPriceChart(history) {
-    const canvas = document.getElementById('priceHistoryChart');
-    if (!canvas) {
-        console.warn('Price history chart canvas not found.');
-        return;
-    }
-    const ctx = canvas.getContext('2d');
-    const labels = history.map(d => new Date(d.date).toLocaleDateString());
-    const bestBidData = history.map(d => d.best_price);
-
-    new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Best Bid Price',
-                data: bestBidData,
-                borderColor: 'rgba(75, 192, 192, 1)',
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                fill: true,
-                tension: 0.1
-            }]
-        },
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: false,
-                    ticks: {
-                        callback: function(value, index, values) {
-                            return '$' + value.toFixed(2);
-                        }
-                    }
-                }
-            }
-        }
-    });
 }
 
 function updateCardCount(count) {

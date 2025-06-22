@@ -28464,3 +28464,942 @@ condition
 2025-06-22 12:39:42,467 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 12:39:42] "GET /api/cache-status HTTP/1.1" 200 -
 2025-06-22 12:40:42,453 - __main__ - INFO - API Request: cache_status - Success
 2025-06-22 12:40:42,453 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 12:40:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 14:19:34,776 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 14:19:34,777 - apscheduler.scheduler - INFO - Added job "refresh_prices_and_analytics" to job store "default"
+2025-06-22 14:19:34,777 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-22 14:21:24,948 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 14:21:24,948 - apscheduler.scheduler - INFO - Added job "refresh_prices_and_analytics" to job store "default"
+2025-06-22 14:21:24,948 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-22 14:21:24,971 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.86.33:8080
+2025-06-22 14:21:24,971 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-22 14:21:24,972 - werkzeug - INFO -  * Restarting with stat
+2025-06-22 14:21:25,184 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 14:21:25,185 - apscheduler.scheduler - INFO - Added job "refresh_prices_and_analytics" to job store "default"
+2025-06-22 14:21:25,185 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-22 14:21:25,196 - werkzeug - WARNING -  * Debugger is active!
+2025-06-22 14:21:25,200 - werkzeug - INFO -  * Debugger PIN: 118-838-002
+2025-06-22 16:26:41,875 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:26:41] "GET / HTTP/1.1" 200 -
+2025-06-22 16:26:41,932 - mtg_buylist_aggregator.api_service - INFO - Generating fresh dashboard data
+2025-06-22 16:26:41,935 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:26:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-06-22 16:26:41,936 - mtg_buylist_aggregator.api_service - INFO - Fetching fresh prices from vendors
+2025-06-22 16:26:41,936 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Scryfall scraper (real)
+2025-06-22 16:26:41,936 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Card Kingdom scraper (real)
+2025-06-22 16:26:41,936 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized TCG Player scraper (real)
+2025-06-22 16:26:41,936 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized MTGGoldfish scraper (real)
+2025-06-22 16:26:41,936 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized MTGStocks scraper (real)
+2025-06-22 16:26:41,936 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized MTGMintCard scraper (real)
+2025-06-22 16:26:41,936 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized StrikeZoneOnline scraper (real)
+2025-06-22 16:26:41,936 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Troll Trader Cards scraper (real)
+2025-06-22 16:26:41,936 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Nerd Rage Gaming scraper (real)
+2025-06-22 16:26:41,937 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Harlequin Games scraper (real)
+2025-06-22 16:26:41,937 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized BeatTheBuylist scraper (real)
+2025-06-22 16:26:41,937 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized 11 scrapers
+2025-06-22 16:26:41,937 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Getting prices for 12 cards from 11 vendors
+2025-06-22 16:26:41,937 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 1/12: Cabal Ritual (TORMENT)
+2025-06-22 16:26:42,069 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from TCG Player
+2025-06-22 16:26:43,251 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGGoldfish
+2025-06-22 16:26:43,408 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGStocks
+2025-06-22 16:26:43,778 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Card Kingdom
+2025-06-22 16:26:43,778 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from StrikeZoneOnline
+2025-06-22 16:26:43,778 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Troll Trader Cards
+2025-06-22 16:26:43,778 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Nerd Rage Gaming
+2025-06-22 16:26:43,778 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Harlequin Games
+2025-06-22 16:26:43,778 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from BeatTheBuylist
+2025-06-22 16:26:43,808 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Scryfall
+2025-06-22 16:26:46,529 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGMintCard
+2025-06-22 16:26:46,529 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Cabal Ritual
+2025-06-22 16:26:46,529 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 2/12: Cabal Ritual (torment)
+2025-06-22 16:26:46,568 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from TCG Player
+2025-06-22 16:26:46,914 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Scryfall
+2025-06-22 16:26:46,963 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGStocks
+2025-06-22 16:26:47,617 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGGoldfish
+2025-06-22 16:26:47,617 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from StrikeZoneOnline
+2025-06-22 16:26:47,617 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Troll Trader Cards
+2025-06-22 16:26:47,617 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Nerd Rage Gaming
+2025-06-22 16:26:47,617 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Harlequin Games
+2025-06-22 16:26:47,617 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from BeatTheBuylist
+2025-06-22 16:26:48,099 - mtg_buylist_aggregator.card_manager - INFO - Loaded 12 cards from collection
+2025-06-22 16:26:48,106 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:26:48] "GET /collection HTTP/1.1" 200 -
+2025-06-22 16:26:48,124 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 16:26:48,124 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:26:48] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 16:26:48,369 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Card Kingdom
+2025-06-22 16:26:49,511 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGMintCard
+2025-06-22 16:26:49,511 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Cabal Ritual
+2025-06-22 16:26:49,511 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 3/12: Counterspell (Commander 2013)
+2025-06-22 16:26:49,539 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from TCG Player
+2025-06-22 16:26:50,404 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from MTGStocks
+2025-06-22 16:26:50,581 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from MTGGoldfish
+2025-06-22 16:26:50,582 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from StrikeZoneOnline
+2025-06-22 16:26:50,582 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from Troll Trader Cards
+2025-06-22 16:26:50,582 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from Nerd Rage Gaming
+2025-06-22 16:26:50,582 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from Harlequin Games
+2025-06-22 16:26:50,582 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from BeatTheBuylist
+2025-06-22 16:26:51,507 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from Card Kingdom
+2025-06-22 16:26:57,025 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from MTGMintCard
+2025-06-22 16:26:57,025 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Counterspell
+2025-06-22 16:26:57,026 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 4/12: Demonic Tutor (Ultimate Masters)
+2025-06-22 16:26:57,060 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from TCG Player
+2025-06-22 16:26:58,105 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from MTGGoldfish
+2025-06-22 16:26:58,137 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from MTGStocks
+2025-06-22 16:26:58,138 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from StrikeZoneOnline
+2025-06-22 16:26:58,138 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from Troll Trader Cards
+2025-06-22 16:26:58,138 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from Nerd Rage Gaming
+2025-06-22 16:26:58,138 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from Harlequin Games
+2025-06-22 16:26:58,138 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from BeatTheBuylist
+2025-06-22 16:26:59,003 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from Card Kingdom
+2025-06-22 16:27:01,141 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from MTGMintCard
+2025-06-22 16:27:01,141 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Demonic Tutor
+2025-06-22 16:27:01,141 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 5/12: Lightning Bolt (Magic 2010)
+2025-06-22 16:27:01,168 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from TCG Player
+2025-06-22 16:27:01,705 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from MTGStocks
+2025-06-22 16:27:02,230 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from MTGGoldfish
+2025-06-22 16:27:02,230 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from StrikeZoneOnline
+2025-06-22 16:27:02,230 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from Troll Trader Cards
+2025-06-22 16:27:02,230 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from Nerd Rage Gaming
+2025-06-22 16:27:02,230 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from Harlequin Games
+2025-06-22 16:27:02,230 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from BeatTheBuylist
+2025-06-22 16:27:03,141 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from Card Kingdom
+2025-06-22 16:27:04,181 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from MTGMintCard
+2025-06-22 16:27:04,181 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Lightning Bolt
+2025-06-22 16:27:04,182 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 6/12: Path To Exile (Modern Masters 2015)
+2025-06-22 16:27:04,229 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from TCG Player
+2025-06-22 16:27:05,268 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from MTGStocks
+2025-06-22 16:27:05,278 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from MTGGoldfish
+2025-06-22 16:27:05,278 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from StrikeZoneOnline
+2025-06-22 16:27:05,278 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from Troll Trader Cards
+2025-06-22 16:27:05,278 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from Nerd Rage Gaming
+2025-06-22 16:27:05,278 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from Harlequin Games
+2025-06-22 16:27:05,278 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from BeatTheBuylist
+2025-06-22 16:27:06,127 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from Card Kingdom
+2025-06-22 16:27:07,513 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from MTGMintCard
+2025-06-22 16:27:07,513 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Path To Exile
+2025-06-22 16:27:07,513 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 7/12: Rhystic Study (prophecy)
+2025-06-22 16:27:07,555 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from TCG Player
+2025-06-22 16:27:08,119 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from MTGStocks
+2025-06-22 16:27:08,617 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from MTGGoldfish
+2025-06-22 16:27:08,617 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from StrikeZoneOnline
+2025-06-22 16:27:08,617 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from Troll Trader Cards
+2025-06-22 16:27:08,617 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from Nerd Rage Gaming
+2025-06-22 16:27:08,617 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from Harlequin Games
+2025-06-22 16:27:08,617 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from BeatTheBuylist
+2025-06-22 16:27:09,463 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from Card Kingdom
+2025-06-22 16:27:10,527 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from MTGMintCard
+2025-06-22 16:27:10,527 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Rhystic Study
+2025-06-22 16:27:10,527 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 8/12: Snapcaster Mage (Innistrad)
+2025-06-22 16:27:10,554 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from TCG Player
+2025-06-22 16:27:11,274 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from MTGStocks
+2025-06-22 16:27:11,610 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from MTGGoldfish
+2025-06-22 16:27:11,611 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from StrikeZoneOnline
+2025-06-22 16:27:11,611 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from Troll Trader Cards
+2025-06-22 16:27:11,611 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from Nerd Rage Gaming
+2025-06-22 16:27:11,611 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from Harlequin Games
+2025-06-22 16:27:11,611 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from BeatTheBuylist
+2025-06-22 16:27:12,574 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from Card Kingdom
+2025-06-22 16:27:14,048 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from MTGMintCard
+2025-06-22 16:27:14,048 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Snapcaster Mage
+2025-06-22 16:27:14,048 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 9/12: Sol Ring (Commander 2021)
+2025-06-22 16:27:14,051 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from TCG Player
+2025-06-22 16:27:14,839 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from MTGStocks
+2025-06-22 16:27:14,840 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from MTGMintCard
+2025-06-22 16:27:14,840 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from StrikeZoneOnline
+2025-06-22 16:27:14,840 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from Troll Trader Cards
+2025-06-22 16:27:14,840 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from Nerd Rage Gaming
+2025-06-22 16:27:14,840 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from Harlequin Games
+2025-06-22 16:27:14,840 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from BeatTheBuylist
+2025-06-22 16:27:15,101 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from MTGGoldfish
+2025-06-22 16:27:16,119 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from Card Kingdom
+2025-06-22 16:27:16,119 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Sol Ring
+2025-06-22 16:27:16,119 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 10/12: Tarmogoyf (Modern Masters 2017)
+2025-06-22 16:27:16,147 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from TCG Player
+2025-06-22 16:27:16,918 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from MTGStocks
+2025-06-22 16:27:17,189 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from MTGGoldfish
+2025-06-22 16:27:17,190 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from StrikeZoneOnline
+2025-06-22 16:27:17,190 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from Troll Trader Cards
+2025-06-22 16:27:17,190 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from Nerd Rage Gaming
+2025-06-22 16:27:17,190 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from Harlequin Games
+2025-06-22 16:27:17,190 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from BeatTheBuylist
+2025-06-22 16:27:18,125 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 16:27:18,126 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:27:18] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 16:27:19,116 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from Card Kingdom
+2025-06-22 16:27:19,242 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from MTGMintCard
+2025-06-22 16:27:19,242 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Tarmogoyf
+2025-06-22 16:27:19,243 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 11/12: Test Card (Test Set)
+2025-06-22 16:27:19,333 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from TCG Player
+2025-06-22 16:27:20,381 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from MTGGoldfish
+2025-06-22 16:27:20,421 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from MTGStocks
+2025-06-22 16:27:21,645 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Scryfall
+2025-06-22 16:27:21,645 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from StrikeZoneOnline
+2025-06-22 16:27:21,645 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Troll Trader Cards
+2025-06-22 16:27:21,645 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Nerd Rage Gaming
+2025-06-22 16:27:21,645 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Harlequin Games
+2025-06-22 16:27:21,645 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from BeatTheBuylist
+2025-06-22 16:27:21,918 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Card Kingdom
+2025-06-22 16:27:22,710 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from MTGMintCard
+2025-06-22 16:27:22,710 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Test Card
+2025-06-22 16:27:22,710 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 12/12: Wrath Of God (Core Set 2021)
+2025-06-22 16:27:22,735 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from TCG Player
+2025-06-22 16:27:23,773 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from MTGGoldfish
+2025-06-22 16:27:23,785 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from MTGStocks
+2025-06-22 16:27:23,785 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from StrikeZoneOnline
+2025-06-22 16:27:23,785 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from Troll Trader Cards
+2025-06-22 16:27:23,785 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from Nerd Rage Gaming
+2025-06-22 16:27:23,785 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from Harlequin Games
+2025-06-22 16:27:23,785 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from BeatTheBuylist
+2025-06-22 16:27:25,009 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from Card Kingdom
+2025-06-22 16:27:26,339 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from MTGMintCard
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Wrath Of God
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Completed price lookup for 12 cards
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - Completed scraping with the following errors:
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [TCG Player]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGGoldfish]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGStocks]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Card Kingdom]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [StrikeZoneOnline]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Troll Trader Cards]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Nerd Rage Gaming]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Harlequin Games]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [BeatTheBuylist]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Scryfall]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGMintCard]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [TCG Player]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Scryfall]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGStocks]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGGoldfish]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [StrikeZoneOnline]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Troll Trader Cards]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Nerd Rage Gaming]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Harlequin Games]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [BeatTheBuylist]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Card Kingdom]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGMintCard]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [TCG Player]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [MTGStocks]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [MTGGoldfish]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [StrikeZoneOnline]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [Troll Trader Cards]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [Nerd Rage Gaming]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [Harlequin Games]: No price found
+2025-06-22 16:27:26,340 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [BeatTheBuylist]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [Card Kingdom]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [MTGMintCard]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [TCG Player]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [MTGGoldfish]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [MTGStocks]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [StrikeZoneOnline]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [Troll Trader Cards]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [Nerd Rage Gaming]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [Harlequin Games]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [BeatTheBuylist]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [Card Kingdom]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [MTGMintCard]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [TCG Player]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [MTGStocks]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [MTGGoldfish]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [StrikeZoneOnline]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [Troll Trader Cards]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [Nerd Rage Gaming]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [Harlequin Games]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [BeatTheBuylist]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [Card Kingdom]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [MTGMintCard]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [TCG Player]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [MTGStocks]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [MTGGoldfish]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [StrikeZoneOnline]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [Troll Trader Cards]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [Nerd Rage Gaming]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [Harlequin Games]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [BeatTheBuylist]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [Card Kingdom]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [MTGMintCard]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [TCG Player]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [MTGStocks]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [MTGGoldfish]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [StrikeZoneOnline]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [Troll Trader Cards]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [Nerd Rage Gaming]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [Harlequin Games]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [BeatTheBuylist]: No price found
+2025-06-22 16:27:26,341 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [Card Kingdom]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [MTGMintCard]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [TCG Player]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [MTGStocks]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [MTGGoldfish]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [StrikeZoneOnline]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [Troll Trader Cards]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [Nerd Rage Gaming]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [Harlequin Games]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [BeatTheBuylist]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [Card Kingdom]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [MTGMintCard]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [TCG Player]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [MTGStocks]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [MTGMintCard]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [StrikeZoneOnline]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [Troll Trader Cards]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [Nerd Rage Gaming]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [Harlequin Games]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [BeatTheBuylist]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [MTGGoldfish]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [Card Kingdom]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [TCG Player]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [MTGStocks]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [MTGGoldfish]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [StrikeZoneOnline]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [Troll Trader Cards]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [Nerd Rage Gaming]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [Harlequin Games]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [BeatTheBuylist]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [Card Kingdom]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [MTGMintCard]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [TCG Player]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [MTGGoldfish]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [MTGStocks]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Scryfall]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [StrikeZoneOnline]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Troll Trader Cards]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Nerd Rage Gaming]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Harlequin Games]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [BeatTheBuylist]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Card Kingdom]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [MTGMintCard]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [TCG Player]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [MTGGoldfish]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [MTGStocks]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [StrikeZoneOnline]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [Troll Trader Cards]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [Nerd Rage Gaming]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [Harlequin Games]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [BeatTheBuylist]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [Card Kingdom]: No price found
+2025-06-22 16:27:26,342 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [MTGMintCard]: No price found
+2025-06-22 16:27:26,344 - mtg_buylist_aggregator.database - INFO - Updated price cache for 12 cards
+2025-06-22 16:27:26,346 - mtg_buylist_aggregator.enhanced_price_analyzer - ERROR - Error analyzing market for Counterspell: 'list' object has no attribute 'price'
+2025-06-22 16:27:26,346 - mtg_buylist_aggregator.enhanced_price_analyzer - ERROR - Error analyzing market for Demonic Tutor: 'list' object has no attribute 'price'
+2025-06-22 16:27:26,346 - mtg_buylist_aggregator.enhanced_price_analyzer - ERROR - Error analyzing market for Lightning Bolt: 'list' object has no attribute 'price'
+2025-06-22 16:27:26,346 - mtg_buylist_aggregator.enhanced_price_analyzer - ERROR - Error analyzing market for Path To Exile: 'list' object has no attribute 'price'
+2025-06-22 16:27:26,346 - mtg_buylist_aggregator.enhanced_price_analyzer - ERROR - Error analyzing market for Rhystic Study: 'list' object has no attribute 'price'
+2025-06-22 16:27:26,346 - mtg_buylist_aggregator.enhanced_price_analyzer - ERROR - Error analyzing market for Snapcaster Mage: 'list' object has no attribute 'price'
+2025-06-22 16:27:26,346 - mtg_buylist_aggregator.enhanced_price_analyzer - ERROR - Error analyzing market for Sol Ring: 'list' object has no attribute 'price'
+2025-06-22 16:27:26,346 - mtg_buylist_aggregator.enhanced_price_analyzer - ERROR - Error analyzing market for Tarmogoyf: 'list' object has no attribute 'price'
+2025-06-22 16:27:26,346 - mtg_buylist_aggregator.enhanced_price_analyzer - ERROR - Error analyzing market for Wrath Of God: 'list' object has no attribute 'price'
+2025-06-22 16:27:26,347 - mtg_buylist_aggregator.hot_card_detector - INFO - Detecting hot cards for 12 cards over 7 days
+2025-06-22 16:27:26,347 - mtg_buylist_aggregator.hot_card_detector - INFO - Found 0 hot cards
+2025-06-22 16:27:26,349 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Star City Games scraper (mock)
+2025-06-22 16:27:26,349 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Card Kingdom scraper (mock)
+2025-06-22 16:27:26,349 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized BeatTheBuylist scraper (mock)
+2025-06-22 16:27:26,349 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized eBay Recent Sales scraper (mock)
+2025-06-22 16:27:26,349 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized TCG Player scraper (mock)
+2025-06-22 16:27:26,349 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Channel Fireball scraper (mock)
+2025-06-22 16:27:26,349 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized CoolStuffInc scraper (mock)
+2025-06-22 16:27:26,349 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized 7 scrapers
+2025-06-22 16:27:26,350 - __main__ - INFO - API Request: dashboard - Success
+2025-06-22 16:27:26,350 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:27:26] "GET /api/dashboard?mock=true HTTP/1.1" 200 -
+2025-06-22 16:27:26,351 - mtg_buylist_aggregator.api_service - INFO - Fetching fresh prices from vendors
+2025-06-22 16:27:26,351 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Scryfall scraper (real)
+2025-06-22 16:27:26,351 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Card Kingdom scraper (real)
+2025-06-22 16:27:26,351 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized TCG Player scraper (real)
+2025-06-22 16:27:26,351 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized MTGGoldfish scraper (real)
+2025-06-22 16:27:26,351 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized MTGStocks scraper (real)
+2025-06-22 16:27:26,351 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized MTGMintCard scraper (real)
+2025-06-22 16:27:26,351 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized StrikeZoneOnline scraper (real)
+2025-06-22 16:27:26,351 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Troll Trader Cards scraper (real)
+2025-06-22 16:27:26,351 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Nerd Rage Gaming scraper (real)
+2025-06-22 16:27:26,351 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Harlequin Games scraper (real)
+2025-06-22 16:27:26,351 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized BeatTheBuylist scraper (real)
+2025-06-22 16:27:26,351 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized 11 scrapers
+2025-06-22 16:27:26,351 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Getting prices for 12 cards from 11 vendors
+2025-06-22 16:27:26,351 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 1/12: Cabal Ritual (TORMENT)
+2025-06-22 16:27:26,439 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from TCG Player
+2025-06-22 16:27:26,809 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Scryfall
+2025-06-22 16:27:26,911 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGStocks
+2025-06-22 16:27:27,630 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGGoldfish
+2025-06-22 16:27:27,630 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from StrikeZoneOnline
+2025-06-22 16:27:27,630 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Troll Trader Cards
+2025-06-22 16:27:27,630 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Nerd Rage Gaming
+2025-06-22 16:27:27,630 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Harlequin Games
+2025-06-22 16:27:27,630 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from BeatTheBuylist
+2025-06-22 16:27:28,360 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Card Kingdom
+2025-06-22 16:27:30,040 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGMintCard
+2025-06-22 16:27:30,040 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Cabal Ritual
+2025-06-22 16:27:30,040 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 2/12: Cabal Ritual (torment)
+2025-06-22 16:27:30,133 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from TCG Player
+2025-06-22 16:27:30,374 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Scryfall
+2025-06-22 16:27:30,415 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGStocks
+2025-06-22 16:27:31,175 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGGoldfish
+2025-06-22 16:27:31,175 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from StrikeZoneOnline
+2025-06-22 16:27:31,175 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Troll Trader Cards
+2025-06-22 16:27:31,175 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Nerd Rage Gaming
+2025-06-22 16:27:31,175 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Harlequin Games
+2025-06-22 16:27:31,175 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from BeatTheBuylist
+2025-06-22 16:27:31,951 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Card Kingdom
+2025-06-22 16:27:33,229 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGMintCard
+2025-06-22 16:27:33,229 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Cabal Ritual
+2025-06-22 16:27:33,230 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 3/12: Counterspell (Commander 2013)
+2025-06-22 16:27:33,263 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from TCG Player
+2025-06-22 16:27:33,600 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from MTGStocks
+2025-06-22 16:27:34,309 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from MTGGoldfish
+2025-06-22 16:27:34,310 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from StrikeZoneOnline
+2025-06-22 16:27:34,310 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from Troll Trader Cards
+2025-06-22 16:27:34,310 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from Nerd Rage Gaming
+2025-06-22 16:27:34,310 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from Harlequin Games
+2025-06-22 16:27:34,310 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from BeatTheBuylist
+2025-06-22 16:27:35,283 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from Card Kingdom
+2025-06-22 16:27:36,002 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from MTGMintCard
+2025-06-22 16:27:36,002 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Counterspell
+2025-06-22 16:27:36,003 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 4/12: Demonic Tutor (Ultimate Masters)
+2025-06-22 16:27:36,027 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from TCG Player
+2025-06-22 16:27:36,409 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from MTGStocks
+2025-06-22 16:27:37,076 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from MTGGoldfish
+2025-06-22 16:27:37,077 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from StrikeZoneOnline
+2025-06-22 16:27:37,077 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from Troll Trader Cards
+2025-06-22 16:27:37,077 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from Nerd Rage Gaming
+2025-06-22 16:27:37,077 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from Harlequin Games
+2025-06-22 16:27:37,077 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from BeatTheBuylist
+2025-06-22 16:27:38,294 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from MTGMintCard
+2025-06-22 16:27:38,350 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from Card Kingdom
+2025-06-22 16:27:38,351 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Demonic Tutor
+2025-06-22 16:27:38,351 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 5/12: Lightning Bolt (Magic 2010)
+2025-06-22 16:27:38,376 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from TCG Player
+2025-06-22 16:27:38,860 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from MTGStocks
+2025-06-22 16:27:39,422 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from MTGGoldfish
+2025-06-22 16:27:39,422 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from StrikeZoneOnline
+2025-06-22 16:27:39,422 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from Troll Trader Cards
+2025-06-22 16:27:39,422 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from Nerd Rage Gaming
+2025-06-22 16:27:39,422 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from Harlequin Games
+2025-06-22 16:27:39,422 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from BeatTheBuylist
+2025-06-22 16:27:41,396 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from Card Kingdom
+2025-06-22 16:27:41,422 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from MTGMintCard
+2025-06-22 16:27:41,422 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Lightning Bolt
+2025-06-22 16:27:41,423 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 6/12: Path To Exile (Modern Masters 2015)
+2025-06-22 16:27:41,510 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from TCG Player
+2025-06-22 16:27:41,752 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from MTGStocks
+2025-06-22 16:27:42,554 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from MTGGoldfish
+2025-06-22 16:27:42,555 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from StrikeZoneOnline
+2025-06-22 16:27:42,555 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from Troll Trader Cards
+2025-06-22 16:27:42,555 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from Nerd Rage Gaming
+2025-06-22 16:27:42,555 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from Harlequin Games
+2025-06-22 16:27:42,555 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from BeatTheBuylist
+2025-06-22 16:27:44,064 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from MTGMintCard
+2025-06-22 16:27:44,364 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from Card Kingdom
+2025-06-22 16:27:44,364 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Path To Exile
+2025-06-22 16:27:44,364 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 7/12: Rhystic Study (prophecy)
+2025-06-22 16:27:44,398 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from TCG Player
+2025-06-22 16:27:45,041 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from MTGStocks
+2025-06-22 16:27:45,440 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from MTGGoldfish
+2025-06-22 16:27:45,440 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from StrikeZoneOnline
+2025-06-22 16:27:45,441 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from Troll Trader Cards
+2025-06-22 16:27:45,441 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from Nerd Rage Gaming
+2025-06-22 16:27:45,441 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from Harlequin Games
+2025-06-22 16:27:45,441 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from BeatTheBuylist
+2025-06-22 16:27:47,303 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from Card Kingdom
+2025-06-22 16:27:47,647 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from MTGMintCard
+2025-06-22 16:27:47,647 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Rhystic Study
+2025-06-22 16:27:47,647 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 8/12: Snapcaster Mage (Innistrad)
+2025-06-22 16:27:47,691 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from TCG Player
+2025-06-22 16:27:48,062 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from MTGStocks
+2025-06-22 16:27:48,124 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 16:27:48,125 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:27:48] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 16:27:48,729 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from MTGGoldfish
+2025-06-22 16:27:48,729 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from StrikeZoneOnline
+2025-06-22 16:27:48,730 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from Troll Trader Cards
+2025-06-22 16:27:48,730 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from Nerd Rage Gaming
+2025-06-22 16:27:48,730 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from Harlequin Games
+2025-06-22 16:27:48,730 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from BeatTheBuylist
+2025-06-22 16:27:49,921 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from MTGMintCard
+2025-06-22 16:27:50,229 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from Card Kingdom
+2025-06-22 16:27:50,229 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Snapcaster Mage
+2025-06-22 16:27:50,229 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 9/12: Sol Ring (Commander 2021)
+2025-06-22 16:27:50,229 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from TCG Player
+2025-06-22 16:27:50,810 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from MTGStocks
+2025-06-22 16:27:50,810 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from MTGMintCard
+2025-06-22 16:27:50,810 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from StrikeZoneOnline
+2025-06-22 16:27:50,810 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from Troll Trader Cards
+2025-06-22 16:27:50,811 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from Nerd Rage Gaming
+2025-06-22 16:27:50,811 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from Harlequin Games
+2025-06-22 16:27:50,811 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from BeatTheBuylist
+2025-06-22 16:27:51,272 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from MTGGoldfish
+2025-06-22 16:27:53,255 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from Card Kingdom
+2025-06-22 16:27:53,255 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Sol Ring
+2025-06-22 16:27:53,255 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 10/12: Tarmogoyf (Modern Masters 2017)
+2025-06-22 16:27:53,282 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from TCG Player
+2025-06-22 16:27:53,628 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from MTGStocks
+2025-06-22 16:27:54,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from MTGGoldfish
+2025-06-22 16:27:54,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from StrikeZoneOnline
+2025-06-22 16:27:54,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from Troll Trader Cards
+2025-06-22 16:27:54,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from Nerd Rage Gaming
+2025-06-22 16:27:54,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from Harlequin Games
+2025-06-22 16:27:54,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from BeatTheBuylist
+2025-06-22 16:27:56,400 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from Card Kingdom
+2025-06-22 16:27:56,511 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from MTGMintCard
+2025-06-22 16:27:56,512 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Tarmogoyf
+2025-06-22 16:27:56,512 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 11/12: Test Card (Test Set)
+2025-06-22 16:27:56,542 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from TCG Player
+2025-06-22 16:27:56,904 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Scryfall
+2025-06-22 16:27:56,949 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from MTGStocks
+2025-06-22 16:27:57,592 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from MTGGoldfish
+2025-06-22 16:27:57,593 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from StrikeZoneOnline
+2025-06-22 16:27:57,593 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Troll Trader Cards
+2025-06-22 16:27:57,593 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Nerd Rage Gaming
+2025-06-22 16:27:57,593 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Harlequin Games
+2025-06-22 16:27:57,593 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from BeatTheBuylist
+2025-06-22 16:27:58,916 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from MTGMintCard
+2025-06-22 16:27:59,227 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Card Kingdom
+2025-06-22 16:27:59,227 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Test Card
+2025-06-22 16:27:59,227 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 12/12: Wrath Of God (Core Set 2021)
+2025-06-22 16:27:59,425 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from TCG Player
+2025-06-22 16:28:00,473 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from MTGGoldfish
+2025-06-22 16:28:00,513 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from MTGStocks
+2025-06-22 16:28:00,676 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from StrikeZoneOnline
+2025-06-22 16:28:00,676 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from Troll Trader Cards
+2025-06-22 16:28:00,676 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from Nerd Rage Gaming
+2025-06-22 16:28:00,676 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from Harlequin Games
+2025-06-22 16:28:00,676 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from BeatTheBuylist
+2025-06-22 16:28:02,315 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from Card Kingdom
+2025-06-22 16:28:03,327 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from MTGMintCard
+2025-06-22 16:28:03,328 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Wrath Of God
+2025-06-22 16:28:03,328 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Completed price lookup for 12 cards
+2025-06-22 16:28:03,328 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - Completed scraping with the following errors:
+2025-06-22 16:28:03,328 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [TCG Player]: No price found
+2025-06-22 16:28:03,328 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Scryfall]: No price found
+2025-06-22 16:28:03,328 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGStocks]: No price found
+2025-06-22 16:28:03,328 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGGoldfish]: No price found
+2025-06-22 16:28:03,328 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [StrikeZoneOnline]: No price found
+2025-06-22 16:28:03,328 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Troll Trader Cards]: No price found
+2025-06-22 16:28:03,328 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Nerd Rage Gaming]: No price found
+2025-06-22 16:28:03,328 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Harlequin Games]: No price found
+2025-06-22 16:28:03,328 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [BeatTheBuylist]: No price found
+2025-06-22 16:28:03,328 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Card Kingdom]: No price found
+2025-06-22 16:28:03,328 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGMintCard]: No price found
+2025-06-22 16:28:03,328 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [TCG Player]: No price found
+2025-06-22 16:28:03,328 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Scryfall]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGStocks]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGGoldfish]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [StrikeZoneOnline]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Troll Trader Cards]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Nerd Rage Gaming]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Harlequin Games]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [BeatTheBuylist]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Card Kingdom]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGMintCard]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [TCG Player]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [MTGStocks]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [MTGGoldfish]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [StrikeZoneOnline]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [Troll Trader Cards]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [Nerd Rage Gaming]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [Harlequin Games]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [BeatTheBuylist]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [Card Kingdom]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [MTGMintCard]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [TCG Player]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [MTGStocks]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [MTGGoldfish]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [StrikeZoneOnline]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [Troll Trader Cards]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [Nerd Rage Gaming]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [Harlequin Games]: No price found
+2025-06-22 16:28:03,329 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [BeatTheBuylist]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [MTGMintCard]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [Card Kingdom]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [TCG Player]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [MTGStocks]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [MTGGoldfish]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [StrikeZoneOnline]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [Troll Trader Cards]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [Nerd Rage Gaming]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [Harlequin Games]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [BeatTheBuylist]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [Card Kingdom]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [MTGMintCard]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [TCG Player]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [MTGStocks]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [MTGGoldfish]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [StrikeZoneOnline]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [Troll Trader Cards]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [Nerd Rage Gaming]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [Harlequin Games]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [BeatTheBuylist]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [MTGMintCard]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [Card Kingdom]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [TCG Player]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [MTGStocks]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [MTGGoldfish]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [StrikeZoneOnline]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [Troll Trader Cards]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [Nerd Rage Gaming]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [Harlequin Games]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [BeatTheBuylist]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [Card Kingdom]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [MTGMintCard]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [TCG Player]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [MTGStocks]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [MTGGoldfish]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [StrikeZoneOnline]: No price found
+2025-06-22 16:28:03,330 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [Troll Trader Cards]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [Nerd Rage Gaming]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [Harlequin Games]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [BeatTheBuylist]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [MTGMintCard]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [Card Kingdom]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [TCG Player]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [MTGStocks]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [MTGMintCard]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [StrikeZoneOnline]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [Troll Trader Cards]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [Nerd Rage Gaming]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [Harlequin Games]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [BeatTheBuylist]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [MTGGoldfish]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [Card Kingdom]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [TCG Player]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [MTGStocks]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [MTGGoldfish]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [StrikeZoneOnline]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [Troll Trader Cards]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [Nerd Rage Gaming]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [Harlequin Games]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [BeatTheBuylist]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [Card Kingdom]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [MTGMintCard]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [TCG Player]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Scryfall]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [MTGStocks]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [MTGGoldfish]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [StrikeZoneOnline]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Troll Trader Cards]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Nerd Rage Gaming]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Harlequin Games]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [BeatTheBuylist]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [MTGMintCard]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Card Kingdom]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [TCG Player]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [MTGGoldfish]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [MTGStocks]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [StrikeZoneOnline]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [Troll Trader Cards]: No price found
+2025-06-22 16:28:03,331 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [Nerd Rage Gaming]: No price found
+2025-06-22 16:28:03,332 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [Harlequin Games]: No price found
+2025-06-22 16:28:03,332 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [BeatTheBuylist]: No price found
+2025-06-22 16:28:03,332 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [Card Kingdom]: No price found
+2025-06-22 16:28:03,332 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [MTGMintCard]: No price found
+2025-06-22 16:28:03,333 - mtg_buylist_aggregator.database - INFO - Updated price cache for 12 cards
+2025-06-22 16:28:03,333 - __main__ - INFO - API Request: collection_prices - Success
+2025-06-22 16:28:03,334 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:28:03] "GET /api/collection-prices HTTP/1.1" 200 -
+2025-06-22 16:28:18,127 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 16:28:18,128 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:28:18] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 16:28:48,442 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 16:28:48,442 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:28:48] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 16:28:53,049 - mtg_buylist_aggregator.card_manager - INFO - Loaded 12 cards from collection
+2025-06-22 16:28:53,051 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:28:53] "GET /collection HTTP/1.1" 200 -
+2025-06-22 16:28:53,065 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 16:28:53,065 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:28:53] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 16:28:53,066 - mtg_buylist_aggregator.api_service - INFO - Fetching fresh prices from vendors
+2025-06-22 16:28:53,067 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Scryfall scraper (real)
+2025-06-22 16:28:53,067 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Card Kingdom scraper (real)
+2025-06-22 16:28:53,067 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized TCG Player scraper (real)
+2025-06-22 16:28:53,067 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized MTGGoldfish scraper (real)
+2025-06-22 16:28:53,067 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized MTGStocks scraper (real)
+2025-06-22 16:28:53,067 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized MTGMintCard scraper (real)
+2025-06-22 16:28:53,067 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized StrikeZoneOnline scraper (real)
+2025-06-22 16:28:53,067 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Troll Trader Cards scraper (real)
+2025-06-22 16:28:53,067 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Nerd Rage Gaming scraper (real)
+2025-06-22 16:28:53,067 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized Harlequin Games scraper (real)
+2025-06-22 16:28:53,067 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized BeatTheBuylist scraper (real)
+2025-06-22 16:28:53,068 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Initialized 11 scrapers
+2025-06-22 16:28:53,068 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Getting prices for 12 cards from 11 vendors
+2025-06-22 16:28:53,068 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 1/12: Cabal Ritual (TORMENT)
+2025-06-22 16:28:53,202 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from TCG Player
+2025-06-22 16:28:53,421 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Scryfall
+2025-06-22 16:28:53,577 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGStocks
+2025-06-22 16:28:54,386 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGGoldfish
+2025-06-22 16:28:54,387 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from StrikeZoneOnline
+2025-06-22 16:28:54,387 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Troll Trader Cards
+2025-06-22 16:28:54,387 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Nerd Rage Gaming
+2025-06-22 16:28:54,387 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Harlequin Games
+2025-06-22 16:28:54,387 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from BeatTheBuylist
+2025-06-22 16:28:54,925 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Card Kingdom
+2025-06-22 16:28:56,467 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGMintCard
+2025-06-22 16:28:56,467 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Cabal Ritual
+2025-06-22 16:28:56,467 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 2/12: Cabal Ritual (torment)
+2025-06-22 16:28:56,588 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from TCG Player
+2025-06-22 16:28:56,810 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Scryfall
+2025-06-22 16:28:56,851 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGStocks
+2025-06-22 16:28:57,747 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGGoldfish
+2025-06-22 16:28:57,747 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from StrikeZoneOnline
+2025-06-22 16:28:57,747 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Troll Trader Cards
+2025-06-22 16:28:57,747 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Nerd Rage Gaming
+2025-06-22 16:28:57,747 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Harlequin Games
+2025-06-22 16:28:57,747 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from BeatTheBuylist
+2025-06-22 16:28:58,310 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from Card Kingdom
+2025-06-22 16:28:59,282 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Cabal Ritual from MTGMintCard
+2025-06-22 16:28:59,282 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Cabal Ritual
+2025-06-22 16:28:59,282 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 3/12: Counterspell (Commander 2013)
+2025-06-22 16:28:59,316 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from TCG Player
+2025-06-22 16:28:59,676 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from MTGStocks
+2025-06-22 16:29:00,356 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from MTGGoldfish
+2025-06-22 16:29:00,356 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from StrikeZoneOnline
+2025-06-22 16:29:00,356 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from Troll Trader Cards
+2025-06-22 16:29:00,356 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from Nerd Rage Gaming
+2025-06-22 16:29:00,356 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from Harlequin Games
+2025-06-22 16:29:00,356 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from BeatTheBuylist
+2025-06-22 16:29:01,648 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from Card Kingdom
+2025-06-22 16:29:02,374 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Counterspell from MTGMintCard
+2025-06-22 16:29:02,374 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Counterspell
+2025-06-22 16:29:02,374 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 4/12: Demonic Tutor (Ultimate Masters)
+2025-06-22 16:29:02,410 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from TCG Player
+2025-06-22 16:29:02,732 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from MTGStocks
+2025-06-22 16:29:03,457 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from MTGGoldfish
+2025-06-22 16:29:03,458 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from StrikeZoneOnline
+2025-06-22 16:29:03,458 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from Troll Trader Cards
+2025-06-22 16:29:03,458 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from Nerd Rage Gaming
+2025-06-22 16:29:03,458 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from Harlequin Games
+2025-06-22 16:29:03,458 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from BeatTheBuylist
+2025-06-22 16:29:04,614 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from Card Kingdom
+2025-06-22 16:29:05,394 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Demonic Tutor from MTGMintCard
+2025-06-22 16:29:05,394 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Demonic Tutor
+2025-06-22 16:29:05,394 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 5/12: Lightning Bolt (Magic 2010)
+2025-06-22 16:29:05,433 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from TCG Player
+2025-06-22 16:29:05,710 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from MTGStocks
+2025-06-22 16:29:06,481 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from MTGGoldfish
+2025-06-22 16:29:06,481 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from StrikeZoneOnline
+2025-06-22 16:29:06,481 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from Troll Trader Cards
+2025-06-22 16:29:06,481 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from Nerd Rage Gaming
+2025-06-22 16:29:06,481 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from Harlequin Games
+2025-06-22 16:29:06,481 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from BeatTheBuylist
+2025-06-22 16:29:07,452 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from Card Kingdom
+2025-06-22 16:29:08,232 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Lightning Bolt from MTGMintCard
+2025-06-22 16:29:08,232 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Lightning Bolt
+2025-06-22 16:29:08,232 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 6/12: Path To Exile (Modern Masters 2015)
+2025-06-22 16:29:08,266 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from TCG Player
+2025-06-22 16:29:08,714 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from MTGStocks
+2025-06-22 16:29:09,307 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from MTGGoldfish
+2025-06-22 16:29:09,308 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from StrikeZoneOnline
+2025-06-22 16:29:09,308 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from Troll Trader Cards
+2025-06-22 16:29:09,308 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from Nerd Rage Gaming
+2025-06-22 16:29:09,308 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from Harlequin Games
+2025-06-22 16:29:09,308 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from BeatTheBuylist
+2025-06-22 16:29:10,702 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from Card Kingdom
+2025-06-22 16:29:10,725 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Path To Exile from MTGMintCard
+2025-06-22 16:29:10,725 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Path To Exile
+2025-06-22 16:29:10,725 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 7/12: Rhystic Study (prophecy)
+2025-06-22 16:29:10,757 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from TCG Player
+2025-06-22 16:29:11,056 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from MTGStocks
+2025-06-22 16:29:11,806 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from MTGGoldfish
+2025-06-22 16:29:11,806 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from StrikeZoneOnline
+2025-06-22 16:29:11,807 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from Troll Trader Cards
+2025-06-22 16:29:11,807 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from Nerd Rage Gaming
+2025-06-22 16:29:11,807 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from Harlequin Games
+2025-06-22 16:29:11,807 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from BeatTheBuylist
+2025-06-22 16:29:13,625 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from Card Kingdom
+2025-06-22 16:29:13,859 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Rhystic Study from MTGMintCard
+2025-06-22 16:29:13,859 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Rhystic Study
+2025-06-22 16:29:13,859 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 8/12: Snapcaster Mage (Innistrad)
+2025-06-22 16:29:13,889 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from TCG Player
+2025-06-22 16:29:14,378 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from MTGStocks
+2025-06-22 16:29:14,942 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from MTGGoldfish
+2025-06-22 16:29:14,942 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from StrikeZoneOnline
+2025-06-22 16:29:14,942 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from Troll Trader Cards
+2025-06-22 16:29:14,942 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from Nerd Rage Gaming
+2025-06-22 16:29:14,942 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from Harlequin Games
+2025-06-22 16:29:14,942 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from BeatTheBuylist
+2025-06-22 16:29:16,427 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from MTGMintCard
+2025-06-22 16:29:16,538 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Snapcaster Mage from Card Kingdom
+2025-06-22 16:29:16,538 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Snapcaster Mage
+2025-06-22 16:29:16,538 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 9/12: Sol Ring (Commander 2021)
+2025-06-22 16:29:16,539 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from TCG Player
+2025-06-22 16:29:16,830 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from MTGStocks
+2025-06-22 16:29:16,830 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from MTGMintCard
+2025-06-22 16:29:16,830 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from StrikeZoneOnline
+2025-06-22 16:29:16,830 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from Troll Trader Cards
+2025-06-22 16:29:16,830 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from Nerd Rage Gaming
+2025-06-22 16:29:16,830 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from Harlequin Games
+2025-06-22 16:29:16,830 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from BeatTheBuylist
+2025-06-22 16:29:17,593 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from MTGGoldfish
+2025-06-22 16:29:19,709 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Sol Ring from Card Kingdom
+2025-06-22 16:29:19,709 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Sol Ring
+2025-06-22 16:29:19,709 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 10/12: Tarmogoyf (Modern Masters 2017)
+2025-06-22 16:29:19,744 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from TCG Player
+2025-06-22 16:29:20,125 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from MTGStocks
+2025-06-22 16:29:20,792 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from MTGGoldfish
+2025-06-22 16:29:20,792 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from StrikeZoneOnline
+2025-06-22 16:29:20,792 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from Troll Trader Cards
+2025-06-22 16:29:20,792 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from Nerd Rage Gaming
+2025-06-22 16:29:20,792 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from Harlequin Games
+2025-06-22 16:29:20,792 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from BeatTheBuylist
+2025-06-22 16:29:22,837 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from MTGMintCard
+2025-06-22 16:29:22,879 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Tarmogoyf from Card Kingdom
+2025-06-22 16:29:22,879 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Tarmogoyf
+2025-06-22 16:29:22,879 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 11/12: Test Card (Test Set)
+2025-06-22 16:29:22,905 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from TCG Player
+2025-06-22 16:29:23,066 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 16:29:23,066 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:29:23] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 16:29:23,289 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Scryfall
+2025-06-22 16:29:23,339 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from MTGStocks
+2025-06-22 16:29:23,959 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from MTGGoldfish
+2025-06-22 16:29:23,959 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from StrikeZoneOnline
+2025-06-22 16:29:23,959 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Troll Trader Cards
+2025-06-22 16:29:23,959 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Nerd Rage Gaming
+2025-06-22 16:29:23,959 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Harlequin Games
+2025-06-22 16:29:23,959 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from BeatTheBuylist
+2025-06-22 16:29:25,541 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from Card Kingdom
+2025-06-22 16:29:26,146 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Test Card from MTGMintCard
+2025-06-22 16:29:26,147 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Test Card
+2025-06-22 16:29:26,147 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Processing card 12/12: Wrath Of God (Core Set 2021)
+2025-06-22 16:29:26,178 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from TCG Player
+2025-06-22 16:29:26,620 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from MTGStocks
+2025-06-22 16:29:27,226 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from MTGGoldfish
+2025-06-22 16:29:27,227 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from StrikeZoneOnline
+2025-06-22 16:29:27,227 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from Troll Trader Cards
+2025-06-22 16:29:27,227 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from Nerd Rage Gaming
+2025-06-22 16:29:27,227 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from Harlequin Games
+2025-06-22 16:29:27,227 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from BeatTheBuylist
+2025-06-22 16:29:28,551 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from Card Kingdom
+2025-06-22 16:29:36,559 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - No price found for Wrath Of God from MTGMintCard
+2025-06-22 16:29:36,559 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   No buylist prices found for Wrath Of God
+2025-06-22 16:29:36,559 - mtg_buylist_aggregator.scrapers.scraper_manager - INFO - Completed price lookup for 12 cards
+2025-06-22 16:29:36,559 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING - Completed scraping with the following errors:
+2025-06-22 16:29:36,559 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [TCG Player]: No price found
+2025-06-22 16:29:36,559 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Scryfall]: No price found
+2025-06-22 16:29:36,559 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGStocks]: No price found
+2025-06-22 16:29:36,559 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGGoldfish]: No price found
+2025-06-22 16:29:36,559 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [StrikeZoneOnline]: No price found
+2025-06-22 16:29:36,559 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Troll Trader Cards]: No price found
+2025-06-22 16:29:36,560 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Nerd Rage Gaming]: No price found
+2025-06-22 16:29:36,560 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Harlequin Games]: No price found
+2025-06-22 16:29:36,560 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [BeatTheBuylist]: No price found
+2025-06-22 16:29:36,560 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Card Kingdom]: No price found
+2025-06-22 16:29:36,560 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGMintCard]: No price found
+2025-06-22 16:29:36,560 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [TCG Player]: No price found
+2025-06-22 16:29:36,560 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Scryfall]: No price found
+2025-06-22 16:29:36,560 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGStocks]: No price found
+2025-06-22 16:29:36,560 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGGoldfish]: No price found
+2025-06-22 16:29:36,560 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [StrikeZoneOnline]: No price found
+2025-06-22 16:29:36,560 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Troll Trader Cards]: No price found
+2025-06-22 16:29:36,560 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Nerd Rage Gaming]: No price found
+2025-06-22 16:29:36,560 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Harlequin Games]: No price found
+2025-06-22 16:29:36,560 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [BeatTheBuylist]: No price found
+2025-06-22 16:29:36,560 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [Card Kingdom]: No price found
+2025-06-22 16:29:36,560 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Cabal Ritual [MTGMintCard]: No price found
+2025-06-22 16:29:36,560 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [TCG Player]: No price found
+2025-06-22 16:29:36,560 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [MTGStocks]: No price found
+2025-06-22 16:29:36,560 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [MTGGoldfish]: No price found
+2025-06-22 16:29:36,560 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [StrikeZoneOnline]: No price found
+2025-06-22 16:29:36,560 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [Troll Trader Cards]: No price found
+2025-06-22 16:29:36,560 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [Nerd Rage Gaming]: No price found
+2025-06-22 16:29:36,560 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [Harlequin Games]: No price found
+2025-06-22 16:29:36,560 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [BeatTheBuylist]: No price found
+2025-06-22 16:29:36,561 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [Card Kingdom]: No price found
+2025-06-22 16:29:36,561 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Counterspell [MTGMintCard]: No price found
+2025-06-22 16:29:36,561 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [TCG Player]: No price found
+2025-06-22 16:29:36,561 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [MTGStocks]: No price found
+2025-06-22 16:29:36,561 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [MTGGoldfish]: No price found
+2025-06-22 16:29:36,561 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [StrikeZoneOnline]: No price found
+2025-06-22 16:29:36,561 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [Troll Trader Cards]: No price found
+2025-06-22 16:29:36,561 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [Nerd Rage Gaming]: No price found
+2025-06-22 16:29:36,561 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [Harlequin Games]: No price found
+2025-06-22 16:29:36,561 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [BeatTheBuylist]: No price found
+2025-06-22 16:29:36,561 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [Card Kingdom]: No price found
+2025-06-22 16:29:36,561 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Demonic Tutor [MTGMintCard]: No price found
+2025-06-22 16:29:36,561 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [TCG Player]: No price found
+2025-06-22 16:29:36,561 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [MTGStocks]: No price found
+2025-06-22 16:29:36,561 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [MTGGoldfish]: No price found
+2025-06-22 16:29:36,561 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [StrikeZoneOnline]: No price found
+2025-06-22 16:29:36,561 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [Troll Trader Cards]: No price found
+2025-06-22 16:29:36,561 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [Nerd Rage Gaming]: No price found
+2025-06-22 16:29:36,561 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [Harlequin Games]: No price found
+2025-06-22 16:29:36,561 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [BeatTheBuylist]: No price found
+2025-06-22 16:29:36,561 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [Card Kingdom]: No price found
+2025-06-22 16:29:36,561 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Lightning Bolt [MTGMintCard]: No price found
+2025-06-22 16:29:36,561 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [TCG Player]: No price found
+2025-06-22 16:29:36,561 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [MTGStocks]: No price found
+2025-06-22 16:29:36,561 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [MTGGoldfish]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [StrikeZoneOnline]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [Troll Trader Cards]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [Nerd Rage Gaming]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [Harlequin Games]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [BeatTheBuylist]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [Card Kingdom]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Path To Exile [MTGMintCard]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [TCG Player]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [MTGStocks]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [MTGGoldfish]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [StrikeZoneOnline]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [Troll Trader Cards]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [Nerd Rage Gaming]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [Harlequin Games]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [BeatTheBuylist]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [Card Kingdom]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Rhystic Study [MTGMintCard]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [TCG Player]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [MTGStocks]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [MTGGoldfish]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [StrikeZoneOnline]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [Troll Trader Cards]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [Nerd Rage Gaming]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [Harlequin Games]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [BeatTheBuylist]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [MTGMintCard]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Snapcaster Mage [Card Kingdom]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [TCG Player]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [MTGStocks]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [MTGMintCard]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [StrikeZoneOnline]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [Troll Trader Cards]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [Nerd Rage Gaming]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [Harlequin Games]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [BeatTheBuylist]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [MTGGoldfish]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Sol Ring [Card Kingdom]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [TCG Player]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [MTGStocks]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [MTGGoldfish]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [StrikeZoneOnline]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [Troll Trader Cards]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [Nerd Rage Gaming]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [Harlequin Games]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [BeatTheBuylist]: No price found
+2025-06-22 16:29:36,562 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [MTGMintCard]: No price found
+2025-06-22 16:29:36,563 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Tarmogoyf [Card Kingdom]: No price found
+2025-06-22 16:29:36,563 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [TCG Player]: No price found
+2025-06-22 16:29:36,563 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Scryfall]: No price found
+2025-06-22 16:29:36,563 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [MTGStocks]: No price found
+2025-06-22 16:29:36,563 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [MTGGoldfish]: No price found
+2025-06-22 16:29:36,563 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [StrikeZoneOnline]: No price found
+2025-06-22 16:29:36,563 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Troll Trader Cards]: No price found
+2025-06-22 16:29:36,563 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Nerd Rage Gaming]: No price found
+2025-06-22 16:29:36,563 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Harlequin Games]: No price found
+2025-06-22 16:29:36,563 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [BeatTheBuylist]: No price found
+2025-06-22 16:29:36,563 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [Card Kingdom]: No price found
+2025-06-22 16:29:36,563 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Test Card [MTGMintCard]: No price found
+2025-06-22 16:29:36,563 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [TCG Player]: No price found
+2025-06-22 16:29:36,563 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [MTGStocks]: No price found
+2025-06-22 16:29:36,563 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [MTGGoldfish]: No price found
+2025-06-22 16:29:36,563 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [StrikeZoneOnline]: No price found
+2025-06-22 16:29:36,563 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [Troll Trader Cards]: No price found
+2025-06-22 16:29:36,563 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [Nerd Rage Gaming]: No price found
+2025-06-22 16:29:36,563 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [Harlequin Games]: No price found
+2025-06-22 16:29:36,563 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [BeatTheBuylist]: No price found
+2025-06-22 16:29:36,563 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [Card Kingdom]: No price found
+2025-06-22 16:29:36,563 - mtg_buylist_aggregator.scrapers.scraper_manager - WARNING -   Wrath Of God [MTGMintCard]: No price found
+2025-06-22 16:29:36,564 - mtg_buylist_aggregator.database - INFO - Updated price cache for 12 cards
+2025-06-22 16:29:36,564 - __main__ - INFO - API Request: collection_prices - Success
+2025-06-22 16:29:36,565 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:29:36] "GET /api/collection-prices HTTP/1.1" 200 -
+2025-06-22 16:29:53,069 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 16:29:53,070 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:29:53] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 16:30:23,066 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 16:30:23,067 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:30:23] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 16:30:53,070 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 16:30:53,071 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:30:53] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 16:31:17,478 - werkzeug - INFO -  * Detected change in '/Users/johnforys/MagicCardTrader/mtg_buylist_aggregator/scrapers/scraper_manager.py', reloading
+2025-06-22 16:31:17,576 - werkzeug - INFO -  * Restarting with stat
+2025-06-22 16:31:17,920 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 16:31:17,920 - apscheduler.scheduler - INFO - Added job "refresh_prices_and_analytics" to job store "default"
+2025-06-22 16:31:17,920 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-22 16:31:17,934 - werkzeug - WARNING -  * Debugger is active!
+2025-06-22 16:31:17,940 - werkzeug - INFO -  * Debugger PIN: 118-838-002
+2025-06-22 16:31:23,067 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 16:31:23,067 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 16:31:23] "GET /api/cache-status HTTP/1.1" 200 -
