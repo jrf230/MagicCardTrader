@@ -519,116 +519,61 @@ def api_card_details():
         name = request.args.get("name")
         set_name = request.args.get("set")
         foil = request.args.get("foil", "false").lower() == "true"
-        condition = request.args.get("condition", None)
         
         if not name or not set_name:
             return jsonify({"error": "Card name and set are required"}), 400
             
-        # Normalize name and set
-        name = name.strip().title()
-        set_name = set_name.strip().title()
+        name, set_name = name.strip().title(), set_name.strip().title()
         
-        # Build Card object
-        from mtg_buylist_aggregator.models import Card, Condition
-
-        card_kwargs = dict(name=name, set_name=set_name, quantity=1)
-        if condition:
-            card_kwargs["condition"] = Condition(condition)
-        card = Card(**card_kwargs)
-        card.foil = foil
+        card = Card(name=name, set_name=set_name, quantity=1, foil=foil)
         
-        # Get price data from all vendors
         scraper_manager = ScraperManager(use_mock=False)
         card_prices = scraper_manager.get_collection_prices([card])
 
-        # Initialize default response structure
-        vendors_data = []
-        best_bid = None
-        best_vendor = None
-        
-        if card_prices and len(card_prices) > 0:
+        vendors_data = {}
+        best_bid, best_offer = None, None
+        best_bid_vendor, best_offer_vendor = None, None
+
+        if card_prices and card_prices[0].prices:
             card_price_data = card_prices[0]
             
-            # Prepare vendor data
             for vendor, price_data_list in card_price_data.prices.items():
-                # price_data_list is now a list of PriceData objects
+                if vendor not in vendors_data:
+                    vendors_data[vendor] = {'prices': []}
+                
                 for price_data in price_data_list:
-                    # Only include prices matching the foil status
-                    if card.is_foil() != (
-                        getattr(price_data, "foil", False)
-                        or getattr(price_data, "foil_treatment", None) == "Foil"
-                    ):
-                        continue
-                    
-                    # Use the price directly since we don't have all_conditions anymore
-                    price = price_data.price if price_data.price else 0
-                    
-                    # Determine price type and set bid/ask/mid accordingly
-                    price_type = getattr(price_data, 'price_type', 'unknown')
-                    bid = None
-                    ask = None
-                    mid = None
-                    
-                    if 'bid' in price_type.lower():
-                        bid = price
-                    elif 'offer' in price_type.lower() or 'ask' in price_type.lower():
-                        ask = price
-                    else:
-                        # Default to mid price for unknown types
-                        mid = price
-                    
-                    vendors_data.append(
-                        {
-                            "vendor": vendor,
-                            "bid": bid,
-                            "ask": ask,
-                            "mid": mid,
-                            "condition": price_data.condition,
-                            "last_updated": (
-                                price_data.last_price_update.isoformat()
-                                if price_data.last_price_update
-                                else None
-                            ),
-                        }
-                    )
-            
-            # Get best bid info
+                    vendors_data[vendor]['prices'].append({
+                        'price': price_data.price,
+                        'price_type': price_data.price_type,
+                        'condition': price_data.condition,
+                        'last_updated': price_data.last_price_update.isoformat() if price_data.last_price_update else None,
+                    })
+
             if card_price_data.best_bid:
                 best_bid = card_price_data.best_bid.price
-                best_vendor = card_price_data.best_bid.vendor
-
-        # Get historical data
+                best_bid_vendor = card_price_data.best_bid.vendor
+            if card_price_data.best_offer:
+                best_offer = card_price_data.best_offer.price
+                best_offer_vendor = card_price_data.best_offer.vendor
+        
         history = PriceHistory()
         historical_data = history.get_card_history(name, set_name, days=30)
-
-        # Add Card Kingdom retail prices by condition
-        retail_prices_by_condition = {}
-        try:
-            ck_scraper = CardKingdomScraper()
-            retail_prices = ck_scraper.get_retail_prices_by_condition(card)
-            retail_prices_by_condition = {k: v.dict() for k, v in retail_prices.items()}
-        except Exception as e:
-            logger.warning(f"Failed to get Card Kingdom retail prices for {name}: {e}")
-
+        
         response = {
-            "card": {
-                "name": card.name,
-                "set_name": card.set_name,
-                "foil": foil,
-                "rarity": card.rarity.value if card.rarity else "Unknown",
-            },
+            "card": {"name": card.name, "set_name": card.set_name, "foil": foil},
             "current_prices": {
                 "best_bid": best_bid,
-                "best_vendor": best_vendor,
+                "best_bid_vendor": best_bid_vendor,
+                "best_offer": best_offer,
+                "best_offer_vendor": best_offer_vendor,
                 "vendors": vendors_data,
             },
             "historical_data": historical_data,
-            "retail_prices_by_condition": retail_prices_by_condition,
         }
         return jsonify(response)
         
     except Exception as e:
-        logger.error(f"Error in card details API: {e}")
+        logger.error(f"Error in card details API: {e}", exc_info=True)
         return jsonify({"error": f"Failed to get card details: {str(e)}"}), 500
 
 

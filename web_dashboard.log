@@ -33122,3 +33122,18 @@ condition
 2025-06-22 17:20:42,432 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 17:20:42] "GET /api/cache-status HTTP/1.1" 200 -
 2025-06-22 17:20:51,428 - __main__ - INFO - API Request: cache_status - Success
 2025-06-22 17:20:51,428 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 17:20:51] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 17:21:21,430 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 17:21:21,431 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 17:21:21] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 17:21:42,430 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 17:21:42,430 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 17:21:42] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 17:22:22,432 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 17:22:22,432 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 17:22:22] "GET /api/cache-status HTTP/1.1" 200 -
+2025-06-22 17:22:34,699 - werkzeug - INFO -  * Detected change in '/Users/johnforys/MagicCardTrader/mtg_buylist_aggregator/web_dashboard.py', reloading
+2025-06-22 17:22:34,740 - werkzeug - INFO -  * Restarting with stat
+2025-06-22 17:22:35,035 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 17:22:35,035 - apscheduler.scheduler - INFO - Added job "refresh_prices_and_analytics" to job store "default"
+2025-06-22 17:22:35,035 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-22 17:22:35,049 - werkzeug - WARNING -  * Debugger is active!
+2025-06-22 17:22:35,053 - werkzeug - INFO -  * Debugger PIN: 118-838-002
+2025-06-22 17:22:42,432 - __main__ - INFO - API Request: cache_status - Success
+2025-06-22 17:22:42,433 - werkzeug - INFO - 127.0.0.1 - - [22/Jun/2025 17:22:42] "GET /api/cache-status HTTP/1.1" 200 -

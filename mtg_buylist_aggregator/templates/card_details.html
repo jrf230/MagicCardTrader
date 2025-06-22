@@ -183,9 +183,7 @@
                                         <thead>
                                             <tr>
                                                 <th>Vendor</th>
-                                                <th>Bid</th>
-                                                <th>Mid</th>
-                                                <th>Ask</th>
+                                                <th>Price</th>
                                                 <th>Condition</th>
                                                 <th>Last Updated</th>
                                             </tr>
@@ -268,12 +266,6 @@ let isFoil = false;
 document.addEventListener('DOMContentLoaded', function() {
     setupEventListeners();
     checkUrlParameters();
-    
-    // Make the vendor prices table sortable
-    const table = document.getElementById('vendorPricesTableContainer');
-    if (table) {
-        makeTableSortable('vendorPricesTableContainer');
-    }
 });
 
 function setupEventListeners() {
@@ -570,16 +562,19 @@ function displayCardDetails(data) {
     const marketPrice = bestBid > 0 && bestAsk > 0 ? (bestBid + bestAsk) / 2 : 0;
     
     document.getElementById('bestBid').textContent = bestBid > 0 ? `$${bestBid.toFixed(2)}` : 'N/A';
-    document.getElementById('bestBidVendor').textContent = data.current_prices.best_vendor || 'N/A';
+    document.getElementById('bestBidVendor').textContent = data.current_prices.best_bid_vendor || 'N/A';
     document.getElementById('marketPrice').textContent = marketPrice > 0 ? `$${marketPrice.toFixed(2)}` : 'N/A';
     document.getElementById('bestAsk').textContent = bestAsk > 0 ? `$${bestAsk.toFixed(2)}` : 'N/A';
+    document.getElementById('bestAskVendor').textContent = data.current_prices.best_offer_vendor || 'N/A';
     
     // Update vendor prices table
     const tableBody = document.getElementById('vendorPricesTable');
-    if (data.current_prices.vendors.length === 0) {
+    const vendors = data.current_prices.vendors;
+    
+    if (Object.keys(vendors).length === 0) {
         tableBody.innerHTML = `
             <tr>
-                <td colspan="6" class="text-center text-muted py-4">
+                <td colspan="5" class="text-center text-muted py-4">
                     <i class="fas fa-exclamation-triangle fa-2x mb-2"></i>
                     <p class="mb-0">No price data available for this card.</p>
                     <small>Try updating the price cache or check back later.</small>
@@ -587,16 +582,29 @@ function displayCardDetails(data) {
             </tr>
         `;
     } else {
-        tableBody.innerHTML = data.current_prices.vendors.map(vendor => `
-            <tr>
-                <td><strong>${vendor.vendor}</strong></td>
-                <td><span class="text-success">${vendor.bid ? `$${vendor.bid.toFixed(2)}` : 'N/A'}</span></td>
-                <td><span class="text-info">${vendor.mid ? `$${vendor.mid.toFixed(2)}` : 'N/A'}</span></td>
-                <td><span class="text-warning">${vendor.ask ? `$${vendor.ask.toFixed(2)}` : 'N/A'}</span></td>
-                <td>${vendor.condition || 'N/A'}</td>
-                <td>${vendor.last_updated ? new Date(vendor.last_updated).toLocaleDateString() : 'N/A'}</td>
-            </tr>
-        `).join('');
+        let tableHtml = '';
+        for (const vendorName in vendors) {
+            const vendorData = vendors[vendorName];
+            tableHtml += `
+                <tr>
+                    <td rowspan="${vendorData.prices.length}"><strong>${vendorName}</strong></td>
+                    <td>${formatPrice(vendorData.prices[0].price, vendorData.prices[0].price_type)}</td>
+                    <td>${vendorData.prices[0].condition || 'N/A'}</td>
+                    <td>${vendorData.prices[0].last_updated ? new Date(vendorData.prices[0].last_updated).toLocaleDateString() : 'N/A'}</td>
+                </tr>
+            `;
+            for (let i = 1; i < vendorData.prices.length; i++) {
+                const priceInfo = vendorData.prices[i];
+                tableHtml += `
+                    <tr>
+                        <td>${formatPrice(priceInfo.price, priceInfo.price_type)}</td>
+                        <td>${priceInfo.condition || 'N/A'}</td>
+                        <td>${priceInfo.last_updated ? new Date(priceInfo.last_updated).toLocaleDateString() : 'N/A'}</td>
+                    </tr>
+                `;
+            }
+        }
+        tableBody.innerHTML = tableHtml;
     }
     
     // Create price chart
@@ -624,6 +632,23 @@ function displayCardDetails(data) {
     if (table && data.current_prices.vendors.length > 0) {
         makeTableSortable('vendorPricesTableContainer');
     }
+}
+
+function formatPrice(price, priceType) {
+    if (price === null || price === undefined) return '<span class="text-muted">N/A</span>';
+    
+    let priceClass = 'text-dark';
+    let typeLabel = priceType.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+
+    if (priceType.includes('bid')) {
+        priceClass = 'text-success';
+    } else if (priceType.includes('offer') || priceType.includes('ask')) {
+        priceClass = 'text-primary';
+    } else if (priceType.includes('credit')) {
+        priceClass = 'text-info';
+    }
+
+    return `<span class="${priceClass}">$${price.toFixed(2)}</span> <small class="text-muted">(${typeLabel})</small>`;
 }
 
 async function loadCardImage(cardName, setName, isFoil) {
