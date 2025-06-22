@@ -181,8 +181,13 @@ jobs:
           echo "Deploying to PyPI..."
           twine upload dist/*
         else
-          echo "Skipping PyPI deployment - PYPI_API_TOKEN not configured"
-          echo "To enable PyPI deployment, add PYPI_API_TOKEN to repository secrets"
+          echo "⚠️  Skipping PyPI deployment - PYPI_API_TOKEN not configured"
+          echo "📝 To enable PyPI deployment:"
+          echo "   1. Go to your PyPI account and create an API token"
+          echo "   2. Go to this repository's Settings → Secrets and variables → Actions"
+          echo "   3. Add a new repository secret named 'PYPI_API_TOKEN'"
+          echo "   4. Set the value to your PyPI API token"
+          echo "   5. The next tagged release will automatically deploy to PyPI"
         fi
     
     - name: Create Release
