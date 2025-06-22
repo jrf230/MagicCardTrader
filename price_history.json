@@ -1,0 +1,1613 @@
+{
+  "Sol Ring (Commander 2021)": [
+    {
+      "timestamp": "2025-06-21T18:35:51.961380",
+      "card_name": "Sol Ring",
+      "set_name": "Commander 2021",
+      "quantity": 2,
+      "foil": false,
+      "prices": {
+        "Card Kingdom": {
+          "price": 3.73,
+          "condition": "LP",
+          "quantity_limit": 10
+        },
+        "Star City Games": {
+          "price": 4.23,
+          "condition": "NM",
+          "quantity_limit": 50
+        },
+        "BeatTheBuylist": {
+          "price": 3.88,
+          "condition": "MP",
+          "quantity_limit": null
+        }
+      },
+      "best_price": 4.23,
+      "best_vendor": "Star City Games"
+    },
+    {
+      "timestamp": "2025-06-21T22:23:09.020152",
+      "card_name": "Sol Ring",
+      "set_name": "Commander 2021",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 1.2,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "TCG Player": {
+          "price": 12.99,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Card Kingdom": {
+          "price": 10.0,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "MTGMintCard": {
+          "price": 8.5,
+          "condition": "Near Mint",
+          "quantity_limit": 100
+        },
+        "MTGStocks": {
+          "price": 9.75,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      },
+      "best_price": 12.99,
+      "best_vendor": "TCG Player"
+    },
+    {
+      "timestamp": "2025-06-21T22:27:57.012185",
+      "card_name": "Sol Ring",
+      "set_name": "Commander 2021",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 1.2,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Card Kingdom": {
+          "price": 10.0,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "TCG Player": {
+          "price": 12.99,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "MTGStocks": {
+          "price": 9.75,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "MTGMintCard": {
+          "price": 8.5,
+          "condition": "Near Mint",
+          "quantity_limit": 100
+        }
+      },
+      "best_price": 12.99,
+      "best_vendor": "TCG Player"
+    },
+    {
+      "timestamp": "2025-06-21T22:30:29.775433",
+      "card_name": "Sol Ring",
+      "set_name": "Commander 2021",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 1.2,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Card Kingdom": {
+          "price": 10.0,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "TCG Player": {
+          "price": 12.99,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Troll Trader Cards": {
+          "price": 10.62,
+          "condition": "Near Mint",
+          "quantity_limit": 100
+        },
+        "MTGStocks": {
+          "price": 9.75,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "MTGMintCard": {
+          "price": 8.5,
+          "condition": "Near Mint",
+          "quantity_limit": 100
+        }
+      },
+      "best_price": 12.99,
+      "best_vendor": "TCG Player"
+    },
+    {
+      "timestamp": "2025-06-21T22:37:07.231718",
+      "card_name": "Sol Ring",
+      "set_name": "Commander 2021",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 1.2,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Card Kingdom": {
+          "price": 10.0,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "TCG Player": {
+          "price": 12.99,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Troll Trader Cards": {
+          "price": 10.62,
+          "condition": "Near Mint",
+          "quantity_limit": 100
+        },
+        "Nerd Rage Gaming": {
+          "price": 10.4,
+          "condition": "Near Mint",
+          "quantity_limit": 100
+        },
+        "MTGMintCard": {
+          "price": 8.5,
+          "condition": "Near Mint",
+          "quantity_limit": 100
+        },
+        "MTGStocks": {
+          "price": 9.75,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      },
+      "best_price": 12.99,
+      "best_vendor": "TCG Player"
+    },
+    {
+      "timestamp": "2025-06-21T22:38:40.056280",
+      "card_name": "Sol Ring",
+      "set_name": "Commander 2021",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 1.2,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Card Kingdom": {
+          "price": 10.0,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "TCG Player": {
+          "price": 12.99,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Troll Trader Cards": {
+          "price": 10.62,
+          "condition": "Near Mint",
+          "quantity_limit": 100
+        },
+        "Nerd Rage Gaming": {
+          "price": 10.4,
+          "condition": "Near Mint",
+          "quantity_limit": 100
+        },
+        "Harlequin Games": {
+          "price": 10.0,
+          "condition": "Near Mint",
+          "quantity_limit": 100
+        },
+        "MTGMintCard": {
+          "price": 8.5,
+          "condition": "Near Mint",
+          "quantity_limit": 100
+        },
+        "MTGStocks": {
+          "price": 9.75,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      },
+      "best_price": 12.99,
+      "best_vendor": "TCG Player"
+    },
+    {
+      "timestamp": "2025-06-21T22:40:27.037976",
+      "card_name": "Sol Ring",
+      "set_name": "Commander 2021",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 1.2,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Card Kingdom": {
+          "price": 10.0,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "TCG Player": {
+          "price": 12.99,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Troll Trader Cards": {
+          "price": 10.62,
+          "condition": "Near Mint",
+          "quantity_limit": 100
+        },
+        "Nerd Rage Gaming": {
+          "price": 10.4,
+          "condition": "Near Mint",
+          "quantity_limit": 100
+        },
+        "Harlequin Games": {
+          "price": 10.0,
+          "condition": "Near Mint",
+          "quantity_limit": 100
+        },
+        "BeatTheBuylist": {
+          "price": 12.0,
+          "condition": "Near Mint",
+          "quantity_limit": 100
+        },
+        "MTGMintCard": {
+          "price": 8.5,
+          "condition": "Near Mint",
+          "quantity_limit": 100
+        },
+        "MTGStocks": {
+          "price": 9.75,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      },
+      "best_price": 12.99,
+      "best_vendor": "TCG Player"
+    },
+    {
+      "timestamp": "2025-06-22T04:21:27.904789",
+      "card_name": "Sol Ring",
+      "set_name": "Commander 2021",
+      "quantity": 2,
+      "foil": false,
+      "prices": {
+        "TCG Player": {
+          "price": 12.99,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Scryfall": {
+          "price": 1.18,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "MTGStocks": {
+          "price": 9.75,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "MTGMintCard": {
+          "price": 8.5,
+          "condition": "Near Mint",
+          "quantity_limit": 100
+        },
+        "Troll Trader Cards": {
+          "price": 10.62,
+          "condition": "Near Mint",
+          "quantity_limit": 100
+        },
+        "Nerd Rage Gaming": {
+          "price": 10.4,
+          "condition": "Near Mint",
+          "quantity_limit": 100
+        },
+        "Harlequin Games": {
+          "price": 10.0,
+          "condition": "Near Mint",
+          "quantity_limit": 100
+        },
+        "BeatTheBuylist": {
+          "price": 12.0,
+          "condition": "Near Mint",
+          "quantity_limit": 100
+        },
+        "Card Kingdom": {
+          "price": 10.0,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      },
+      "best_price": 12.99,
+      "best_vendor": "TCG Player"
+    },
+    {
+      "timestamp": "2025-06-22T10:25:33.314898",
+      "card_name": "Sol Ring",
+      "set_name": "Commander 2021",
+      "quantity": 2,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 1.18,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      }
+    },
+    {
+      "timestamp": "2025-06-22T10:42:44.862807",
+      "card_name": "Sol Ring",
+      "set_name": "Commander 2021",
+      "quantity": 2,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 1.18,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      }
+    }
+  ],
+  "Rhystic Study (Prophecy)": [
+    {
+      "timestamp": "2025-06-21T18:35:51.961380",
+      "card_name": "Rhystic Study",
+      "set_name": "Prophecy",
+      "quantity": 1,
+      "foil": true,
+      "prices": {
+        "BeatTheBuylist": {
+          "price": 48.81,
+          "condition": "NM",
+          "quantity_limit": 20
+        },
+        "Star City Games": {
+          "price": 50.31,
+          "condition": "NM",
+          "quantity_limit": 10
+        },
+        "Card Kingdom": {
+          "price": 47.06,
+          "condition": "NM",
+          "quantity_limit": 100
+        }
+      },
+      "best_price": 50.31,
+      "best_vendor": "Star City Games"
+    },
+    {
+      "timestamp": "2025-06-21T22:23:09.020152",
+      "card_name": "Rhystic Study",
+      "set_name": "Prophecy",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 54.67,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Card Kingdom": {
+          "price": 36.0,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "TCG Player": {
+          "price": 42.5,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "MTGMintCard": {
+          "price": 34.0,
+          "condition": "Near Mint",
+          "quantity_limit": 50
+        },
+        "MTGStocks": {
+          "price": 40.5,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      },
+      "best_price": 54.67,
+      "best_vendor": "Scryfall"
+    },
+    {
+      "timestamp": "2025-06-21T22:27:57.012185",
+      "card_name": "Rhystic Study",
+      "set_name": "Prophecy",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 54.67,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Card Kingdom": {
+          "price": 36.0,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "TCG Player": {
+          "price": 42.5,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "StrikeZoneOnline": {
+          "price": 200.0,
+          "condition": "Near Mint Foil",
+          "quantity_limit": 3
+        },
+        "MTGStocks": {
+          "price": 40.5,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "MTGMintCard": {
+          "price": 34.0,
+          "condition": "Near Mint",
+          "quantity_limit": 50
+        }
+      },
+      "best_price": 200.0,
+      "best_vendor": "StrikeZoneOnline"
+    },
+    {
+      "timestamp": "2025-06-21T22:30:29.775433",
+      "card_name": "Rhystic Study",
+      "set_name": "Prophecy",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Card Kingdom": {
+          "price": 36.0,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Scryfall": {
+          "price": 54.67,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "TCG Player": {
+          "price": 42.5,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "StrikeZoneOnline": {
+          "price": 200.0,
+          "condition": "Near Mint Foil",
+          "quantity_limit": 3
+        },
+        "Troll Trader Cards": {
+          "price": 29.04,
+          "condition": "Near Mint",
+          "quantity_limit": 50
+        },
+        "MTGStocks": {
+          "price": 40.5,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "MTGMintCard": {
+          "price": 34.0,
+          "condition": "Near Mint",
+          "quantity_limit": 50
+        }
+      },
+      "best_price": 200.0,
+      "best_vendor": "StrikeZoneOnline"
+    },
+    {
+      "timestamp": "2025-06-21T22:37:07.231718",
+      "card_name": "Rhystic Study",
+      "set_name": "Prophecy",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 54.67,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Card Kingdom": {
+          "price": 36.0,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "TCG Player": {
+          "price": 42.5,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "StrikeZoneOnline": {
+          "price": 200.0,
+          "condition": "Near Mint Foil",
+          "quantity_limit": 3
+        },
+        "Troll Trader Cards": {
+          "price": 29.04,
+          "condition": "Near Mint",
+          "quantity_limit": 50
+        },
+        "Nerd Rage Gaming": {
+          "price": 32.0,
+          "condition": "Near Mint",
+          "quantity_limit": 50
+        },
+        "MTGMintCard": {
+          "price": 34.0,
+          "condition": "Near Mint",
+          "quantity_limit": 50
+        },
+        "MTGStocks": {
+          "price": 40.5,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      },
+      "best_price": 200.0,
+      "best_vendor": "StrikeZoneOnline"
+    },
+    {
+      "timestamp": "2025-06-21T22:38:40.056280",
+      "card_name": "Rhystic Study",
+      "set_name": "Prophecy",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 54.67,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Card Kingdom": {
+          "price": 36.0,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "TCG Player": {
+          "price": 42.5,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "StrikeZoneOnline": {
+          "price": 200.0,
+          "condition": "Near Mint Foil",
+          "quantity_limit": 3
+        },
+        "Troll Trader Cards": {
+          "price": 29.04,
+          "condition": "Near Mint",
+          "quantity_limit": 50
+        },
+        "Nerd Rage Gaming": {
+          "price": 32.0,
+          "condition": "Near Mint",
+          "quantity_limit": 50
+        },
+        "Harlequin Games": {
+          "price": 29.31,
+          "condition": "Near Mint",
+          "quantity_limit": 50
+        },
+        "MTGMintCard": {
+          "price": 34.0,
+          "condition": "Near Mint",
+          "quantity_limit": 50
+        },
+        "MTGStocks": {
+          "price": 40.5,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      },
+      "best_price": 200.0,
+      "best_vendor": "StrikeZoneOnline"
+    },
+    {
+      "timestamp": "2025-06-21T22:40:27.037976",
+      "card_name": "Rhystic Study",
+      "set_name": "Prophecy",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 54.67,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Card Kingdom": {
+          "price": 36.0,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "TCG Player": {
+          "price": 42.5,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "StrikeZoneOnline": {
+          "price": 200.0,
+          "condition": "Near Mint Foil",
+          "quantity_limit": 3
+        },
+        "Troll Trader Cards": {
+          "price": 29.04,
+          "condition": "Near Mint",
+          "quantity_limit": 50
+        },
+        "Nerd Rage Gaming": {
+          "price": 32.0,
+          "condition": "Near Mint",
+          "quantity_limit": 50
+        },
+        "Harlequin Games": {
+          "price": 29.31,
+          "condition": "Near Mint",
+          "quantity_limit": 50
+        },
+        "BeatTheBuylist": {
+          "price": 35.0,
+          "condition": "Near Mint",
+          "quantity_limit": 50
+        },
+        "MTGStocks": {
+          "price": 40.5,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "MTGMintCard": {
+          "price": 34.0,
+          "condition": "Near Mint",
+          "quantity_limit": 50
+        }
+      },
+      "best_price": 200.0,
+      "best_vendor": "StrikeZoneOnline"
+    }
+  ],
+  "Demonic Tutor (Ultimate Masters)": [
+    {
+      "timestamp": "2025-06-21T18:35:51.961380",
+      "card_name": "Demonic Tutor",
+      "set_name": "Ultimate Masters",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Card Kingdom": {
+          "price": 10.84,
+          "condition": "MP",
+          "quantity_limit": 50
+        },
+        "BeatTheBuylist": {
+          "price": 13.96,
+          "condition": "NM",
+          "quantity_limit": 100
+        },
+        "Star City Games": {
+          "price": 11.57,
+          "condition": "NM",
+          "quantity_limit": 50
+        }
+      },
+      "best_price": 13.96,
+      "best_vendor": "BeatTheBuylist"
+    },
+    {
+      "timestamp": "2025-06-22T04:21:27.904789",
+      "card_name": "Demonic Tutor",
+      "set_name": "Ultimate Masters",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 55.47,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Card Kingdom": {
+          "price": 33.0,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      },
+      "best_price": 55.47,
+      "best_vendor": "Scryfall"
+    },
+    {
+      "timestamp": "2025-06-22T10:25:33.314898",
+      "card_name": "Demonic Tutor",
+      "set_name": "Ultimate Masters",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 55.77,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      }
+    },
+    {
+      "timestamp": "2025-06-22T10:42:44.862807",
+      "card_name": "Demonic Tutor",
+      "set_name": "Ultimate Masters",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 55.77,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      }
+    }
+  ],
+  "Counterspell (Commander 2013)": [
+    {
+      "timestamp": "2025-06-21T18:35:51.961380",
+      "card_name": "Counterspell",
+      "set_name": "Commander 2013",
+      "quantity": 4,
+      "foil": false,
+      "prices": {
+        "Card Kingdom": {
+          "price": 0.59,
+          "condition": "LP",
+          "quantity_limit": 100
+        },
+        "Star City Games": {
+          "price": 0.69,
+          "condition": "NM",
+          "quantity_limit": 10
+        },
+        "BeatTheBuylist": {
+          "price": 0.62,
+          "condition": "LP",
+          "quantity_limit": 100
+        }
+      },
+      "best_price": 0.69,
+      "best_vendor": "Star City Games"
+    },
+    {
+      "timestamp": "2025-06-22T04:21:27.904789",
+      "card_name": "Counterspell",
+      "set_name": "Commander 2013",
+      "quantity": 4,
+      "foil": false,
+      "prices": {
+        "Card Kingdom": {
+          "price": 1.8,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Scryfall": {
+          "price": 1.61,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      },
+      "best_price": 1.8,
+      "best_vendor": "Card Kingdom"
+    },
+    {
+      "timestamp": "2025-06-22T10:25:33.314898",
+      "card_name": "Counterspell",
+      "set_name": "Commander 2013",
+      "quantity": 4,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 1.66,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      }
+    },
+    {
+      "timestamp": "2025-06-22T10:42:44.862807",
+      "card_name": "Counterspell",
+      "set_name": "Commander 2013",
+      "quantity": 4,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 1.66,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      }
+    }
+  ],
+  "Lightning Bolt (Magic 2010)": [
+    {
+      "timestamp": "2025-06-21T18:35:51.961380",
+      "card_name": "Lightning Bolt",
+      "set_name": "Magic 2010",
+      "quantity": 3,
+      "foil": false,
+      "prices": {
+        "BeatTheBuylist": {
+          "price": 1.63,
+          "condition": "NM",
+          "quantity_limit": 100
+        },
+        "Card Kingdom": {
+          "price": 1.48,
+          "condition": "LP",
+          "quantity_limit": 100
+        },
+        "Star City Games": {
+          "price": 1.63,
+          "condition": "MP",
+          "quantity_limit": 20
+        }
+      },
+      "best_price": 1.63,
+      "best_vendor": "BeatTheBuylist"
+    },
+    {
+      "timestamp": "2025-06-22T04:21:27.904789",
+      "card_name": "Lightning Bolt",
+      "set_name": "Magic 2010",
+      "quantity": 3,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 0.9,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      },
+      "best_price": 0.9,
+      "best_vendor": "Scryfall"
+    },
+    {
+      "timestamp": "2025-06-22T10:25:33.314898",
+      "card_name": "Lightning Bolt",
+      "set_name": "Magic 2010",
+      "quantity": 3,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 0.87,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      }
+    },
+    {
+      "timestamp": "2025-06-22T10:42:44.862807",
+      "card_name": "Lightning Bolt",
+      "set_name": "Magic 2010",
+      "quantity": 3,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 0.87,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      }
+    }
+  ],
+  "Wrath of God (Core Set 2021)": [
+    {
+      "timestamp": "2025-06-21T18:35:51.961380",
+      "card_name": "Wrath of God",
+      "set_name": "Core Set 2021",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "BeatTheBuylist": {
+          "price": 2.79,
+          "condition": "LP",
+          "quantity_limit": 10
+        },
+        "Star City Games": {
+          "price": 2.26,
+          "condition": "LP",
+          "quantity_limit": 20
+        },
+        "Card Kingdom": {
+          "price": 2.29,
+          "condition": "LP",
+          "quantity_limit": 10
+        }
+      },
+      "best_price": 2.79,
+      "best_vendor": "BeatTheBuylist"
+    },
+    {
+      "timestamp": "2025-06-22T04:21:27.904789",
+      "card_name": "Wrath of God",
+      "set_name": "Core Set 2021",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Card Kingdom": {
+          "price": 2.0,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Scryfall": {
+          "price": 2.9,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      },
+      "best_price": 2.9,
+      "best_vendor": "Scryfall"
+    }
+  ],
+  "Path to Exile (Modern Masters 2015)": [
+    {
+      "timestamp": "2025-06-21T18:35:51.961380",
+      "card_name": "Path to Exile",
+      "set_name": "Modern Masters 2015",
+      "quantity": 2,
+      "foil": false,
+      "prices": {
+        "Star City Games": {
+          "price": 2.97,
+          "condition": "NM",
+          "quantity_limit": 100
+        },
+        "BeatTheBuylist": {
+          "price": 3.23,
+          "condition": "MP",
+          "quantity_limit": 20
+        },
+        "Card Kingdom": {
+          "price": 2.8,
+          "condition": "MP",
+          "quantity_limit": 20
+        }
+      },
+      "best_price": 3.23,
+      "best_vendor": "BeatTheBuylist"
+    },
+    {
+      "timestamp": "2025-06-22T04:21:27.904789",
+      "card_name": "Path to Exile",
+      "set_name": "Modern Masters 2015",
+      "quantity": 2,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 0.92,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Card Kingdom": {
+          "price": 1.0,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      },
+      "best_price": 1.0,
+      "best_vendor": "Card Kingdom"
+    }
+  ],
+  "Thoughtseize (Theros)": [
+    {
+      "timestamp": "2025-06-21T18:35:51.961380",
+      "card_name": "Thoughtseize",
+      "set_name": "Theros",
+      "quantity": 1,
+      "foil": true,
+      "prices": {
+        "BeatTheBuylist": {
+          "price": 27.17,
+          "condition": "LP",
+          "quantity_limit": 50
+        },
+        "Star City Games": {
+          "price": 26.32,
+          "condition": "LP",
+          "quantity_limit": 10
+        },
+        "Card Kingdom": {
+          "price": 21.17,
+          "condition": "NM",
+          "quantity_limit": 20
+        }
+      },
+      "best_price": 27.17,
+      "best_vendor": "BeatTheBuylist"
+    }
+  ],
+  "Snapcaster Mage (Innistrad)": [
+    {
+      "timestamp": "2025-06-21T18:35:51.961380",
+      "card_name": "Snapcaster Mage",
+      "set_name": "Innistrad",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Card Kingdom": {
+          "price": 16.28,
+          "condition": "LP",
+          "quantity_limit": 20
+        },
+        "BeatTheBuylist": {
+          "price": 16.66,
+          "condition": "NM",
+          "quantity_limit": 20
+        },
+        "Star City Games": {
+          "price": 15.34,
+          "condition": "NM",
+          "quantity_limit": null
+        }
+      },
+      "best_price": 16.66,
+      "best_vendor": "BeatTheBuylist"
+    },
+    {
+      "timestamp": "2025-06-22T04:21:27.904789",
+      "card_name": "Snapcaster Mage",
+      "set_name": "Innistrad",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 15.32,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Card Kingdom": {
+          "price": 1.0,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      },
+      "best_price": 15.32,
+      "best_vendor": "Scryfall"
+    },
+    {
+      "timestamp": "2025-06-22T10:25:33.314898",
+      "card_name": "Snapcaster Mage",
+      "set_name": "Innistrad",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 15.32,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      }
+    },
+    {
+      "timestamp": "2025-06-22T10:42:44.862807",
+      "card_name": "Snapcaster Mage",
+      "set_name": "Innistrad",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 15.32,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      }
+    }
+  ],
+  "Tarmogoyf (Modern Masters 2017)": [
+    {
+      "timestamp": "2025-06-21T18:35:51.961380",
+      "card_name": "Tarmogoyf",
+      "set_name": "Modern Masters 2017",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "BeatTheBuylist": {
+          "price": 41.58,
+          "condition": "MP",
+          "quantity_limit": 10
+        },
+        "Star City Games": {
+          "price": 36.3,
+          "condition": "LP",
+          "quantity_limit": 20
+        },
+        "Card Kingdom": {
+          "price": 31.82,
+          "condition": "NM",
+          "quantity_limit": 10
+        }
+      },
+      "best_price": 41.58,
+      "best_vendor": "BeatTheBuylist"
+    },
+    {
+      "timestamp": "2025-06-22T04:21:27.904789",
+      "card_name": "Tarmogoyf",
+      "set_name": "Modern Masters 2017",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 7.04,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Card Kingdom": {
+          "price": 12.0,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      },
+      "best_price": 12.0,
+      "best_vendor": "Card Kingdom"
+    },
+    {
+      "timestamp": "2025-06-22T10:25:33.314898",
+      "card_name": "Tarmogoyf",
+      "set_name": "Modern Masters 2017",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 7.06,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      }
+    },
+    {
+      "timestamp": "2025-06-22T10:42:44.862807",
+      "card_name": "Tarmogoyf",
+      "set_name": "Modern Masters 2017",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 7.06,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      }
+    }
+  ],
+  "Demonic Tutor (Revised Edition)": [
+    {
+      "timestamp": "2025-06-21T22:23:09.020152",
+      "card_name": "Demonic Tutor",
+      "set_name": "Revised Edition",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 55.51,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "TCG Player": {
+          "price": 32.5,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "MTGStocks": {
+          "price": 28.5,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "MTGMintCard": {
+          "price": 22.0,
+          "condition": "Near Mint",
+          "quantity_limit": 25
+        }
+      },
+      "best_price": 55.51,
+      "best_vendor": "Scryfall"
+    },
+    {
+      "timestamp": "2025-06-21T22:27:57.012185",
+      "card_name": "Demonic Tutor",
+      "set_name": "Revised Edition",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 55.51,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "TCG Player": {
+          "price": 32.5,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "MTGStocks": {
+          "price": 28.5,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "MTGMintCard": {
+          "price": 22.0,
+          "condition": "Near Mint",
+          "quantity_limit": 25
+        }
+      },
+      "best_price": 55.51,
+      "best_vendor": "Scryfall"
+    },
+    {
+      "timestamp": "2025-06-21T22:30:29.775433",
+      "card_name": "Demonic Tutor",
+      "set_name": "Revised Edition",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 55.51,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "TCG Player": {
+          "price": 32.5,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Troll Trader Cards": {
+          "price": 22.5,
+          "condition": "Near Mint",
+          "quantity_limit": 25
+        },
+        "MTGStocks": {
+          "price": 28.5,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "MTGMintCard": {
+          "price": 22.0,
+          "condition": "Near Mint",
+          "quantity_limit": 25
+        }
+      },
+      "best_price": 55.51,
+      "best_vendor": "Scryfall"
+    },
+    {
+      "timestamp": "2025-06-21T22:37:07.231718",
+      "card_name": "Demonic Tutor",
+      "set_name": "Revised Edition",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 55.51,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "TCG Player": {
+          "price": 32.5,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Troll Trader Cards": {
+          "price": 22.5,
+          "condition": "Near Mint",
+          "quantity_limit": 25
+        },
+        "Nerd Rage Gaming": {
+          "price": 26.0,
+          "condition": "Near Mint",
+          "quantity_limit": 25
+        },
+        "MTGMintCard": {
+          "price": 22.0,
+          "condition": "Near Mint",
+          "quantity_limit": 25
+        },
+        "MTGStocks": {
+          "price": 28.5,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      },
+      "best_price": 55.51,
+      "best_vendor": "Scryfall"
+    },
+    {
+      "timestamp": "2025-06-21T22:38:40.056280",
+      "card_name": "Demonic Tutor",
+      "set_name": "Revised Edition",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 55.51,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "TCG Player": {
+          "price": 32.5,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Troll Trader Cards": {
+          "price": 22.5,
+          "condition": "Near Mint",
+          "quantity_limit": 25
+        },
+        "Nerd Rage Gaming": {
+          "price": 26.0,
+          "condition": "Near Mint",
+          "quantity_limit": 25
+        },
+        "Harlequin Games": {
+          "price": 22.5,
+          "condition": "Near Mint",
+          "quantity_limit": 25
+        },
+        "MTGMintCard": {
+          "price": 22.0,
+          "condition": "Near Mint",
+          "quantity_limit": 25
+        },
+        "MTGStocks": {
+          "price": 28.5,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      },
+      "best_price": 55.51,
+      "best_vendor": "Scryfall"
+    },
+    {
+      "timestamp": "2025-06-21T22:40:27.037976",
+      "card_name": "Demonic Tutor",
+      "set_name": "Revised Edition",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 55.51,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "TCG Player": {
+          "price": 32.5,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        },
+        "Troll Trader Cards": {
+          "price": 22.5,
+          "condition": "Near Mint",
+          "quantity_limit": 25
+        },
+        "Nerd Rage Gaming": {
+          "price": 26.0,
+          "condition": "Near Mint",
+          "quantity_limit": 25
+        },
+        "Harlequin Games": {
+          "price": 22.5,
+          "condition": "Near Mint",
+          "quantity_limit": 25
+        },
+        "BeatTheBuylist": {
+          "price": 28.0,
+          "condition": "Near Mint",
+          "quantity_limit": 25
+        },
+        "MTGMintCard": {
+          "price": 22.0,
+          "condition": "Near Mint",
+          "quantity_limit": 25
+        },
+        "MTGStocks": {
+          "price": 28.5,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      },
+      "best_price": 55.51,
+      "best_vendor": "Scryfall"
+    }
+  ],
+  "Test Card (Test Set)": [
+    {
+      "timestamp": "2025-06-22T04:21:27.904789",
+      "card_name": "Test Card",
+      "set_name": "Test Set",
+      "quantity": 1,
+      "foil": false,
+      "prices": {}
+    },
+    {
+      "timestamp": "2025-06-22T10:25:33.314898",
+      "card_name": "Test Card",
+      "set_name": "Test Set",
+      "quantity": 1,
+      "foil": false,
+      "prices": {}
+    },
+    {
+      "timestamp": "2025-06-22T10:42:44.862807",
+      "card_name": "Test Card",
+      "set_name": "Test Set",
+      "quantity": 1,
+      "foil": false,
+      "prices": {}
+    }
+  ],
+  "CABAL RITUAL (TORMENT)": [
+    {
+      "timestamp": "2025-06-22T04:21:27.904789",
+      "card_name": "CABAL RITUAL",
+      "set_name": "TORMENT",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Card Kingdom": {
+          "price": 9.75,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      },
+      "best_price": 9.75,
+      "best_vendor": "Card Kingdom"
+    }
+  ],
+  "Wrath Of God (Core Set 2021)": [
+    {
+      "timestamp": "2025-06-22T10:25:33.314898",
+      "card_name": "Wrath Of God",
+      "set_name": "Core Set 2021",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 2.97,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      }
+    },
+    {
+      "timestamp": "2025-06-22T10:42:44.862807",
+      "card_name": "Wrath Of God",
+      "set_name": "Core Set 2021",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 2.97,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      }
+    }
+  ],
+  "Path To Exile (Modern Masters 2015)": [
+    {
+      "timestamp": "2025-06-22T10:25:33.314898",
+      "card_name": "Path To Exile",
+      "set_name": "Modern Masters 2015",
+      "quantity": 2,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 0.92,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      }
+    },
+    {
+      "timestamp": "2025-06-22T10:42:44.862807",
+      "card_name": "Path To Exile",
+      "set_name": "Modern Masters 2015",
+      "quantity": 2,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 0.92,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      }
+    }
+  ],
+  "Cabal Ritual (TORMENT)": [
+    {
+      "timestamp": "2025-06-22T10:25:33.314898",
+      "card_name": "Cabal Ritual",
+      "set_name": "TORMENT",
+      "quantity": 1,
+      "foil": false,
+      "prices": {}
+    },
+    {
+      "timestamp": "2025-06-22T10:42:44.862807",
+      "card_name": "Cabal Ritual",
+      "set_name": "TORMENT",
+      "quantity": 1,
+      "foil": false,
+      "prices": {}
+    }
+  ],
+  "Rhystic Study (prophecy)": [
+    {
+      "timestamp": "2025-06-22T10:25:33.314898",
+      "card_name": "Rhystic Study",
+      "set_name": "prophecy",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 53.99,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      }
+    },
+    {
+      "timestamp": "2025-06-22T10:42:44.862807",
+      "card_name": "Rhystic Study",
+      "set_name": "prophecy",
+      "quantity": 1,
+      "foil": false,
+      "prices": {
+        "Scryfall": {
+          "price": 53.99,
+          "condition": "Near Mint",
+          "quantity_limit": null
+        }
+      }
+    }
+  ],
+  "Cabal Ritual (torment)": [
+    {
+      "timestamp": "2025-06-22T10:25:33.314898",
+      "card_name": "Cabal Ritual",
+      "set_name": "torment",
+      "quantity": 1,
+      "foil": false,
+      "prices": {}
+    },
+    {
+      "timestamp": "2025-06-22T10:42:44.862807",
+      "card_name": "Cabal Ritual",
+      "set_name": "torment",
+      "quantity": 1,
+      "foil": false,
+      "prices": {}
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "Sol Ring (Commander 2021) [Non-foil]": {
+    "card_name": "Sol Ring",
+    "set_name": "Commander 2021",
+    "foil": false,
+    "timestamp": "2025-06-22T10:41:31.978342",
+    "best_bid": 1.18,
+    "best_offer": 0,
+    "best_vendor": "Scryfall",
+    "vendor_prices": {
+      "Scryfall": {
+        "price": 1.18,
+        "condition": "Near Mint",
+        "is_bid": true
+      }
+    },
+    "last_updated": "2025-06-22T10:41:31.978342",
+    "best_bid_vendor": "Scryfall",
+    "best_offer_vendor": null,
+    "vendor_prices_json": "{\"card\":{\"name\":\"Sol Ring\",\"set_name\":\"Commander 2021\",\"card_number\":\"1.0\",\"rarity\":\"Uncommon\",\"quantity\":2,\"foil_treatment\":\"Non-foil\",\"condition\":\"Near Mint\",\"promo_type\":\"Regular\",\"artwork_variant\":\"Normal\",\"border_treatment\":\"Normal\",\"card_size\":\"Normal\",\"language\":\"English\",\"edition\":null,\"signed\":false,\"original_printing\":true,\"stamp\":null,\"serialized_number\":null,\"is_token\":false,\"is_emblem\":false,\"is_other\":false,\"foil\":false,\"set_code\":\"C21\",\"scryfall_id\":null},\"prices\":{\"Scryfall\":[{\"vendor\":\"Scryfall\",\"price\":1.18,\"price_type\":\"offer_market\",\"condition\":\"Near Mint\",\"quantity_limit\":null,\"last_price_update\":\"2025-06-22T10:41:32.361216\",\"notes\":\"Scryfall market price for Tarkir: Dragonstorm Commander\"}]},\"best_bid\":null,\"best_offer\":{\"vendor\":\"Scryfall\",\"price\":1.18,\"price_type\":\"offer_market\",\"condition\":\"Near Mint\",\"quantity_limit\":null,\"last_price_update\":\"2025-06-22T10:41:32.361216\",\"notes\":\"Scryfall market price for Tarkir: Dragonstorm Commander\"}}"
+  },
+  "Demonic Tutor (Ultimate Masters) [Non-foil]": {
+    "card_name": "Demonic Tutor",
+    "set_name": "Ultimate Masters",
+    "foil": false,
+    "timestamp": "2025-06-22T10:41:31.978342",
+    "best_bid": 55.77,
+    "best_offer": 0,
+    "best_vendor": "Scryfall",
+    "vendor_prices": {
+      "Scryfall": {
+        "price": 55.77,
+        "condition": "Near Mint",
+        "is_bid": true
+      }
+    },
+    "last_updated": "2025-06-22T10:41:31.978342",
+    "best_bid_vendor": "Scryfall",
+    "best_offer_vendor": null,
+    "vendor_prices_json": "{\"card\":{\"name\":\"Demonic Tutor\",\"set_name\":\"Ultimate Masters\",\"card_number\":\"77.0\",\"rarity\":\"Rare\",\"quantity\":1,\"foil_treatment\":\"Non-foil\",\"condition\":\"Near Mint\",\"promo_type\":\"Regular\",\"artwork_variant\":\"Normal\",\"border_treatment\":\"Normal\",\"card_size\":\"Normal\",\"language\":\"English\",\"edition\":null,\"signed\":false,\"original_printing\":true,\"stamp\":null,\"serialized_number\":null,\"is_token\":false,\"is_emblem\":false,\"is_other\":false,\"foil\":false,\"set_code\":\"UMA\",\"scryfall_id\":null},\"prices\":{\"Scryfall\":[{\"vendor\":\"Scryfall\",\"price\":55.77,\"price_type\":\"offer_market\",\"condition\":\"Near Mint\",\"quantity_limit\":null,\"last_price_update\":\"2025-06-22T10:41:34.244081\",\"notes\":\"Scryfall market price for Commander Masters\"}]},\"best_bid\":null,\"best_offer\":{\"vendor\":\"Scryfall\",\"price\":55.77,\"price_type\":\"offer_market\",\"condition\":\"Near Mint\",\"quantity_limit\":null,\"last_price_update\":\"2025-06-22T10:41:34.244081\",\"notes\":\"Scryfall market price for Commander Masters\"}}"
+  },
+  "Counterspell (Commander 2013) [Non-foil]": {
+    "card_name": "Counterspell",
+    "set_name": "Commander 2013",
+    "foil": false,
+    "timestamp": "2025-06-22T10:41:31.978342",
+    "best_bid": 1.66,
+    "best_offer": 0,
+    "best_vendor": "Scryfall",
+    "vendor_prices": {
+      "Scryfall": {
+        "price": 1.66,
+        "condition": "Near Mint",
+        "is_bid": true
+      }
+    },
+    "last_updated": "2025-06-22T10:41:31.978342",
+    "best_bid_vendor": "Scryfall",
+    "best_offer_vendor": null,
+    "vendor_prices_json": "{\"card\":{\"name\":\"Counterspell\",\"set_name\":\"Commander 2013\",\"card_number\":null,\"rarity\":\"Common\",\"quantity\":4,\"foil_treatment\":\"Non-foil\",\"condition\":\"Near Mint\",\"promo_type\":\"Regular\",\"artwork_variant\":\"Normal\",\"border_treatment\":\"Normal\",\"card_size\":\"Normal\",\"language\":\"English\",\"edition\":null,\"signed\":false,\"original_printing\":true,\"stamp\":null,\"serialized_number\":null,\"is_token\":false,\"is_emblem\":false,\"is_other\":false,\"foil\":false,\"set_code\":\"C13\",\"scryfall_id\":null},\"prices\":{\"Scryfall\":[{\"vendor\":\"Scryfall\",\"price\":1.66,\"price_type\":\"offer_market\",\"condition\":\"Near Mint\",\"quantity_limit\":null,\"last_price_update\":\"2025-06-22T10:41:37.903197\",\"notes\":\"Scryfall market price for Duskmourn: House of Horror Commander\"}]},\"best_bid\":null,\"best_offer\":{\"vendor\":\"Scryfall\",\"price\":1.66,\"price_type\":\"offer_market\",\"condition\":\"Near Mint\",\"quantity_limit\":null,\"last_price_update\":\"2025-06-22T10:41:37.903197\",\"notes\":\"Scryfall market price for Duskmourn: House of Horror Commander\"}}"
+  },
+  "Lightning Bolt (Magic 2010) [Non-foil]": {
+    "card_name": "Lightning Bolt",
+    "set_name": "Magic 2010",
+    "foil": false,
+    "timestamp": "2025-06-22T10:41:31.978342",
+    "best_bid": 0.87,
+    "best_offer": 0,
+    "best_vendor": "Scryfall",
+    "vendor_prices": {
+      "Scryfall": {
+        "price": 0.87,
+        "condition": "Near Mint",
+        "is_bid": true
+      }
+    },
+    "last_updated": "2025-06-22T10:41:31.978342",
+    "best_bid_vendor": "Scryfall",
+    "best_offer_vendor": null,
+    "vendor_prices_json": "{\"card\":{\"name\":\"Lightning Bolt\",\"set_name\":\"Magic 2010\",\"card_number\":null,\"rarity\":\"Common\",\"quantity\":3,\"foil_treatment\":\"Non-foil\",\"condition\":\"Near Mint\",\"promo_type\":\"Regular\",\"artwork_variant\":\"Normal\",\"border_treatment\":\"Normal\",\"card_size\":\"Normal\",\"language\":\"English\",\"edition\":null,\"signed\":false,\"original_printing\":true,\"stamp\":null,\"serialized_number\":null,\"is_token\":false,\"is_emblem\":false,\"is_other\":false,\"foil\":false,\"set_code\":\"M10\",\"scryfall_id\":null},\"prices\":{\"Scryfall\":[{\"vendor\":\"Scryfall\",\"price\":0.87,\"price_type\":\"offer_market\",\"condition\":\"Near Mint\",\"quantity_limit\":null,\"last_price_update\":\"2025-06-22T10:41:40.852184\",\"notes\":\"Scryfall market price for Ravnica: Clue Edition\"}]},\"best_bid\":null,\"best_offer\":{\"vendor\":\"Scryfall\",\"price\":0.87,\"price_type\":\"offer_market\",\"condition\":\"Near Mint\",\"quantity_limit\":null,\"last_price_update\":\"2025-06-22T10:41:40.852184\",\"notes\":\"Scryfall market price for Ravnica: Clue Edition\"}}"
+  },
+  "Wrath Of God (Core Set 2021) [Non-foil]": {
+    "card_name": "Wrath Of God",
+    "set_name": "Core Set 2021",
+    "foil": false,
+    "timestamp": "2025-06-22T10:41:31.978342",
+    "best_bid": 2.97,
+    "best_offer": 0,
+    "best_vendor": "Scryfall",
+    "vendor_prices": {
+      "Scryfall": {
+        "price": 2.97,
+        "condition": "Near Mint",
+        "is_bid": true
+      }
+    },
+    "last_updated": "2025-06-22T10:41:31.978342",
+    "best_bid_vendor": "Scryfall",
+    "best_offer_vendor": null,
+    "vendor_prices_json": "{\"card\":{\"name\":\"Wrath Of God\",\"set_name\":\"Core Set 2021\",\"card_number\":null,\"rarity\":\"Rare\",\"quantity\":1,\"foil_treatment\":\"Non-foil\",\"condition\":\"Near Mint\",\"promo_type\":\"Regular\",\"artwork_variant\":\"Normal\",\"border_treatment\":\"Normal\",\"card_size\":\"Normal\",\"language\":\"English\",\"edition\":null,\"signed\":false,\"original_printing\":true,\"stamp\":null,\"serialized_number\":null,\"is_token\":false,\"is_emblem\":false,\"is_other\":false,\"foil\":false,\"set_code\":\"M21\",\"scryfall_id\":null},\"prices\":{\"Scryfall\":[{\"vendor\":\"Scryfall\",\"price\":2.97,\"price_type\":\"offer_market\",\"condition\":\"Near Mint\",\"quantity_limit\":null,\"last_price_update\":\"2025-06-22T10:41:43.767031\",\"notes\":\"Scryfall market price for Commander Masters\"}]},\"best_bid\":null,\"best_offer\":{\"vendor\":\"Scryfall\",\"price\":2.97,\"price_type\":\"offer_market\",\"condition\":\"Near Mint\",\"quantity_limit\":null,\"last_price_update\":\"2025-06-22T10:41:43.767031\",\"notes\":\"Scryfall market price for Commander Masters\"}}"
+  },
+  "Path To Exile (Modern Masters 2015) [Non-foil]": {
+    "card_name": "Path To Exile",
+    "set_name": "Modern Masters 2015",
+    "foil": false,
+    "timestamp": "2025-06-22T10:41:31.978342",
+    "best_bid": 0.92,
+    "best_offer": 0,
+    "best_vendor": "Scryfall",
+    "vendor_prices": {
+      "Scryfall": {
+        "price": 0.92,
+        "condition": "Near Mint",
+        "is_bid": true
+      }
+    },
+    "last_updated": "2025-06-22T10:41:31.978342",
+    "best_bid_vendor": "Scryfall",
+    "best_offer_vendor": null,
+    "vendor_prices_json": "{\"card\":{\"name\":\"Path To Exile\",\"set_name\":\"Modern Masters 2015\",\"card_number\":null,\"rarity\":\"Uncommon\",\"quantity\":2,\"foil_treatment\":\"Non-foil\",\"condition\":\"Near Mint\",\"promo_type\":\"Regular\",\"artwork_variant\":\"Normal\",\"border_treatment\":\"Normal\",\"card_size\":\"Normal\",\"language\":\"English\",\"edition\":null,\"signed\":false,\"original_printing\":true,\"stamp\":null,\"serialized_number\":null,\"is_token\":false,\"is_emblem\":false,\"is_other\":false,\"foil\":false,\"set_code\":\"MM2\",\"scryfall_id\":null},\"prices\":{\"Scryfall\":[{\"vendor\":\"Scryfall\",\"price\":0.92,\"price_type\":\"offer_market\",\"condition\":\"Near Mint\",\"quantity_limit\":null,\"last_price_update\":\"2025-06-22T10:41:50.078965\",\"notes\":\"Scryfall market price for Outlaws of Thunder Junction Commander\"}]},\"best_bid\":null,\"best_offer\":{\"vendor\":\"Scryfall\",\"price\":0.92,\"price_type\":\"offer_market\",\"condition\":\"Near Mint\",\"quantity_limit\":null,\"last_price_update\":\"2025-06-22T10:41:50.078965\",\"notes\":\"Scryfall market price for Outlaws of Thunder Junction Commander\"}}"
+  },
+  "Snapcaster Mage (Innistrad) [Non-foil]": {
+    "card_name": "Snapcaster Mage",
+    "set_name": "Innistrad",
+    "foil": false,
+    "timestamp": "2025-06-22T10:41:31.978342",
+    "best_bid": 15.32,
+    "best_offer": 0,
+    "best_vendor": "Scryfall",
+    "vendor_prices": {
+      "Scryfall": {
+        "price": 15.32,
+        "condition": "Near Mint",
+        "is_bid": true
+      }
+    },
+    "last_updated": "2025-06-22T10:41:31.978342",
+    "best_bid_vendor": "Scryfall",
+    "best_offer_vendor": null,
+    "vendor_prices_json": "{\"card\":{\"name\":\"Snapcaster Mage\",\"set_name\":\"Innistrad\",\"card_number\":null,\"rarity\":\"Rare\",\"quantity\":1,\"foil_treatment\":\"Non-foil\",\"condition\":\"Near Mint\",\"promo_type\":\"Regular\",\"artwork_variant\":\"Normal\",\"border_treatment\":\"Normal\",\"card_size\":\"Normal\",\"language\":\"English\",\"edition\":null,\"signed\":false,\"original_printing\":true,\"stamp\":null,\"serialized_number\":null,\"is_token\":false,\"is_emblem\":false,\"is_other\":false,\"foil\":false,\"set_code\":\"ISD\",\"scryfall_id\":null},\"prices\":{\"Scryfall\":[{\"vendor\":\"Scryfall\",\"price\":15.32,\"price_type\":\"offer_market\",\"condition\":\"Near Mint\",\"quantity_limit\":null,\"last_price_update\":\"2025-06-22T10:41:52.763716\",\"notes\":\"Scryfall market price for Ultimate Masters\"}]},\"best_bid\":null,\"best_offer\":{\"vendor\":\"Scryfall\",\"price\":15.32,\"price_type\":\"offer_market\",\"condition\":\"Near Mint\",\"quantity_limit\":null,\"last_price_update\":\"2025-06-22T10:41:52.763716\",\"notes\":\"Scryfall market price for Ultimate Masters\"}}"
+  },
+  "Tarmogoyf (Modern Masters 2017) [Non-foil]": {
+    "card_name": "Tarmogoyf",
+    "set_name": "Modern Masters 2017",
+    "foil": false,
+    "timestamp": "2025-06-22T10:41:31.978342",
+    "best_bid": 7.06,
+    "best_offer": 0,
+    "best_vendor": "Scryfall",
+    "vendor_prices": {
+      "Scryfall": {
+        "price": 7.06,
+        "condition": "Near Mint",
+        "is_bid": true
+      }
+    },
+    "last_updated": "2025-06-22T10:41:31.978342",
+    "best_bid_vendor": "Scryfall",
+    "best_offer_vendor": null,
+    "vendor_prices_json": "{\"card\":{\"name\":\"Tarmogoyf\",\"set_name\":\"Modern Masters 2017\",\"card_number\":null,\"rarity\":\"Mythic Rare\",\"quantity\":1,\"foil_treatment\":\"Non-foil\",\"condition\":\"Near Mint\",\"promo_type\":\"Regular\",\"artwork_variant\":\"Normal\",\"border_treatment\":\"Normal\",\"card_size\":\"Normal\",\"language\":\"English\",\"edition\":null,\"signed\":false,\"original_printing\":true,\"stamp\":null,\"serialized_number\":null,\"is_token\":false,\"is_emblem\":false,\"is_other\":false,\"foil\":false,\"set_code\":\"MM3\",\"scryfall_id\":null},\"prices\":{\"Scryfall\":[{\"vendor\":\"Scryfall\",\"price\":7.06,\"price_type\":\"offer_market\",\"condition\":\"Near Mint\",\"quantity_limit\":null,\"last_price_update\":\"2025-06-22T10:41:55.767495\",\"notes\":\"Scryfall market price for Time Spiral Remastered\"}]},\"best_bid\":null,\"best_offer\":{\"vendor\":\"Scryfall\",\"price\":7.06,\"price_type\":\"offer_market\",\"condition\":\"Near Mint\",\"quantity_limit\":null,\"last_price_update\":\"2025-06-22T10:41:55.767495\",\"notes\":\"Scryfall market price for Time Spiral Remastered\"}}"
+  },
+  "Test Card (Test Set) [Non-foil]": {
+    "card_name": "Test Card",
+    "set_name": "Test Set",
+    "foil": false,
+    "timestamp": "2025-06-22T10:41:31.978342",
+    "best_bid": 0,
+    "best_offer": 0,
+    "best_vendor": "Unknown",
+    "vendor_prices": {},
+    "last_updated": "2025-06-22T10:41:31.978342",
+    "best_bid_vendor": null,
+    "best_offer_vendor": null,
+    "vendor_prices_json": "{\"card\":{\"name\":\"Test Card\",\"set_name\":\"Test Set\",\"card_number\":null,\"rarity\":null,\"quantity\":1,\"foil_treatment\":\"Non-foil\",\"condition\":\"Near Mint\",\"promo_type\":\"Regular\",\"artwork_variant\":\"Normal\",\"border_treatment\":\"Normal\",\"card_size\":\"Normal\",\"language\":\"English\",\"edition\":null,\"signed\":false,\"original_printing\":true,\"stamp\":null,\"serialized_number\":null,\"is_token\":false,\"is_emblem\":false,\"is_other\":false,\"foil\":false,\"set_code\":null,\"scryfall_id\":null},\"prices\":{},\"best_bid\":null,\"best_offer\":null}"
+  },
+  "Cabal Ritual (TORMENT) [Non-foil]": {
+    "card_name": "Cabal Ritual",
+    "set_name": "TORMENT",
+    "foil": false,
+    "timestamp": "2025-06-22T10:41:31.978342",
+    "best_bid": 0,
+    "best_offer": 0,
+    "best_vendor": "Unknown",
+    "vendor_prices": {},
+    "last_updated": "2025-06-22T10:41:31.978342",
+    "best_bid_vendor": null,
+    "best_offer_vendor": null,
+    "vendor_prices_json": "{\"card\":{\"name\":\"Cabal Ritual\",\"set_name\":\"TORMENT\",\"card_number\":null,\"rarity\":null,\"quantity\":1,\"foil_treatment\":\"Non-foil\",\"condition\":\"Near Mint\",\"promo_type\":\"Regular\",\"artwork_variant\":\"Normal\",\"border_treatment\":\"Normal\",\"card_size\":\"Normal\",\"language\":\"English\",\"edition\":null,\"signed\":false,\"original_printing\":true,\"stamp\":null,\"serialized_number\":null,\"is_token\":false,\"is_emblem\":false,\"is_other\":false,\"foil\":false,\"set_code\":null,\"scryfall_id\":null},\"prices\":{},\"best_bid\":null,\"best_offer\":null}"
+  },
+  "Rhystic Study (prophecy) [Non-foil]": {
+    "card_name": "Rhystic Study",
+    "set_name": "prophecy",
+    "foil": false,
+    "timestamp": "2025-06-22T10:41:31.978342",
+    "best_bid": 53.99,
+    "best_offer": 0,
+    "best_vendor": "Scryfall",
+    "vendor_prices": {
+      "Scryfall": {
+        "price": 53.99,
+        "condition": "Near Mint",
+        "is_bid": true
+      }
+    },
+    "last_updated": "2025-06-22T10:41:31.978342",
+    "best_bid_vendor": "Scryfall",
+    "best_offer_vendor": null,
+    "vendor_prices_json": "{\"card\":{\"name\":\"Rhystic Study\",\"set_name\":\"prophecy\",\"card_number\":null,\"rarity\":null,\"quantity\":1,\"foil_treatment\":\"Non-foil\",\"condition\":\"Near Mint\",\"promo_type\":\"Regular\",\"artwork_variant\":\"Normal\",\"border_treatment\":\"Normal\",\"card_size\":\"Normal\",\"language\":\"English\",\"edition\":null,\"signed\":false,\"original_printing\":true,\"stamp\":null,\"serialized_number\":null,\"is_token\":false,\"is_emblem\":false,\"is_other\":false,\"foil\":false,\"set_code\":null,\"scryfall_id\":null},\"prices\":{\"Scryfall\":[{\"vendor\":\"Scryfall\",\"price\":53.99,\"price_type\":\"offer_market\",\"condition\":\"Near Mint\",\"quantity_limit\":null,\"last_price_update\":\"2025-06-22T10:42:04.126926\",\"notes\":\"Scryfall market price for Jumpstart\"}]},\"best_bid\":null,\"best_offer\":{\"vendor\":\"Scryfall\",\"price\":53.99,\"price_type\":\"offer_market\",\"condition\":\"Near Mint\",\"quantity_limit\":null,\"last_price_update\":\"2025-06-22T10:42:04.126926\",\"notes\":\"Scryfall market price for Jumpstart\"}}"
+  },
+  "Cabal Ritual (torment) [Non-foil]": {
+    "card_name": "Cabal Ritual",
+    "set_name": "torment",
+    "foil": false,
+    "timestamp": "2025-06-22T10:41:31.978342",
+    "best_bid": 0,
+    "best_offer": 0,
+    "best_vendor": "Unknown",
+    "vendor_prices": {},
+    "last_updated": "2025-06-22T10:41:31.978342",
+    "best_bid_vendor": null,
+    "best_offer_vendor": null,
+    "vendor_prices_json": "{\"card\":{\"name\":\"Cabal Ritual\",\"set_name\":\"torment\",\"card_number\":null,\"rarity\":null,\"quantity\":1,\"foil_treatment\":\"Non-foil\",\"condition\":\"Near Mint\",\"promo_type\":\"Regular\",\"artwork_variant\":\"Normal\",\"border_treatment\":\"Normal\",\"card_size\":\"Normal\",\"language\":\"English\",\"edition\":null,\"signed\":false,\"original_printing\":true,\"stamp\":null,\"serialized_number\":null,\"is_token\":false,\"is_emblem\":false,\"is_other\":false,\"foil\":false,\"set_code\":null,\"scryfall_id\":null},\"prices\":{},\"best_bid\":null,\"best_offer\":null}"
+  }
+}

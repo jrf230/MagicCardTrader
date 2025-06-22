@@ -1,0 +1,278 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - MTG Buylist Aggregator{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="mb-4">
+            <i class="fas fa-dragon text-primary me-2"></i>
+            MTG Trader Pro Dashboard
+        </h1>
+        <p class="lead text-muted">Your comprehensive Magic: The Gathering collection management and market analysis platform</p>
+    </div>
+</div>
+
+<!-- Quick Stats -->
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="stats-card">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h6 class="text-light mb-1">Total Cards</h6>
+                    <h3 class="mb-0" id="totalCards">-</h3>
+                </div>
+                <i class="fas fa-book fa-2x text-light opacity-75"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stats-card">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h6 class="text-light mb-1">Collection Value</h6>
+                    <h3 class="mb-0" id="collectionValue">-</h3>
+                </div>
+                <i class="fas fa-dollar-sign fa-2x text-light opacity-75"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stats-card">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h6 class="text-light mb-1">Hot Cards</h6>
+                    <h3 class="mb-0" id="hotCards">-</h3>
+                </div>
+                <i class="fas fa-fire fa-2x text-light opacity-75"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stats-card">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h6 class="text-light mb-1">Active Vendors</h6>
+                    <h3 class="mb-0" id="activeVendors">-</h3>
+                </div>
+                <i class="fas fa-store fa-2x text-light opacity-75"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Actions -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="fas fa-bolt me-2"></i>Quick Actions</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <a href="/collection" class="btn btn-outline-primary w-100">
+                            <i class="fas fa-plus me-2"></i>Add Cards
+                        </a>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <a href="/market-analysis" class="btn btn-outline-success w-100">
+                            <i class="fas fa-chart-line me-2"></i>Market Analysis
+                        </a>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <a href="/hot-cards" class="btn btn-outline-warning w-100">
+                            <i class="fas fa-fire me-2"></i>Hot Cards
+                        </a>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <a href="/recommendations" class="btn btn-outline-info w-100">
+                            <i class="fas fa-lightbulb me-2"></i>Recommendations
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Recent Activity and Market Overview -->
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0"><i class="fas fa-chart-pie me-2"></i>Collection Overview</h5>
+            </div>
+            <div class="card-body">
+                <canvas id="collectionChart" width="400" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-warning text-white">
+                <h5 class="mb-0"><i class="fas fa-trending-up me-2"></i>Market Trends</h5>
+            </div>
+            <div class="card-body">
+                <canvas id="marketChart" width="400" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Loading Indicator -->
+<div class="loading" id="loading">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <p class="mt-2">Loading dashboard data...</p>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    loadDashboardData();
+});
+
+async function loadDashboardData() {
+    showLoading('loading');
+    
+    try {
+        // Load all dashboard data in a single optimized call
+        const dashboardResponse = await fetch('/api/dashboard?mock=true');
+        const dashboardData = await dashboardResponse.json();
+        
+        if (dashboardData.error) {
+            throw new Error(dashboardData.error);
+        }
+        
+        // Update stats
+        document.getElementById('totalCards').textContent = dashboardData.collection.total_cards || 0;
+        document.getElementById('collectionValue').textContent = formatCurrency(dashboardData.market?.total_market_value || 0);
+        document.getElementById('hotCards').textContent = dashboardData.total_hot_cards || 0;
+        document.getElementById('activeVendors').textContent = dashboardData.vendors.healthy_count || 0;
+        
+        // Create charts
+        createCollectionChart(dashboardData.collection);
+        createMarketChart(dashboardData.market);
+        
+        // Log cache status
+        if (dashboardData.cache_timestamp) {
+            console.log('Dashboard data cached at:', dashboardData.cache_timestamp);
+        }
+        
+    } catch (error) {
+        console.error('Error loading dashboard data:', error);
+        showAlert('Error loading dashboard data. Please try again.', 'danger');
+    } finally {
+        hideLoading('loading');
+    }
+}
+
+function createCollectionChart(collectionData) {
+    const ctx = document.getElementById('collectionChart').getContext('2d');
+    
+    // Sample data - in real app, this would come from analytics
+    const data = {
+        labels: ['Commons', 'Uncommons', 'Rares', 'Mythics'],
+        datasets: [{
+            data: [30, 25, 35, 10],
+            backgroundColor: [
+                '#3498db',
+                '#2ecc71',
+                '#f39c12',
+                '#e74c3c'
+            ],
+            borderWidth: 2,
+            borderColor: '#fff'
+        }]
+    };
+    
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: data,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+}
+
+function createMarketChart(marketData) {
+    const ctx = document.getElementById('marketChart').getContext('2d');
+    
+    // Sample data - in real app, this would come from market analysis
+    const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
+    const values = [1200, 1350, 1420, 1380, 1550, 1680];
+    
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Collection Value',
+                data: values,
+                borderColor: 'rgb(75, 192, 192)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                tension: 0.1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return '$' + value;
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+function createDiversificationChart(marketData) {
+    const ctx = document.getElementById('diversificationChart').getContext('2d');
+    
+    // Use real diversification data if available
+    const diversification = marketData.diversification?.set_breakdown || {
+        'Commander 2021': 25,
+        'Ultimate Masters': 20,
+        'Modern Masters': 15,
+        'Other': 40
+    };
+    
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: Object.keys(diversification),
+            datasets: [{
+                data: Object.values(diversification),
+                backgroundColor: [
+                    '#FF6384',
+                    '#36A2EB',
+                    '#FFCE56',
+                    '#4BC0C0'
+                ]
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+}
+</script>
+{% endblock %} 

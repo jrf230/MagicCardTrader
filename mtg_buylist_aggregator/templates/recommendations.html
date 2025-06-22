@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Recommendations - MTG Buylist Aggregator{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="mb-4">
+            <i class="fas fa-lightbulb text-primary me-2"></i>
+            Trading Recommendations
+        </h1>
+        <p class="lead text-muted">AI-powered buy/sell/hold recommendations</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0"><i class="fas fa-lightbulb me-2"></i>Recommendations Engine</h5>
+            </div>
+            <div class="card-body">
+                <p class="text-muted">Trading recommendations are available through the Market Analysis page.</p>
+                <a href="/market-analysis" class="btn btn-info">
+                    <i class="fas fa-chart-bar me-2"></i>Go to Market Analysis
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

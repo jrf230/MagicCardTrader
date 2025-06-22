@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Vendors - MTG Buylist Aggregator{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="mb-4">
+            <i class="fas fa-store text-primary me-2"></i>
+            Vendor Health
+        </h1>
+        <p class="lead text-muted">Monitor vendor reliability and performance</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-secondary text-white">
+                <h5 class="mb-0"><i class="fas fa-store me-2"></i>Vendor Status</h5>
+            </div>
+            <div class="card-body">
+                <p class="text-muted">Vendor health monitoring is available through the Market Analysis page.</p>
+                <a href="/market-analysis" class="btn btn-secondary">
+                    <i class="fas fa-chart-bar me-2"></i>Go to Market Analysis
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

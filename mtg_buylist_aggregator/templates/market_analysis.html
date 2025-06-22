@@ -1,0 +1,327 @@
+{% extends "base.html" %}
+
+{% block title %}Market Analysis - MTG Buylist Aggregator{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="mb-4">
+            <i class="fas fa-chart-bar text-primary me-2"></i>
+            Market Analysis
+        </h1>
+        <p class="lead text-muted">Comprehensive market and portfolio insights</p>
+    </div>
+</div>
+
+<!-- Overview Cards -->
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="stats-card">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h6 class="text-light mb-1">Market Value</h6>
+                    <h3 class="mb-0" id="marketValue">-</h3>
+                </div>
+                <i class="fas fa-dollar-sign fa-2x text-light opacity-75"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stats-card">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h6 class="text-light mb-1">Buylist Value</h6>
+                    <h3 class="mb-0" id="buylistValue">-</h3>
+                </div>
+                <i class="fas fa-shopping-cart fa-2x text-light opacity-75"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stats-card">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h6 class="text-light mb-1">Price Spread</h6>
+                    <h3 class="mb-0" id="priceSpread">-</h3>
+                </div>
+                <i class="fas fa-chart-line fa-2x text-light opacity-75"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stats-card">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h6 class="text-light mb-1">Risk Score</h6>
+                    <h3 class="mb-0" id="riskScore">-</h3>
+                </div>
+                <i class="fas fa-shield-alt fa-2x text-light opacity-75"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Dashboard Widgets -->
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0"><i class="fas fa-chart-pie me-2"></i>Diversification</h5>
+            </div>
+            <div class="card-body">
+                <canvas id="diversificationChart" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header bg-secondary text-white">
+                <h5 class="mb-0"><i class="fas fa-exclamation-triangle me-2"></i>Risk Assessment</h5>
+            </div>
+            <div class="card-body">
+                <canvas id="riskChart" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0"><i class="fas fa-chart-line me-2"></i>Performance</h5>
+            </div>
+            <div class="card-body">
+                <canvas id="performanceChart" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Top/Bottom Performers and Benchmarks -->
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="fas fa-trophy me-2"></i>Top Performers</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-group" id="topPerformersList"></ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-danger text-white">
+                <h5 class="mb-0"><i class="fas fa-arrow-down me-2"></i>Bottom Performers</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-group" id="bottomPerformersList"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Benchmarks and Alerts -->
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-warning text-dark">
+                <h5 class="mb-0"><i class="fas fa-balance-scale me-2"></i>Benchmarks</h5>
+            </div>
+            <div class="card-body" id="benchmarks">
+                <!-- Benchmarks will be loaded here -->
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-warning text-dark">
+                <h5 class="mb-0"><i class="fas fa-bell me-2"></i>Alerts</h5>
+            </div>
+            <div class="card-body" id="alerts">
+                <!-- Alerts will be loaded here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Market Analysis Results Table (unchanged) -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0"><i class="fas fa-table me-2"></i>Detailed Analysis</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Card</th>
+                                <th>Market Price</th>
+                                <th>Buylist Price</th>
+                                <th>Spread</th>
+                                <th>Trend</th>
+                                <th>Risk</th>
+                                <th>Recommendation</th>
+                            </tr>
+                        </thead>
+                        <tbody id="analysisTable">
+                            <!-- Analysis results will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Loading Indicator -->
+<div class="loading" id="loading">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <p class="mt-2">Running market analysis...</p>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+let analysisData = null;
+
+document.addEventListener('DOMContentLoaded', function() {
+    runAnalysis();
+});
+
+async function runAnalysis() {
+    showLoading('loading');
+    
+    try {
+        const useMock = document.getElementById('useMock') ? document.getElementById('useMock').checked : false;
+        const response = await fetch(`/api/market-analysis?mock=${useMock}`);
+        analysisData = await response.json();
+        
+        displayAnalysisResults(analysisData);
+        updateOverviewCards(analysisData);
+        createCharts(analysisData);
+        displayTopBottomPerformers(analysisData);
+        displayBenchmarks(analysisData);
+        displayAlerts(analysisData);
+        
+    } catch (error) {
+        console.error('Error running analysis:', error);
+        showAlert('Error running market analysis. Please try again.', 'danger');
+    } finally {
+        hideLoading('loading');
+    }
+}
+
+function updateOverviewCards(data) {
+    const market = data.market;
+    document.getElementById('marketValue').textContent = market.total_market_value ? formatCurrency(market.total_market_value) : '-';
+    document.getElementById('buylistValue').textContent = market.total_buylist_value ? formatCurrency(market.total_buylist_value) : '-';
+    document.getElementById('priceSpread').textContent = market.avg_price_spread ? formatCurrency(market.avg_price_spread) : '-';
+    document.getElementById('riskScore').textContent = market.avg_risk_score ? market.avg_risk_score.toFixed(2) : '-';
+}
+
+function createCharts(data) {
+    // Diversification Pie Chart
+    const diversification = data.diversification.set_breakdown || {};
+    const setLabels = Object.keys(diversification);
+    const setData = Object.values(diversification);
+    new Chart(document.getElementById('diversificationChart').getContext('2d'), {
+        type: 'pie',
+        data: {
+            labels: setLabels,
+            datasets: [{
+                data: setData,
+                backgroundColor: setLabels.map((_, i) => `hsl(${i * 360 / setLabels.length}, 70%, 60%)`)
+            }]
+        },
+        options: { responsive: true }
+    });
+    // Risk Pie Chart
+    const risk = data.risk;
+    const riskLabels = Object.keys(risk).map(k => k.replace('_', ' ').toUpperCase());
+    const riskData = Object.values(risk).map(v => v.count || 0);
+    new Chart(document.getElementById('riskChart').getContext('2d'), {
+        type: 'pie',
+        data: {
+            labels: riskLabels,
+            datasets: [{
+                data: riskData,
+                backgroundColor: ['#27ae60', '#f39c12', '#e74c3c']
+            }]
+        },
+        options: { responsive: true }
+    });
+    // Performance Line Chart
+    const perf = data.performance;
+    const perfLabels = perf.performance_data ? perf.performance_data.map(p => p.card.name) : [];
+    const perfValues = perf.performance_data ? perf.performance_data.map(p => p.current_value) : [];
+    new Chart(document.getElementById('performanceChart').getContext('2d'), {
+        type: 'line',
+        data: {
+            labels: perfLabels,
+            datasets: [{
+                label: 'Current Value',
+                data: perfValues,
+                borderColor: '#3498db',
+                backgroundColor: 'rgba(52, 152, 219, 0.2)',
+                tension: 0.2
+            }]
+        },
+        options: { responsive: true }
+    });
+}
+
+function displayTopBottomPerformers(data) {
+    const topList = document.getElementById('topPerformersList');
+    const bottomList = document.getElementById('bottomPerformersList');
+    topList.innerHTML = data.top_performers.map(p => `<li class="list-group-item d-flex justify-content-between align-items-center">
+        <span>${p.card.name}</span>
+        <span class="badge bg-success">${formatCurrency(p.current_value)}</span>
+    </li>`).join('');
+    bottomList.innerHTML = data.bottom_performers.map(p => `<li class="list-group-item d-flex justify-content-between align-items-center">
+        <span>${p.card.name}</span>
+        <span class="badge bg-danger">${formatCurrency(p.current_value)}</span>
+    </li>`).join('');
+}
+
+function displayBenchmarks(data) {
+    const div = document.getElementById('benchmarks');
+    const b = data.benchmarks;
+    div.innerHTML = `<ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            S&P 500 <span class="badge bg-primary">${(b.sp500 * 100).toFixed(1)}%</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Gold <span class="badge bg-warning text-dark">${(b.gold * 100).toFixed(1)}%</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Market Avg <span class="badge bg-info text-dark">${(b.market_average * 100).toFixed(1)}%</span>
+        </li>
+    </ul>`;
+}
+
+function displayAlerts(data) {
+    const div = document.getElementById('alerts');
+    div.innerHTML = data.alerts.map(a => `<div class="alert alert-warning mb-2"><strong>${a.card}:</strong> ${a.message}</div>`).join('');
+}
+
+function displayAnalysisResults(data) {
+    const tableBody = document.getElementById('analysisTable');
+    const insights = data.market.insights || [];
+    tableBody.innerHTML = insights.map(card => `
+        <tr>
+            <td><strong>${card.card.name}</strong></td>
+            <td>${formatCurrency(card.current_market_price)}</td>
+            <td>${formatCurrency(card.buylist_avg)}</td>
+            <td>${formatCurrency(card.price_spread)}</td>
+            <td>${card.trend || '-'}</td>
+            <td>${card.risk_score ? card.risk_score.toFixed(2) : '-'}</td>
+            <td>${card.recommendation || '-'}</td>
+        </tr>
+    `).join('');
+}
+</script>
+{% endblock %} 

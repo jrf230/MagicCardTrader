@@ -1,0 +1,655 @@
+{% extends "base.html" %}
+
+{% block title %}Card Details - MTG Buylist Aggregator{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="mb-4">
+            <i class="fas fa-search text-primary me-2"></i>
+            Card Details
+        </h1>
+    </div>
+</div>
+
+<!-- Search Section -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="fas fa-search me-2"></i>Search Cards</h5>
+            </div>
+            <div class="card-body">
+                <form id="searchForm">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="cardName" class="form-label">Card Name</label>
+                                <input type="text" class="form-control" id="cardName" placeholder="e.g., Rhystic Study" 
+                                       aria-describedby="cardNameHelp">
+                                <div id="cardNameHelp" class="form-text">Enter the name of the card you want to search for</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="mb-3">
+                                <label for="cardSet" class="form-label">Set</label>
+                                <input type="text" class="form-control" id="cardSet" placeholder="e.g., Prophecy" 
+                                       aria-describedby="cardSetHelp">
+                                <div id="cardSetHelp" class="form-text">Enter the set name (optional)</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="mb-3">
+                                <label for="cardRarity" class="form-label">Rarity</label>
+                                <select class="form-select" id="cardRarity" aria-describedby="cardRarityHelp">
+                                    <option value="">Any Rarity</option>
+                                    <option value="Common">Common</option>
+                                    <option value="Uncommon">Uncommon</option>
+                                    <option value="Rare">Rare</option>
+                                    <option value="Mythic Rare">Mythic Rare</option>
+                                </select>
+                                <div id="cardRarityHelp" class="form-text">Filter by card rarity (optional)</div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="mb-3">
+                                <label for="searchSubmit" class="form-label">Search</label>
+                                <button type="submit" class="btn btn-primary w-100" id="searchSubmit">
+                                    <i class="fas fa-search"></i> Search
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Search Results -->
+<div class="row mb-4" id="searchResults" style="display: none;">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0"><i class="fas fa-list me-2"></i>Search Results</h5>
+            </div>
+            <div class="card-body">
+                <div id="searchResultsList">
+                    <!-- Search results will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Card Details Section -->
+<div class="row" id="cardDetailsSection" style="display: none;">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-info text-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0" id="cardTitle">
+                    <i class="fas fa-info-circle me-2"></i>Card Details
+                </h5>
+                <div>
+                    <button class="btn btn-sm btn-outline-light" onclick="toggleFoil()" id="foilToggle">
+                        <i class="fas fa-star"></i> Toggle Foil
+                    </button>
+                </div>
+            </div>
+            <div class="card-body">
+                <!-- Card Info -->
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <div class="card-image-container mb-3">
+                                <img id="cardImage" src="" alt="Card Image" class="img-fluid rounded shadow-sm" style="max-width: 200px; cursor: pointer;" onclick="showCardImageModal()">
+                                <div id="cardImagePlaceholder" class="card-image-placeholder bg-light rounded p-4" style="display: none;">
+                                    <i class="fas fa-image fa-3x text-muted"></i>
+                                </div>
+                            </div>
+                            <h6 id="cardNameDisplay">Card Name</h6>
+                            <p class="text-muted" id="cardSetDisplay">Set Name</p>
+                            <span class="badge bg-warning" id="foilBadge" style="display: none;">
+                                <i class="fas fa-star"></i> Foil
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card bg-success text-white">
+                                    <div class="card-body text-center">
+                                        <h6>Best Bid</h6>
+                                        <h4 id="bestBid">$0.00</h4>
+                                        <small id="bestBidVendor">Vendor</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card bg-info text-white">
+                                    <div class="card-body text-center">
+                                        <h6>Market Price</h6>
+                                        <h4 id="marketPrice">$0.00</h4>
+                                        <small>Average</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card bg-warning text-white">
+                                    <div class="card-body text-center">
+                                        <h6>Best Ask</h6>
+                                        <h4 id="bestAsk">$0.00</h4>
+                                        <small id="bestAskVendor">Vendor</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Price Chart -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h6 class="mb-0"><i class="fas fa-chart-line me-2"></i>Price History (30 Days)</h6>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="priceChart" width="400" height="200"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vendor Prices -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h6 class="mb-0"><i class="fas fa-store me-2"></i>All Vendor Prices</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Vendor</th>
+                                                <th>Bid</th>
+                                                <th>Mid</th>
+                                                <th>Ask</th>
+                                                <th>Condition</th>
+                                                <th>Last Updated</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="vendorPricesTable">
+                                            <!-- Vendor prices will be loaded here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Kingdom Retail Prices by Condition -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header bg-secondary text-white">
+                                <h6 class="mb-0"><i class="fas fa-shopping-cart me-2"></i>Card Kingdom Retail Prices by Condition</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm">
+                                        <thead>
+                                            <tr>
+                                                <th>Condition</th>
+                                                <th>Price</th>
+                                                <th>Last Updated</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="ckRetailPricesTable">
+                                            <!-- Retail prices by condition will be loaded here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Loading Indicator -->
+<div class="loading" id="loading">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <p class="mt-2">Loading...</p>
+</div>
+
+<!-- Card Image Modal -->
+<div class="modal fade" id="cardImageModal" tabindex="-1" aria-labelledby="cardImageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cardImageModalLabel">Card Image</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img id="enlargedCardImage" src="" alt="Card Image" class="img-fluid">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+let currentCard = null;
+let priceChart = null;
+let isFoil = false;
+
+document.addEventListener('DOMContentLoaded', function() {
+    setupEventListeners();
+    checkUrlParameters();
+    makeTableSortable('vendorPricesTable');
+});
+
+function setupEventListeners() {
+    document.getElementById('searchForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        searchCards();
+    });
+}
+
+function checkUrlParameters() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const name = urlParams.get('name');
+    const set = urlParams.get('set');
+    const foil = urlParams.get('foil') === 'true';
+    
+    if (name && set) {
+        isFoil = foil;
+        loadCardDetails(name, set, foil);
+    }
+}
+
+async function searchCards() {
+    const name = document.getElementById('cardName').value;
+    const set = document.getElementById('cardSet').value;
+    const rarity = document.getElementById('cardRarity').value;
+    
+    if (!name && !set && !rarity) {
+        showAlert('Please enter at least one search criteria', 'warning');
+        return;
+    }
+    
+    showLoading('loading');
+    
+    try {
+        const params = new URLSearchParams();
+        if (name) params.append('q', name);
+        if (set) params.append('set', set);
+        if (rarity) params.append('rarity', rarity);
+        
+        const response = await fetch(`/api/search-cards?${params}`);
+        const data = await response.json();
+        
+        if (data.error) {
+            throw new Error(data.error);
+        }
+        
+        displaySearchResults(data.cards);
+        
+    } catch (error) {
+        console.error('Error searching cards:', error);
+        showAlert('Error searching cards. Please try again.', 'danger');
+    } finally {
+        hideLoading('loading');
+    }
+}
+
+function displaySearchResults(cards) {
+    const resultsDiv = document.getElementById('searchResults');
+    const resultsList = document.getElementById('searchResultsList');
+    
+    if (cards.length === 0) {
+        resultsList.innerHTML = '<p class="text-muted">No cards found matching your criteria.</p>';
+    } else {
+        resultsList.innerHTML = cards.map(card => `
+            <div class="card mb-2" style="cursor: pointer;" ondblclick="selectCard('${card.name}', '${card.set_name}')" onclick="selectCard('${card.name}', '${card.set_name}')">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h6 class="mb-1">${card.name}</h6>
+                            <p class="text-muted mb-0">${card.set_name} (${card.set_code}) - ${card.rarity}</p>
+                        </div>
+                        <div class="col-md-4 text-end">
+                            <button class="btn btn-sm btn-primary" onclick="event.stopPropagation(); selectCard('${card.name}', '${card.set_name}')">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+    
+    resultsDiv.style.display = 'block';
+}
+
+async function selectCard(name, set) {
+    isFoil = false; // Reset to non-foil by default
+    await loadCardDetails(name, set, false);
+    
+    // Update URL
+    const url = new URL(window.location);
+    url.searchParams.set('name', name);
+    url.searchParams.set('set', set);
+    url.searchParams.set('foil', 'false');
+    window.history.pushState({}, '', url);
+}
+
+async function loadCardDetails(name, set, foil) {
+    showLoading('loading');
+    try {
+        const params = new URLSearchParams({
+            name: name,
+            set: set,
+            foil: foil.toString()
+        });
+        const response = await fetch(`/api/card-details?${params}`);
+        const data = await response.json();
+        if (data.error) {
+            throw new Error(data.error);
+        }
+        currentCard = data;
+        displayCardDetails(data);
+        // Render Card Kingdom retail prices by condition
+        renderCKRetailPricesByCondition(data.retail_prices_by_condition);
+    } catch (error) {
+        console.error('Error loading card details:', error);
+        showAlert('Error loading card details. Please try again.', 'danger');
+    } finally {
+        hideLoading('loading');
+    }
+}
+
+function displayCardDetails(data) {
+    // Always display card name in Title Case
+    const titleCaseName = toTitleCase(data.card.name);
+    document.getElementById('cardTitle').textContent = `${titleCaseName} (${data.card.set_name})`;
+    document.getElementById('cardNameDisplay').textContent = titleCaseName;
+    document.getElementById('cardSetDisplay').textContent = data.card.set_name;
+    
+    // Load card image from Scryfall
+    loadCardImage(data.card.name, data.card.set_name, data.card.foil);
+    
+    // Update foil badge
+    const foilBadge = document.getElementById('foilBadge');
+    if (data.card.foil) {
+        foilBadge.style.display = 'inline-block';
+    } else {
+        foilBadge.style.display = 'none';
+    }
+    
+    // Update price summary
+    const bestBid = data.current_prices.best_bid || 0;
+    const bestAsk = data.current_prices.vendors.length > 0 ? 
+        Math.min(...data.current_prices.vendors.map(v => v.ask)) : 0;
+    const marketPrice = (bestBid + bestAsk) / 2;
+    
+    document.getElementById('bestBid').textContent = `$${bestBid.toFixed(2)}`;
+    document.getElementById('bestBidVendor').textContent = data.current_prices.best_vendor || 'N/A';
+    document.getElementById('marketPrice').textContent = `$${marketPrice.toFixed(2)}`;
+    document.getElementById('bestAsk').textContent = `$${bestAsk.toFixed(2)}`;
+    
+    // Update vendor prices table
+    const tableBody = document.getElementById('vendorPricesTable');
+    tableBody.innerHTML = data.current_prices.vendors.map(vendor => `
+        <tr>
+            <td><strong>${vendor.vendor}</strong></td>
+            <td><span class="text-success">$${vendor.bid.toFixed(2)}</span></td>
+            <td><span class="text-info">$${vendor.mid.toFixed(2)}</span></td>
+            <td><span class="text-warning">$${vendor.ask.toFixed(2)}</span></td>
+            <td>${vendor.condition}</td>
+            <td>${vendor.last_updated ? new Date(vendor.last_updated).toLocaleDateString() : 'N/A'}</td>
+        </tr>
+    `).join('');
+    
+    // Create price chart
+    createPriceChart(data.historical_data);
+    
+    // Show the details section
+    document.getElementById('cardDetailsSection').style.display = 'block';
+    document.getElementById('searchResults').style.display = 'none';
+}
+
+async function loadCardImage(cardName, setName, isFoil) {
+    const cardImage = document.getElementById('cardImage');
+    const cardImagePlaceholder = document.getElementById('cardImagePlaceholder');
+    try {
+        // Use Scryfall /search endpoint for exact set match
+        let setCode = '';
+        // Try to extract set code from setName using a mapping (Torment = tor, etc.)
+        const setMap = {
+            'Torment': 'tor',
+            'Vintage Masters': 'vma',
+            'Prophecy': 'pcy',
+            'Commander 2021': 'c21',
+            'Ultimate Masters': 'uma',
+            'Commander 2013': 'c13',
+            'Magic 2010': 'm10',
+            'Core Set 2021': 'm21',
+            'Modern Masters 2015': 'mm2',
+            'Theros': 'ths',
+            'Innistrad': 'isd',
+            'Modern Masters 2017': 'mm3',
+            // Add more as needed
+        };
+        if (setMap[setName]) {
+            setCode = setMap[setName];
+        }
+        let cardData = null;
+        if (setCode) {
+            // Use exact name and set code
+            const searchUrl = `https://api.scryfall.com/cards/search?q=!\"${encodeURIComponent(cardName)}\"+set:${setCode}`;
+            let response = await fetch(searchUrl);
+            if (response.ok) {
+                const searchResult = await response.json();
+                if (searchResult.data && searchResult.data.length > 0) {
+                    cardData = searchResult.data[0];
+                }
+            }
+        }
+        // Fallback to fuzzy search if not found
+        if (!cardData) {
+            let searchQuery = `${cardName} set:${setName}`;
+            let scryfallUrl = `https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(searchQuery)}`;
+            let response = await fetch(scryfallUrl);
+            if (response.ok) {
+                cardData = await response.json();
+            }
+        }
+        if (cardData && cardData.image_uris && cardData.image_uris.small) {
+            const imageUrl = cardData.image_uris.small;
+            cardImage.src = imageUrl;
+            cardImage.style.display = 'block';
+            cardImagePlaceholder.style.display = 'none';
+            cardImage.dataset.highResUrl = cardData.image_uris.normal || imageUrl;
+            // Update the set display to show which version we found
+            const setDisplay = document.getElementById('cardSetDisplay');
+            if (cardData.set_name !== setName) {
+                setDisplay.innerHTML = `${setName} <small class="text-muted">(showing ${cardData.set_name} image)</small>`;
+            }
+        } else {
+            showImagePlaceholder();
+        }
+    } catch (error) {
+        console.error('Error loading card image:', error);
+        showImagePlaceholder();
+    }
+}
+
+function showImagePlaceholder() {
+    const cardImage = document.getElementById('cardImage');
+    const cardImagePlaceholder = document.getElementById('cardImagePlaceholder');
+    
+    cardImage.style.display = 'none';
+    cardImagePlaceholder.style.display = 'block';
+}
+
+function showCardImageModal() {
+    const cardImage = document.getElementById('cardImage');
+    const enlargedCardImage = document.getElementById('enlargedCardImage');
+    const modalLabel = document.getElementById('cardImageModalLabel');
+    
+    if (cardImage.src && !cardImage.src.includes('placeholder')) {
+        // Use high-res image if available, otherwise use the current image
+        const highResUrl = cardImage.dataset.highResUrl || cardImage.src;
+        enlargedCardImage.src = highResUrl;
+        modalLabel.textContent = `${currentCard.card.name} (${currentCard.card.set_name})`;
+        
+        const modal = new bootstrap.Modal(document.getElementById('cardImageModal'));
+        modal.show();
+    }
+}
+
+function createPriceChart(historicalData) {
+    const ctx = document.getElementById('priceChart').getContext('2d');
+    
+    if (priceChart) {
+        priceChart.destroy();
+    }
+    
+    const labels = historicalData.map(entry => new Date(entry.date).toLocaleDateString());
+    const prices = historicalData.map(entry => entry.best_price || 0);
+    
+    priceChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Best Price',
+                data: prices,
+                borderColor: 'rgb(75, 192, 192)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                tension: 0.1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return '$' + value.toFixed(2);
+                        }
+                    }
+                }
+            },
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return 'Price: $' + context.parsed.y.toFixed(2);
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+async function toggleFoil() {
+    if (!currentCard) return;
+    
+    isFoil = !isFoil;
+    await loadCardDetails(currentCard.card.name, currentCard.card.set_name, isFoil);
+    
+    // Update URL
+    const url = new URL(window.location);
+    url.searchParams.set('foil', isFoil.toString());
+    window.history.pushState({}, '', url);
+}
+
+// Function to be called from collection page
+function navigateToCardDetails(name, set, foil) {
+    const url = `/card-details?name=${encodeURIComponent(name)}&set=${encodeURIComponent(set)}&foil=${foil}`;
+    window.location.href = url;
+}
+
+function toTitleCase(str) {
+    return str.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+}
+
+function makeTableSortable(tableId) {
+    const table = document.getElementById(tableId);
+    if (!table) return;
+    const headers = table.querySelectorAll('th');
+    let sortCol = 0;
+    let sortAsc = true;
+    
+    headers.forEach((header, i) => {
+        header.style.cursor = 'pointer';
+        header.addEventListener('click', () => {
+            sortCol = i;
+            sortAsc = !sortAsc;
+            sortTable(table, sortCol, sortAsc);
+        });
+    });
+    // Default sort by vendor (col 0)
+    sortTable(table, 0, true);
+}
+
+function sortTable(table, col, asc) {
+    const tbody = table.tBodies[0];
+    if (!tbody) return;
+    
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+    rows.sort((a, b) => {
+        // Check if the cells exist before accessing them
+        const aCell = a.children[col];
+        const bCell = b.children[col];
+        
+        if (!aCell || !bCell) {
+            return 0; // If either cell is missing, treat as equal
+        }
+        
+        let aText = aCell.textContent.trim();
+        let bText = bCell.textContent.trim();
+        
+        if (col > 0) { // price columns
+            aText = parseFloat(aText.replace(/[^\d.]/g, '')) || 0;
+            bText = parseFloat(bText.replace(/[^\d.]/g, '')) || 0;
+        }
+        
+        return asc ? aText.localeCompare(bText, undefined, {numeric: true}) : bText.localeCompare(aText, undefined, {numeric: true});
+    });
+    
+    rows.forEach(row => tbody.appendChild(row));
+}
+
+function renderCKRetailPricesByCondition(retailPricesByCondition) {
+    const tbody = document.getElementById('ckRetailPricesTable');
+    tbody.innerHTML = '';
+    if (!retailPricesByCondition || Object.keys(retailPricesByCondition).length === 0) {
+        tbody.innerHTML = '<tr><td colspan="3" class="text-muted">No retail prices found.</td></tr>';
+        return;
+    }
+    Object.entries(retailPricesByCondition).forEach(([condition, data]) => {
+        const price = data.price ? `$${data.price.toFixed(2)}` : '-';
+        const lastUpdated = data.last_price_update ? new Date(data.last_price_update).toLocaleString() : '-';
+        tbody.innerHTML += `<tr><td>${condition}</td><td>${price}</td><td>${lastUpdated}</td></tr>`;
+    });
+}
+</script>
+{% endblock %} 

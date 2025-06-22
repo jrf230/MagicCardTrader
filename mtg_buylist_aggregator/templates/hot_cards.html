@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Hot Cards - MTG Buylist Aggregator{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="mb-4">
+            <i class="fas fa-fire text-primary me-2"></i>
+            Hot Cards
+        </h1>
+        <p class="lead text-muted">Cards with significant price movements</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-warning text-white">
+                <h5 class="mb-0"><i class="fas fa-fire me-2"></i>Hot Cards Detection</h5>
+            </div>
+            <div class="card-body">
+                <p class="text-muted">Hot cards detection is available through the Market Analysis page.</p>
+                <a href="/market-analysis" class="btn btn-warning">
+                    <i class="fas fa-chart-bar me-2"></i>Go to Market Analysis
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

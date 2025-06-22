@@ -1,0 +1,819 @@
+{% extends "base.html" %}
+
+{% block title %}Collection - MTG Buylist Aggregator{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="mb-4">
+            <i class="fas fa-book text-primary me-2"></i>
+            Collection Management
+        </h1>
+    </div>
+</div>
+
+<!-- Add Card Form -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="fas fa-plus me-2"></i>Add New Card</h5>
+            </div>
+            <div class="card-body">
+                <form id="addCardForm">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="cardName" class="form-label">Card Name</label>
+                                <input type="text" class="form-control" id="cardName" required autocomplete="off" 
+                                       aria-describedby="cardNameHelp" placeholder="Enter card name">
+                                <div id="cardNameHelp" class="form-text">Start typing to see card suggestions</div>
+                                <div id="cardSuggestions" class="dropdown-menu w-100" style="display: none; max-height: 200px; overflow-y: auto;" 
+                                     role="listbox" aria-label="Card suggestions">
+                                    <!-- Suggestions will be loaded here -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="mb-3">
+                                <label for="cardSet" class="form-label">Set</label>
+                                <input type="text" class="form-control" id="cardSet" required autocomplete="off" 
+                                       aria-describedby="cardSetHelp" placeholder="Enter set name">
+                                <div id="cardSetHelp" class="form-text">Enter the card's set name</div>
+                                <div id="setSuggestions" class="dropdown-menu w-100" style="display: none; max-height: 200px; overflow-y: auto;" 
+                                     role="listbox" aria-label="Set suggestions">
+                                    <!-- Set suggestions will be loaded here -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="mb-3">
+                                <label for="cardQuantity" class="form-label">Quantity</label>
+                                <input type="number" class="form-control" id="cardQuantity" value="1" min="1" required 
+                                       aria-describedby="cardQuantityHelp">
+                                <div id="cardQuantityHelp" class="form-text">Number of copies you own</div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="mb-3">
+                                <label for="cardFoil" class="form-label">Foil</label>
+                                <select class="form-select" id="cardFoil" aria-describedby="cardFoilHelp">
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                </select>
+                                <div id="cardFoilHelp" class="form-text">Is this a foil version?</div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="mb-3">
+                                <label for="cardCondition" class="form-label">Condition</label>
+                                <select class="form-select" id="cardCondition" aria-describedby="cardConditionHelp">
+                                    <option value="Near Mint">Near Mint</option>
+                                    <option value="Excellent">Excellent</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Light Played">Light Played</option>
+                                    <option value="Played">Played</option>
+                                    <option value="Poor">Poor</option>
+                                </select>
+                                <div id="cardConditionHelp" class="form-text">Physical condition of the card</div>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <div class="mb-3">
+                                <label for="addCardSubmit" class="form-label">Add</label>
+                                <button type="submit" class="btn btn-primary w-100" id="addCardSubmit">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Collection Table -->
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i class="fas fa-list me-2"></i>Your Collection</h5>
+                <div class="d-flex align-items-center">
+                    <span class="badge bg-light text-dark me-3" id="cardCount">0 cards</span>
+                    <span class="badge bg-info me-2" id="cacheStatus">Loading...</span>
+                    <button class="btn btn-sm btn-outline-light" onclick="updatePriceCache()" id="updateCacheBtn" 
+                            aria-label="Update price cache for all cards">
+                        <i class="fas fa-sync-alt" aria-hidden="true"></i> Update Prices
+                    </button>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover" role="table" aria-label="Collection of Magic cards">
+                        <thead>
+                            <tr>
+                                <th scope="col">Card Name</th>
+                                <th scope="col">Set</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Foil</th>
+                                <th scope="col">Condition</th>
+                                <th scope="col">Best Bid</th>
+                                <th scope="col">Best Offer</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="collectionTable">
+                            <!-- Cards will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="text-center" id="emptyCollection" style="display: none;">
+                    <i class="fas fa-book fa-3x text-muted mb-3"></i>
+                    <h5 class="text-muted">No cards in your collection</h5>
+                    <p class="text-muted">Add your first card using the form above!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Market Depth Modal -->
+<div class="modal fade" id="marketDepthModal" tabindex="-1" aria-labelledby="marketDepthModalLabel" aria-hidden="true" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="marketDepthModalLabel">Market Depth</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="marketDepthContent">
+                <!-- Market depth content will be loaded here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Loading Indicator -->
+<div class="loading" id="loading" role="status" aria-live="polite">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <p class="mt-2">Loading collection...</p>
+</div>
+
+<!-- Loading Overlay for Price Updates -->
+<div class="loading-overlay" id="loadingOverlay" role="status" aria-live="polite">
+    <div class="loading-spinner">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-2" id="loadingMessage">Updating prices...</p>
+    </div>
+</div>
+
+<style>
+    .suggestion-item {
+        cursor: pointer;
+        padding: 8px 12px;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .suggestion-item:hover,
+    .suggestion-item.active {
+        background-color: #f8f9fa;
+    }
+    
+    .suggestion-item:last-child {
+        border-bottom: none;
+    }
+    
+    #cardSuggestions {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+    
+    .dropdown-item {
+        white-space: normal;
+    }
+    
+    .dropdown-item strong {
+        color: #495057;
+    }
+    
+    .dropdown-item small {
+        font-size: 0.85em;
+    }
+    
+    /* Prevent text selection on table rows */
+    #collectionTable tr {
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+    }
+    
+    /* Add hover effect for better UX */
+    #collectionTable tr:hover {
+        background-color: rgba(0,0,0,0.05);
+    }
+    
+    /* Loading overlay styles */
+    .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+    
+    .loading-spinner {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    loadCollectionAndPrices();
+    setupFormHandlers();
+    loadCacheStatus();
+    setInterval(loadCacheStatus, 30000); // Refresh cache status every 30 seconds
+});
+
+async function loadCollectionAndPrices() {
+    showLoading('loading');
+    try {
+        const response = await fetch('/api/collection-prices');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        renderCollection(data.cards);
+        updateCardCount(data.cards.length);
+    } catch (error) {
+        console.error('Error loading collection and prices:', error);
+        showError('Failed to load collection. Please try refreshing the page.');
+        const tableBody = document.getElementById('collectionTable');
+        tableBody.innerHTML = '<tr><td colspan="8" class="text-center text-danger">Error loading collection.</td></tr>';
+    } finally {
+        hideLoading('loading');
+    }
+}
+
+function renderCollection(cards) {
+    // Sort cards by name, then by set name
+    cards.sort((a, b) => {
+        const nameA = (a.name || '').toLowerCase();
+        const nameB = (b.name || '').toLowerCase();
+        if (nameA < nameB) return -1;
+        if (nameA > nameB) return 1;
+        
+        const setA = (a.set_name || '').toLowerCase();
+        const setB = (b.set_name || '').toLowerCase();
+        if (setA < setB) return -1;
+        if (setA > setB) return 1;
+        
+        return 0;
+    });
+
+    const tableBody = document.getElementById('collectionTable');
+    const emptyCollectionMessage = document.getElementById('emptyCollection');
+    
+    tableBody.innerHTML = '';
+    
+    if (cards.length === 0) {
+        emptyCollectionMessage.style.display = 'block';
+        tableBody.style.display = 'none';
+    } else {
+        emptyCollectionMessage.style.display = 'none';
+        tableBody.style.display = '';
+        
+        cards.forEach(card => {
+            const row = document.createElement('tr');
+            row.dataset.cardName = card.name;
+            row.dataset.setName = card.set_name;
+            row.dataset.foil = card.foil || false;
+
+            // If you have best_bid/best_offer, use them; otherwise fallback to N/A
+            const bestPrice = card.best_bid ? `$${card.best_bid.price.toFixed(2)}` : 'N/A';
+            const bestVendor = card.best_bid ? card.best_bid.vendor : 'N/A';
+            const bestOffer = card.best_offer ? `$${card.best_offer.price.toFixed(2)}` : 'N/A';
+            const bestOfferVendor = card.best_offer ? card.best_offer.vendor : 'N/A';
+
+            row.innerHTML = `
+                <td>
+                    <a href="#" class="card-details-link" data-bs-toggle="modal" data-bs-target="#marketDepthModal" 
+                       aria-label="View market details for ${escapeHTML(toTitleCase(card.name || ''))}">
+                        ${escapeHTML(toTitleCase(card.name || ''))}
+                    </a>
+                </td>
+                <td>${escapeHTML(toTitleCase(card.set_name || ''))}</td>
+                <td>${card.quantity || 1}</td>
+                <td>${card.foil ? '<span class="badge bg-warning text-dark">Yes</span>' : 'No'}</td>
+                <td>${escapeHTML(card.condition || 'N/A')}</td>
+                <td>
+                    <span class="fw-bold">${bestPrice}</span>
+                    <small class="text-muted d-block">${bestVendor}</small>
+                </td>
+                <td>
+                    <span class="fw-bold">${bestOffer}</span>
+                    <small class="text-muted d-block">${bestOfferVendor}</small>
+                </td>
+                <td>
+                    <button class="btn btn-sm btn-danger" onclick="removeCard(event, '${card.name}', '${card.set_name}', ${card.foil})" 
+                            aria-label="Remove ${escapeHTML(card.name)} from collection">
+                        <i class="fas fa-trash" aria-hidden="true"></i>
+                    </button>
+                    <button class="btn btn-sm btn-info" onclick="showMarketDepth(event, '${card.name}', '${card.set_name}', ${card.foil})" 
+                            aria-label="View market depth for ${escapeHTML(card.name)}">
+                        <i class="fas fa-chart-bar" aria-hidden="true"></i>
+                    </button>
+                </td>
+            `;
+            tableBody.appendChild(row);
+        });
+    }
+}
+
+function toTitleCase(str) {
+    if (!str) return '';
+    return str.replace(
+        /\w\S*/g,
+        function(txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        }
+    );
+}
+
+async function removeCard(event, cardName, setName, isFoil) {
+    event.stopPropagation(); // Prevent modal from opening
+    
+    if (!confirm(`Are you sure you want to remove "${cardName}"?`)) {
+        return;
+    }
+
+    try {
+        const response = await fetch('/api/remove-card', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: cardName, set_name: setName, foil: isFoil }),
+        });
+        const result = await response.json();
+        if (response.ok) {
+            showSuccess(result.message);
+            loadCollectionAndPrices(); // Refresh the list
+        } else {
+            showError(result.error || 'Failed to remove card.');
+        }
+    } catch (error) {
+        console.error('Error removing card:', error);
+        showError('An error occurred while removing the card.');
+    }
+}
+
+async function showMarketDepth(event, cardName, setName, isFoil) {
+    event.stopPropagation();
+    const modalTitle = document.getElementById('marketDepthModalLabel');
+    const modalBody = document.getElementById('marketDepthContent');
+    
+    modalTitle.textContent = `Market Depth for ${cardName}`;
+    modalBody.innerHTML = '<div class="text-center"><div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+
+    $('#marketDepthModal').modal('show');
+
+    try {
+        const url = `/api/card-details?name=${encodeURIComponent(cardName)}&set_name=${encodeURIComponent(setName)}&foil=${isFoil}`;
+        const response = await fetch(url);
+        if (!response.ok) throw new Error('Failed to fetch market data');
+        
+        const data = await response.json();
+        
+        let content = `
+            <h5>${escapeHTML(data.card.name)} - ${escapeHTML(data.card.set_name)} ${data.card.foil ? '(Foil)' : ''}</h5>
+            <p>Rarity: ${escapeHTML(data.card.rarity)}</p>
+            
+            <h6>Vendor Prices (Bids)</h6>
+            <ul class="list-group mb-3">
+        `;
+
+        if (data.current_prices.vendors.length > 0) {
+            data.current_prices.vendors.sort((a, b) => (b.bid || 0) - (a.bid || 0)).forEach(vendor => {
+                content += `
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span>
+                            <i class="fas fa-store me-2"></i><strong>${escapeHTML(vendor.vendor)}</strong>
+                            <br><small class="text-muted">Last updated: ${new Date(vendor.last_updated).toLocaleString()}</small>
+                        </span>
+                        <span class="badge bg-success rounded-pill fs-6">$${(vendor.bid || 0).toFixed(2)}</span>
+                    </li>`;
+            });
+        } else {
+            content += '<li class="list-group-item">No bid prices available.</li>';
+        }
+        content += '</ul>';
+
+        content += '<h6>Retail Prices (Offers/Asks)</h6><ul class="list-group mb-3">';
+        if (Object.keys(data.retail_prices_by_condition).length > 0) {
+             Object.entries(data.retail_prices_by_condition).forEach(([condition, price_info]) => {
+                content += `
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span>
+                            <i class="fas fa-tag me-2"></i><strong>Card Kingdom (${escapeHTML(condition)})</strong>
+                        </span>
+                        <span class="badge bg-primary rounded-pill fs-6">$${(price_info.price || 0).toFixed(2)}</span>
+                    </li>`;
+            });
+        } else {
+            content += '<li class="list-group-item">No retail prices available.</li>';
+        }
+
+        content += '</ul><h6>Historical Data (Last 30 Days)</h6>';
+        if (data.historical_data && data.historical_data.length > 0) {
+            content += '<canvas id="priceHistoryChart"></canvas>';
+        } else {
+            content += '<p>No historical data available.</p>';
+        }
+        
+        modalBody.innerHTML = content;
+
+        if (data.historical_data && data.historical_data.length > 0) {
+            renderPriceChart(data.historical_data);
+        }
+    } catch (error) {
+        console.error('Error showing market depth:', error);
+        modalBody.innerHTML = `<div class="alert alert-danger">${error.message}</div>`;
+    }
+}
+
+function renderPriceChart(history) {
+    const canvas = document.getElementById('priceHistoryChart');
+    if (!canvas) {
+        console.warn('Price history chart canvas not found.');
+        return;
+    }
+    const ctx = canvas.getContext('2d');
+    const labels = history.map(d => new Date(d.date).toLocaleDateString());
+    const bestBidData = history.map(d => d.best_price);
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Best Bid Price',
+                data: bestBidData,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                fill: true,
+                tension: 0.1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: false,
+                    ticks: {
+                        callback: function(value, index, values) {
+                            return '$' + value.toFixed(2);
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+function updateCardCount(count) {
+    const cardCountEl = document.getElementById('cardCount');
+    cardCountEl.textContent = `${count} card${count !== 1 ? 's' : ''}`;
+}
+
+async function loadCacheStatus() {
+    try {
+        const response = await fetch('/api/cache-status');
+        const data = await response.json();
+        const cacheStatusEl = document.getElementById('cacheStatus');
+        const updateCacheBtn = document.getElementById('updateCacheBtn');
+        
+        const lastUpdate = new Date(data.last_update);
+        const now = new Date();
+        const ageInMinutes = (now - lastUpdate) / (1000 * 60);
+
+        let statusClass = 'bg-success';
+        let statusText = 'Fresh';
+
+        if (ageInMinutes > 60) { // Over 1 hour old
+            statusClass = 'bg-warning text-dark';
+            statusText = 'Stale';
+        }
+        if (data.stale_cache > 0) {
+            statusClass = 'bg-danger';
+            statusText = 'Outdated';
+        }
+
+        cacheStatusEl.className = `badge ${statusClass} me-2`;
+        cacheStatusEl.textContent = `Prices: ${statusText}`;
+        
+        const tooltip = `Last updated: ${lastUpdate.toLocaleString()}\nTotal cards in cache: ${data.total_cards}`;
+        cacheStatusEl.setAttribute('title', tooltip);
+        new bootstrap.Tooltip(cacheStatusEl);
+
+    } catch (error) {
+        console.error('Error loading cache status:', error);
+        const cacheStatusEl = document.getElementById('cacheStatus');
+        cacheStatusEl.className = 'badge bg-secondary me-2';
+        cacheStatusEl.textContent = 'Status Unknown';
+    }
+}
+
+async function updatePriceCache() {
+    const overlay = document.getElementById('loadingOverlay');
+    const message = document.getElementById('loadingMessage');
+    const updateBtn = document.getElementById('updateCacheBtn');
+    
+    updateBtn.disabled = true;
+    message.textContent = 'Updating price cache... This may take a moment.';
+    overlay.style.display = 'flex';
+
+    try {
+        const response = await fetch('/api/update-price-cache', { method: 'POST' });
+        const result = await response.json();
+        
+        if (response.ok) {
+            showSuccess(result.message || 'Price cache updated successfully!');
+            await loadCollectionAndPrices();
+            await loadCacheStatus();
+        } else {
+            showError(result.error || 'Failed to update price cache.');
+        }
+    } catch (error) {
+        console.error('Error updating price cache:', error);
+        showError('An error occurred while updating prices.');
+    } finally {
+        overlay.style.display = 'none';
+        updateBtn.disabled = false;
+    }
+}
+
+function setupFormHandlers() {
+    const addCardForm = document.getElementById('addCardForm');
+    const cardNameInput = document.getElementById('cardName');
+    const cardSetInput = document.getElementById('cardSet');
+    const suggestionsBox = document.getElementById('cardSuggestions');
+    const setSuggestionsBox = document.getElementById('setSuggestions');
+    
+    let debounceTimer;
+    let setDebounceTimer;
+    let activeSuggestion = -1;
+
+    cardNameInput.addEventListener('input', () => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+            const query = cardNameInput.value;
+            if (query.length >= 3) {
+                getCardSuggestions(query);
+            } else {
+                suggestionsBox.style.display = 'none';
+            }
+        }, 300);
+    });
+    
+    cardSetInput.addEventListener('input', () => {
+        clearTimeout(setDebounceTimer);
+        const cardName = cardNameInput.value;
+        if (!cardName) return;
+
+        setDebounceTimer = setTimeout(() => {
+            const query = cardSetInput.value;
+            filterSetSuggestions(query);
+        }, 300);
+    });
+
+    async function getCardSuggestions(query) {
+        try {
+            const response = await fetch(`/api/search-cards-autocomplete?query=${encodeURIComponent(query)}`);
+            const data = await response.json();
+            
+            suggestionsBox.innerHTML = '';
+            activeSuggestion = -1;
+
+            if (data.cards && data.cards.length > 0) {
+                if (data.is_printings) {
+                    // This is a list of sets for a specific card
+                    data.cards.forEach((card, index) => {
+                        const item = document.createElement('div');
+                        item.className = 'dropdown-item suggestion-item';
+                        item.setAttribute('role', 'option');
+                        item.setAttribute('aria-label', `${escapeHTML(card.name)} from ${escapeHTML(card.set_name)}`);
+                        item.innerHTML = `<strong>${escapeHTML(card.name)}</strong><br><small>${escapeHTML(card.set_name)} (${escapeHTML(card.set_code.toUpperCase())}) - ${escapeHTML(card.rarity)}</small>`;
+                        item.addEventListener('click', () => {
+                            cardNameInput.value = card.name;
+                            cardSetInput.value = card.set_name;
+                            suggestionsBox.style.display = 'none';
+                            setSuggestionsBox.innerHTML = '';
+                        });
+                        suggestionsBox.appendChild(item);
+                    });
+                } else {
+                    // This is a list of card names
+                    data.cards.forEach((name, index) => {
+                        const item = document.createElement('a');
+                        item.className = 'dropdown-item suggestion-item';
+                        item.href = '#';
+                        item.setAttribute('role', 'option');
+                        item.setAttribute('aria-label', `Select ${escapeHTML(name)}`);
+                        item.textContent = name;
+                        item.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            cardNameInput.value = name;
+                            suggestionsBox.style.display = 'none';
+                            getSetSuggestions(name);
+                        });
+                        suggestionsBox.appendChild(item);
+                    });
+                }
+                suggestionsBox.style.display = 'block';
+            } else {
+                suggestionsBox.style.display = 'none';
+            }
+        } catch (error) {
+            console.error('Error fetching card suggestions:', error);
+            suggestionsBox.style.display = 'none';
+        }
+    }
+    
+    async function getSetSuggestions(cardName) {
+        try {
+            const response = await fetch(`/api/card-sets/${encodeURIComponent(cardName)}`);
+            const data = await response.json();
+            setSuggestionsBox.innerHTML = '';
+            if (data.sets && data.sets.length > 0) {
+                data.sets.forEach(set => {
+                    const item = document.createElement('a');
+                    item.className = 'dropdown-item suggestion-item';
+                    item.href = '#';
+                    item.setAttribute('role', 'option');
+                    item.setAttribute('aria-label', `Select ${escapeHTML(set.name)} set`);
+                    item.dataset.setName = set.name; // Store full name
+                    item.innerHTML = `${escapeHTML(set.name)} (${escapeHTML(set.code.toUpperCase())}) <small class="text-muted">${set.released_at.substring(0,4)}</small>`;
+                    item.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        cardSetInput.value = set.name;
+                        setSuggestionsBox.style.display = 'none';
+                    });
+                    setSuggestionsBox.appendChild(item);
+                });
+                filterSetSuggestions(''); // Initially show all
+            }
+        } catch (error) {
+            console.error('Error fetching set suggestions:', error);
+        }
+    }
+    
+    function filterSetSuggestions(query) {
+        const items = setSuggestionsBox.querySelectorAll('.suggestion-item');
+        let hasVisibleItems = false;
+        items.forEach(item => {
+            const setName = item.dataset.setName.toLowerCase();
+            const setCodeMatch = item.textContent.match(/\(([^)]+)\)/);
+            const setCode = setCodeMatch ? setCodeMatch[1].toLowerCase() : '';
+            
+            if (setName.includes(query.toLowerCase()) || setCode.includes(query.toLowerCase())) {
+                item.style.display = '';
+                hasVisibleItems = true;
+            } else {
+                item.style.display = 'none';
+            }
+        });
+        setSuggestionsBox.style.display = hasVisibleItems ? 'block' : 'none';
+    }
+
+    addCardForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const cardName = cardNameInput.value;
+        const setName = cardSetInput.value;
+        const quantity = document.getElementById('cardQuantity').value;
+        const isFoil = document.getElementById('cardFoil').value === 'true';
+        const condition = document.getElementById('cardCondition').value;
+        
+        showLoading('loadingOverlay');
+        document.getElementById('loadingMessage').textContent = 'Adding card to collection...';
+
+        try {
+            const response = await fetch('/api/add-card', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: cardName,
+                    set_name: setName,
+                    quantity: parseInt(quantity, 10),
+                    foil: isFoil,
+                    condition: condition
+                }),
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                showSuccess(result.message || 'Card added successfully!');
+                addCardForm.reset();
+                loadCollectionAndPrices();
+            } else {
+                showError(result.error || 'Failed to add card. Please check the details.');
+            }
+        } catch (error) {
+            console.error('Error adding card:', error);
+            showError('An error occurred. Please try again.');
+        } finally {
+            hideLoading('loadingOverlay');
+        }
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!cardNameInput.contains(e.target)) suggestionsBox.style.display = 'none';
+        if (!cardSetInput.contains(e.target)) setSuggestionsBox.style.display = 'none';
+    });
+}
+
+function showLoading(id) {
+    document.getElementById(id).style.display = 'flex';
+}
+
+function hideLoading(id) {
+    document.getElementById(id).style.display = 'none';
+}
+
+function showSuccess(message) {
+    showToast(message, 'success');
+}
+
+function showError(message) {
+    showToast(message, 'danger');
+}
+
+function showToast(message, type = 'success') {
+    const toastContainer = document.createElement('div');
+    toastContainer.className = `toast align-items-center text-white bg-${type} border-0`;
+    toastContainer.setAttribute('role', 'alert');
+    toastContainer.setAttribute('aria-live', 'assertive');
+    toastContainer.setAttribute('aria-atomic', 'true');
+
+    toastContainer.innerHTML = `
+        <div class="d-flex">
+            <div class="toast-body">${escapeHTML(message)}</div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    `;
+    
+    const toastPlacement = document.createElement('div');
+    toastPlacement.className = 'position-fixed bottom-0 end-0 p-3';
+    toastPlacement.style.zIndex = 1055;
+    toastPlacement.appendChild(toastContainer);
+    document.body.appendChild(toastPlacement);
+
+    const toast = new bootstrap.Toast(toastContainer, { delay: 5000 });
+    toast.show();
+    
+    toastContainer.addEventListener('hidden.bs.toast', () => {
+        document.body.removeChild(toastPlacement);
+    });
+}
+
+function escapeHTML(str) {
+    if (str === null || typeof str === 'undefined') {
+        return '';
+    }
+    return str.toString().replace(/[&<>"']/g, function(match) {
+        return {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#39;'
+        }[match];
+    });
+}
+
+// Add chart.js dynamically
+const chartJsScript = document.createElement('script');
+chartJsScript.src = 'https://cdn.jsdelivr.net/npm/chart.js';
+document.body.appendChild(chartJsScript);
+
+</script>
+{% endblock %} 
